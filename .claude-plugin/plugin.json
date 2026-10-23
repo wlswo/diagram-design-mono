@@ -3,9 +3,9 @@
   "description": "Mono-styled fork of diagram-design: JetBrains Mono, square boxes, turbopuffer-inspired slate and orange palette, accent-on-hover nodes. Architecture, flowchart, sequence, state, ER, timeline, swimlane, charts and 30+ more diagram types as HTML/SVG/PNG.",
   "version": "1.0.0",
   "author": {
-    "name": "OWNER"
+    "name": "wlswo"
   },
-  "repository": "https://github.com/OWNER/diagram-design-mono",
+  "repository": "https://github.com/wlswo/diagram-design-mono",
   "license": "MIT",
   "keywords": ["diagrams", "svg", "architecture", "flowchart", "visualization", "jetbrains-mono", "hover"]
 }

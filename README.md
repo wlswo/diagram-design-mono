@@ -22,11 +22,10 @@ Claude Code에서 아키텍처, 플로차트, 시퀀스 등 45종 다이어그�
 Claude Code에서 아래 두 줄 실행.
 
 ```
-/plugin marketplace add OWNER/diagram-design-mono
+/plugin marketplace add wlswo/diagram-design-mono
 /plugin install diagram-design-mono@diagram-design-mono
 ```
 
-- `OWNER`: 이 저장소를 올린 GitHub 계정
 - 비공개 저장소면 설치하는 사람에게 저장소 읽기 권한과 git 인증 필요
 
 플러그인 없이 쓰려면 스킬 폴더만 복사.

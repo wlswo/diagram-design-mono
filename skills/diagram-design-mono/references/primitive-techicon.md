@@ -15,7 +15,7 @@ Run from the installed skill directory:
 ```bash
 python3 scripts/techicon.py find "Spring Boot"        # → spring_boot
 python3 scripts/techicon.py list kafka                # names containing "kafka"
-python3 scripts/techicon.py snippet kafka --x 744 --y 134 --size 16
+python3 scripts/techicon.py snippet kafka --x 744 --y 134 --size 24
 python3 scripts/techicon.py datauri postgresql        # bare data URL
 ```
 
@@ -35,15 +35,17 @@ The icon takes the type tag's corner. Paste the `snippet` output inside the node
 
 | Node height | Icon size | Position |
 |---|---|---|
-| 48 to 64 | 16 | `x = X + 8`, `y = Y + 6` |
-| 72 and up | 20 | `x = X + 8`, `y = Y + 8` |
-| Sequence actor (56) | 16 | `x = X + 8`, `y = Y + 6` |
+| 48 to 64 | 24, or 28 for a logo with a wordmark | `x = X + 8`, `y = Y + 6` |
+| 72 and up | 28 to 32 | `x = X + 8`, `y = Y + 8` |
+| Sequence actor (56) | 24 | `x = X + 8`, `y = Y + 6` |
+
+Many logos carry their name as text (MySQL, PostgreSQL). Under 24px that text turns to noise and the logo reads as a smudge, so never go below 24 for those; a symbol-only logo (Kafka, Hazelcast) can drop to 20 when the node name is long.
 
 ```svg
 <g class="node">
   <rect x="X" y="Y" width="W" height="H" fill="{paper}"/>
   <rect class="node-box" x="X" y="Y" width="W" height="H" fill="FILL" stroke="STROKE" stroke-width="1"/>
-  <image class="techicon" data-techicon="kafka" x="X+8" y="Y+6" width="16" height="16"
+  <image class="techicon" data-techicon="kafka" x="X+8" y="Y+6" width="24" height="24"
          preserveAspectRatio="xMidYMid meet" href="data:image/png;base64,…"/>
   <text …>이벤트 스트림</text>
   <text …>Kafka</text>
@@ -51,7 +53,7 @@ The icon takes the type tag's corner. Paste the `snippet` output inside the node
 ```
 
 - Keep at least 8px between the icon and the node name. If a centred name would reach the icon, widen the box on the 4px grid rather than shrinking the type.
-- **Dark skin:** many logos are dark. Put a 20×20 square in the light `paper` colour (`#f8fafc`, no `rx`) behind a 16px icon, inset 2px, so the logo stays visible.
+- **Dark skin:** many logos are dark. Put a square in the light `paper` colour (`#f8fafc`, no `rx`) 4px larger than the icon behind it, inset 2px, so the logo stays visible.
 - Hover leaves the icon alone: the hover CSS recolours only `.node-box` and text.
 - A legend does not list icons. The node's own name says what it is.
 

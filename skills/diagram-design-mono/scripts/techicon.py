@@ -10,7 +10,7 @@ and self_check.py accepts data:image URLs.
 
     python3 scripts/techicon.py list [query]
     python3 scripts/techicon.py find "Spring Boot"
-    python3 scripts/techicon.py snippet kafka --x 120 --y 86 [--size 16]
+    python3 scripts/techicon.py snippet kafka --x 120 --y 86 [--size 24]
     python3 scripts/techicon.py datauri postgresql
 
 Stdlib only. Downsizing uses Pillow when installed, else macOS `sips`, else
@@ -34,7 +34,7 @@ from pathlib import Path
 
 RAW_URL = "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/main/icons/{name}.png"
 CACHE = Path(os.environ.get("XDG_CACHE_HOME", Path.home() / ".cache")) / "diagram-design-mono" / "techicons"
-PIXELS = 64  # stored size: sharp at 16-24px display on a 2-3x screen, a few KB each
+PIXELS = 64  # stored size: sharp up to 32px display on a 2x screen, a few KB each
 LARGE = 24_000  # warn above this many bytes of PNG per icon
 
 # Snapshot of icons/*.png on main (286 names). Unknown names are still tried
@@ -165,7 +165,7 @@ def main() -> int:
     snippet.add_argument("name")
     snippet.add_argument("--x", type=float, required=True)
     snippet.add_argument("--y", type=float, required=True)
-    snippet.add_argument("--size", type=int, default=16)
+    snippet.add_argument("--size", type=int, default=24)
     uri = sub.add_parser("datauri", help="print only the data:image/png URL")
     uri.add_argument("name")
     args = parser.parse_args()

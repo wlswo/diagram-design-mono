@@ -22,26 +22,26 @@ S2 = math.sqrt(2)
 # Face tones per skin. Every value is a style-guide role or an rgba() of one.
 SKINS = {
     "light": dict(
-        paper="#f5f5f5", ink="#2d3142", muted="#4f5d75", soft="#5a6580", accent="#bf4520",
-        ink_rgb="45,49,66", acc_rgb="191,69,32", base="#ffffff", rule="rgba(45,49,66,0.12)",
-        shade=(None, "rgba(45,49,66,0.07)", "rgba(45,49,66,0.15)"),
-        focal=("rgba(191,69,32,0.10)", "rgba(191,69,32,0.20)", "rgba(191,69,32,0.32)"),
-        cavity="rgba(45,49,66,0.10)", floor="rgba(45,49,66,0.04)", well="rgba(45,49,66,0.14)",
-        screen="#2d3142", island="#111111", chip_top="#4f5d75", chip_side="#2d3142",
-        sil="#2d3142", inner="rgba(45,49,66,0.55)", trace="rgba(45,49,66,0.30)",
-        lead="rgba(45,49,66,0.40)", lead_acc="rgba(191,69,32,0.60)", inner_acc="rgba(191,69,32,0.70)",
-        lens="#2d3142", lens_ring="rgba(245,245,245,0.35)",
+        paper="#f8fafc", ink="#0f172a", muted="#475569", soft="#64748b", accent="#c2410c",
+        ink_rgb="45,49,66", acc_rgb="191,69,32", base="#ffffff", rule="rgba(15,23,42,0.12)",
+        shade=(None, "rgba(15,23,42,0.07)", "rgba(15,23,42,0.15)"),
+        focal=("rgba(194,65,12,0.10)", "rgba(194,65,12,0.20)", "rgba(194,65,12,0.32)"),
+        cavity="rgba(15,23,42,0.10)", floor="rgba(15,23,42,0.04)", well="rgba(15,23,42,0.14)",
+        screen="#0f172a", island="#111111", chip_top="#475569", chip_side="#0f172a",
+        sil="#0f172a", inner="rgba(15,23,42,0.55)", trace="rgba(15,23,42,0.30)",
+        lead="rgba(15,23,42,0.40)", lead_acc="rgba(194,65,12,0.60)", inner_acc="rgba(194,65,12,0.70)",
+        lens="#0f172a", lens_ring="rgba(248,250,252,0.35)",
     ),
     "dark": dict(
-        paper="#2d3142", ink="#f5f5f5", muted="#bfc0c0", soft="#949eb2", accent="#f08a59",
-        ink_rgb="245,245,245", acc_rgb="240,138,89", base="#393e53", rule="rgba(245,245,245,0.12)",
-        shade=("rgba(245,245,245,0.10)", None, "rgba(45,49,66,0.45)"),
-        focal=("rgba(240,138,89,0.18)", None, "rgba(45,49,66,0.45)"),
-        cavity="rgba(45,49,66,0.55)", floor="rgba(45,49,66,0.25)", well="rgba(45,49,66,0.40)",
-        screen="#111111", island="#2d3142", chip_top="#949eb2", chip_side="#2d3142",
-        sil="#f5f5f5", inner="rgba(245,245,245,0.45)", trace="rgba(245,245,245,0.30)",
-        lead="rgba(245,245,245,0.40)", lead_acc="rgba(240,138,89,0.60)", inner_acc="rgba(240,138,89,0.70)",
-        lens="#111111", lens_ring="rgba(245,245,245,0.35)",
+        paper="#0f172a", ink="#f8fafc", muted="#cbd5e1", soft="#94a3b8", accent="#fdba75",
+        ink_rgb="245,245,245", acc_rgb="240,138,89", base="#1e293b", rule="rgba(248,250,252,0.12)",
+        shade=("rgba(248,250,252,0.10)", None, "rgba(15,23,42,0.45)"),
+        focal=("rgba(253,186,117,0.18)", None, "rgba(15,23,42,0.45)"),
+        cavity="rgba(15,23,42,0.55)", floor="rgba(15,23,42,0.25)", well="rgba(15,23,42,0.40)",
+        screen="#111111", island="#0f172a", chip_top="#94a3b8", chip_side="#0f172a",
+        sil="#f8fafc", inner="rgba(248,250,252,0.45)", trace="rgba(248,250,252,0.30)",
+        lead="rgba(248,250,252,0.40)", lead_acc="rgba(253,186,117,0.60)", inner_acc="rgba(253,186,117,0.70)",
+        lens="#111111", lens_ring="rgba(248,250,252,0.35)",
     ),
 }
 
@@ -263,7 +263,7 @@ FULL = """<!DOCTYPE html>
   <link href="{font}" rel="stylesheet">
   <style>
     *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
-    :root {{ --color-paper:#f5f5f5; --color-paper-2:#ececec; --color-ink:#2d3142; --color-muted:#4f5d75; --color-soft:#5a6580; --color-rule:rgba(45,49,66,0.12); --color-accent:#bf4520; --color-link:#2e5aa8; --font-sans:'Geist',system-ui,sans-serif; --font-serif:'Instrument Serif',serif; --font-mono:'Geist Mono',ui-monospace,monospace; }}
+    :root {{ --color-paper:#f8fafc; --color-paper-2:#f1f5f9; --color-ink:#0f172a; --color-muted:#475569; --color-soft:#64748b; --color-rule:rgba(15,23,42,0.12); --color-accent:#c2410c; --color-link:#1d4ed8; --font-sans:'Geist',system-ui,sans-serif; --font-serif:'Instrument Serif',serif; --font-mono:'Geist Mono',ui-monospace,monospace; }}
     body {{ font-family: var(--font-sans); background: var(--color-paper); min-height: 100vh; padding: 3rem 2rem; color: var(--color-ink); }}
     .container {{ max-width: 1200px; margin: 0 auto; }}
     .header {{ margin-bottom: 2.5rem; }}
@@ -277,14 +277,14 @@ FULL = """<!DOCTYPE html>
     @media (max-width: 820px) {{ .cards {{ grid-template-columns: 1fr; }} }}
     .card {{ background: #fff; border-radius: 6px; border: 1px solid var(--color-rule); padding: 1.25rem; }}
     .card .eyebrow {{ font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-muted); margin-bottom: 0.5rem; }}
-    .card-header {{ display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.875rem; padding-bottom: 0.875rem; border-bottom: 1px solid rgba(45,49,66,0.08); }}
+    .card-header {{ display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.875rem; padding-bottom: 0.875rem; border-bottom: 1px solid rgba(15,23,42,0.08); }}
     .card-dot {{ width: 7px; height: 7px; border-radius: 50%; }}
     .card-dot.ink {{ background: var(--color-ink); }} .card-dot.muted {{ background: var(--color-muted); }} .card-dot.coral {{ background: var(--color-accent); }}
     .card h3 {{ font-size: 0.875rem; font-weight: 600; }}
     .card p, .card ul {{ color: var(--color-muted); font-size: 0.8125rem; line-height: 1.55; list-style: none; }}
     .card li {{ margin-bottom: 0.3rem; padding-left: 0.875rem; position: relative; }}
-    .card li::before {{ content: '·'; position: absolute; left: 0.2rem; color: rgba(45,49,66,0.45); }}
-    .footer {{ margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(45,49,66,0.10); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--color-soft); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }}
+    .card li::before {{ content: '·'; position: absolute; left: 0.2rem; color: rgba(15,23,42,0.45); }}
+    .footer {{ margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(15,23,42,0.10); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--color-soft); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }}
   </style>
 </head>
 <body>

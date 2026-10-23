@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Good design · Desirable × Feasible × Viable</title>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --color-paper:   #f5f5f5;
-      --color-ink:     #2d3142;
-      --color-muted:   #4f5d75;
-      --color-accent:  #bf4520;
-      --font-sans:     'Geist', system-ui, sans-serif;
-      --font-serif:    'Instrument Serif', serif;
-      --font-mono:     'Geist Mono', ui-monospace, monospace;
+      --color-paper:   #f8fafc;
+      --color-ink:     #0f172a;
+      --color-muted:   #475569;
+      --color-accent:  #c2410c;
+      --font-sans:     'JetBrains Mono', ui-monospace, monospace;
+      --font-serif:    'JetBrains Mono', ui-monospace, monospace;
+      --font-mono:     'JetBrains Mono', ui-monospace, monospace;
     }
 
     body {
@@ -51,6 +51,15 @@
     }
 
     svg { width: 100%; min-width: 900px; display: block; }
+  
+    /* Hover: a node box takes the accent fill while the pointer is over it. */
+    svg text { pointer-events: none; }
+    svg .node-box { transition: fill .12s ease, stroke .12s ease; }
+    @media (hover: hover) {
+      svg .node-box:hover, svg .node:hover .node-box { fill: #fdba75; stroke: #0f172a; }
+      svg .node:hover text { fill: #431307; }
+    }
+    @media (prefers-reduced-motion: reduce) { svg .node-box { transition: none; } }
   </style>
 </head>
 <body>
@@ -71,39 +80,39 @@
           </clipPath>
         </defs>
 
-        <rect width="100%" height="100%" fill="#f5f5f5"/>
+        <rect width="100%" height="100%" fill="#f8fafc"/>
 
         <!-- Three set circles (stroke + very-low-opacity tint; tints compound in overlaps) -->
         <!-- Desirable — top, ink -->
-        <circle cx="500" cy="180" r="140" fill="rgba(45,49,66,0.04)" stroke="#2d3142" stroke-width="1"/>
+        <circle class="node-box" cx="500" cy="180" r="140" fill="rgba(15,23,42,0.04)" stroke="#0f172a" stroke-width="1"/>
         <!-- Feasible — bottom-left, muted -->
-        <circle cx="428" cy="320" r="140" fill="rgba(79,93,117,0.05)" stroke="#4f5d75" stroke-width="1"/>
+        <circle class="node-box" cx="428" cy="320" r="140" fill="rgba(71,85,105,0.05)" stroke="#475569" stroke-width="1"/>
         <!-- Viable — bottom-right, soft -->
-        <circle cx="572" cy="320" r="140" fill="rgba(90,101,128,0.05)" stroke="#5a6580" stroke-width="1"/>
+        <circle class="node-box" cx="572" cy="320" r="140" fill="rgba(100,116,139,0.05)" stroke="#64748b" stroke-width="1"/>
 
         <!-- Focal: solid-ink triple intersection (dark fill for white text to read against) -->
         <g clip-path="url(#clip-desirable)">
           <g clip-path="url(#clip-feasible)">
-            <circle cx="572" cy="320" r="140" fill="#2d3142"/>
+            <circle cx="572" cy="320" r="140" fill="#0f172a"/>
           </g>
         </g>
 
         <!-- Set labels — positioned INSIDE each circle's non-overlapping lobe, so the diagram reads like a classic Venn -->
         <!-- Desirable — top lobe (centered inside top of Desirable circle) -->
-        <text x="500" y="96" fill="#2d3142" font-size="14" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Desirable</text>
-        <text x="500" y="112" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.14em">PEOPLE WANT IT</text>
+        <text x="500" y="96" fill="#0f172a" font-size="14" font-weight="600" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">Desirable</text>
+        <text x="500" y="112" fill="#475569" font-size="9" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">PEOPLE WANT IT</text>
 
         <!-- Feasible — bottom-left lobe -->
-        <text x="340" y="386" fill="#2d3142" font-size="14" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Feasible</text>
-        <text x="340" y="402" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.14em">WE CAN BUILD IT</text>
+        <text x="340" y="386" fill="#0f172a" font-size="14" font-weight="600" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">Feasible</text>
+        <text x="340" y="402" fill="#475569" font-size="9" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">WE CAN BUILD IT</text>
 
         <!-- Viable — bottom-right lobe -->
-        <text x="660" y="386" fill="#2d3142" font-size="14" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Viable</text>
-        <text x="660" y="402" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.14em">BUSINESS SUSTAINS</text>
+        <text x="660" y="386" fill="#0f172a" font-size="14" font-weight="600" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">Viable</text>
+        <text x="660" y="402" fill="#475569" font-size="9" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">BUSINESS SUSTAINS</text>
 
         <!-- Focal label: white text on the dark intersection -->
-        <text x="500" y="268" fill="#ffffff" font-size="14" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Shippable</text>
-        <text x="500" y="284" fill="rgba(245,245,245,0.75)" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.14em">THE SWEET SPOT</text>
+        <text x="500" y="268" fill="#ffffff" font-size="14" font-weight="600" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">Shippable</text>
+        <text x="500" y="284" fill="rgba(248,250,252,0.75)" font-size="9" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">THE SWEET SPOT</text>
       </svg>
   </div>
 </body>

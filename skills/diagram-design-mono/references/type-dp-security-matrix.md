@@ -116,13 +116,13 @@ Solid paper fill across the full viewBox. No dot pattern.
 ### 2.2 Header row (`y = 72, h = 52`)
 
 **Component-column header cell:**
-- Rect: `(comp_col_x, header_y, comp_col_w, header_h)`, fill white, stroke `ink @ 0.12` 0.8, `rx=6`
+- Rect: `(comp_col_x, header_y, comp_col_w, header_h)`, fill white, stroke `ink @ 0.12` 0.8, `rx=0`
 - Two-line label centered at `(comp_col_x + comp_col_w/2, header_y+24)` and `(…, header_y+40)`:
   - Line 1: `"Component"` — `node-name` role at 11px, ink
   - Line 2: `"vs. AD group"` — `sublabel` role, muted
 
 **Role banners (one per role):**
-- Rect: `(role_col_x(j), header_y, role_col_w, header_h)`, fill `ink`, `rx=6`
+- Rect: `(role_col_x(j), header_y, role_col_w, header_h)`, fill `ink`, `rx=0`
 - Two-line label centered:
   - Line 1 at `y=92`: `roles[j].name` — `node-name` role at 11px, white
   - Line 2 at `y=108`: `roles[j].code` — `sublabel` role, white at opacity 0.85
@@ -130,12 +130,12 @@ Solid paper fill across the full viewBox. No dot pattern.
 ### 2.3 Data row (`y = row_y(k), h = 36`)
 
 **Component label cell:**
-- Rect: `(comp_col_x, row_y(k), comp_col_w, row_h)`, fill white, stroke `ink @ 0.12` 0.8, `rx=4`
+- Rect: `(comp_col_x, row_y(k), comp_col_w, row_h)`, fill white, stroke `ink @ 0.12` 0.8, `rx=0`
 - Name at `(comp_col_x + 12, row_y(k) + 22)`: `node-name` role at 11px, ink, left-aligned
 - Hint (if present) at `(comp_col_x + comp_col_w − 12, row_y(k) + 22)`: `sublabel` role, muted, right-aligned
 
 **Value cells (one per role × component):**
-- Rect: `(role_col_x(j), row_y(k), role_col_w, row_h)`, `rx=4`, stroke `ink @ 0.12` 0.6
+- Rect: `(role_col_x(j), row_y(k), role_col_w, row_h)`, `rx=0`, stroke `ink @ 0.12` 0.6
 - Fill and text-color depend on `level` (or focal flag) — see §2.4
 - Value text centered at `(role_col_cx(j), row_y(k) + 22)`: `node-name` role at 10px
 - Focal cell uses a slightly raised primary text at `y=18` and a sub-line at `y=30` (`sublabel` role at 8px)
@@ -157,7 +157,7 @@ The focal cell can carry a 2nd line (`sub:`) rendered in `accent` with the `subl
 Hairline separator at `legend_y_top`. Below the separator, one row of style swatches with their labels — only the styles actually used in the diagram appear in the legend.
 
 - "LEGEND" eyebrow at `(left_pad, legend_y_top + 20)`: `eyebrow` role, muted, letter-spacing 0.14em
-- Each style: swatch rect (14×12 `rx=2`) followed by a `sublabel` role label
+- Each style: swatch rect (14×12 `rx=0`) followed by a `sublabel` role label
 - Item x-positions are tabulated left-to-right with ~120-px stride; legend wraps onto a second visual row only if `n_roles ≥ 6` (otherwise fits in one line)
 
 ---
@@ -265,8 +265,8 @@ Before emitting SVG, verify **every** item:
 1. `viewBox = "0 0 {viewBox_w} {viewBox_h}"` derived via §2 (4 roles × 8 components → 920 × 520).
 2. Header row at `y=72 h=52`. Component header cell white-filled with two-line `Component / vs. AD group` label. Role banners filled `ink` with name + AD-group code in white.
 3. Data rows start at `y=140`, stride 40, height 36. `rows_bottom = 140 + (n_components−1)·40 + 36`.
-4. Component label cell `rx=4`, name left-aligned at `x=24`, optional `hint` right-aligned at `x = comp_col_x + comp_col_w − 12`.
-5. Every value cell `rx=4`, stroke `ink @ 0.12` 0.6, fill + text matching §2.4 for its `level`.
+4. Component label cell `rx=0`, name left-aligned at `x=24`, optional `hint` right-aligned at `x = comp_col_x + comp_col_w − 12`.
+5. Every value cell `rx=0`, stroke `ink @ 0.12` 0.6, fill + text matching §2.4 for its `level`.
 6. Exactly **one** focal cell (or zero). Focal cell stroke `accent` width 1.4. Primary value at `y = row_y(k) + 18`; `sub` (if present) at `y = row_y(k) + 30`.
 7. Cells omitted from `cells:` render as `level: "none"` with `none_label` text (default `"No access"`).
 8. Custom-colored cells ≤ 2 (in addition to the focal cell).

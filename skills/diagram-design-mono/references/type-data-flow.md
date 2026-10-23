@@ -127,7 +127,7 @@ chip_x(j)        = step_cx(j) - 16        # 16×16 chip
 chip_y           = 6
 chip_w           = 32
 chip_h           = 16
-chip_rx          = 8                       # pill-shaped
+chip_rx          = 0                       # square
 number_anchor    = (step_cx(j), 14)
 label_anchor     = (step_cx(j), 29)
 ```
@@ -147,13 +147,13 @@ Per-lane `color` override (§4): replaces the label fill with `C` and the lane t
 ### 2.4 Node content layout (inside the 100×64 rect)
 
 ```
-role_chip          rect 18×10 at (node_x+4, node_y+4),  rx=3
+role_chip          rect 18×10 at (node_x+4, node_y+4),  rx=0
 role_chip_text     centered at (node_x+13, node_y+9), eyebrow role, font-size=6, weight=600
 title              centered at (step_cx(j), node_y+23), node-name role, font-size=9
 sub                centered at (step_cx(j), node_y+35), sublabel role, font-size=6.5, muted
 tool               centered at (step_cx(j), node_y+47), sublabel role, font-size=6.5, soft
-data chip IN       rect 16×8 at (node_x+4,   node_y+54), rx=3      # payload type entering the node
-data chip OUT      rect 16×8 at (node_x+80,  node_y+54), rx=3      # payload type leaving the node
+data chip IN       rect 16×8 at (node_x+4,   node_y+54), rx=0      # payload type entering the node
+data chip OUT      rect 16×8 at (node_x+80,  node_y+54), rx=0      # payload type leaving the node
 ```
 
 Empty cells (no node entry) render **nothing**. No placeholder rect, no role chip, no label — the cell is invisible.
@@ -299,7 +299,7 @@ Before emitting SVG, verify **every** item:
 
 ## 8. Data-type chips reference (input + output)
 
-Small `16×8 rx=3` badges at the bottom of each node, one for input and one for output. Position is **non-negotiable**:
+Small `16×8 rx=0` badges at the bottom of each node, one for input and one for output. Position is **non-negotiable**:
 
 - **Input chip** at `(node_x+4, node_y+54)` — bottom-**left** of the node. Represents the payload format *entering* the node from upstream.
 - **Output chip** at `(node_x+80, node_y+54)` — bottom-**right** of the node. Represents the payload format *leaving* the node toward downstream.

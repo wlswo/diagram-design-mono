@@ -127,7 +127,7 @@ sources_w          = x_boundaries[1] - 8           # width of the first chevron,
 sources_h          = 336
 ```
 
-Stroke: `ink @ 0.20`, `stroke-width=0.8`, `stroke-dasharray=6,3`, `rx=6`. Zone fill: `ink @ 0.02`.
+Stroke: `ink @ 0.20`, `stroke-width=0.8`, `stroke-dasharray=6,3`, `rx=0`. Zone fill: `ink @ 0.02`.
 
 ### 2.4 Cluster boundary (solid)
 
@@ -138,7 +138,7 @@ cluster_w          = effective_w - cluster_x       # extends to right strip / ca
 cluster_h          = 336
 ```
 
-Stroke: `ink @ 0.18`, `stroke-width=1.2`, `rx=8`. Fill: `ink @ 0.02`. K8s icon + label at `(cluster_x + 16, 352)` (icon) and `(cluster_x + 40, 362)` (text).
+Stroke: `ink @ 0.18`, `stroke-width=1.2`, `rx=0`. Fill: `ink @ 0.02`. K8s icon + label at `(cluster_x + 16, 352)` (icon) and `(cluster_x + 40, 362)` (text).
 
 ### 2.5 Cross-cutting bars (identity, observability, …)
 
@@ -152,7 +152,7 @@ cross_w            = effective_w - 4               # spans body width, stops at 
 cross_h            = 40
 ```
 
-Stroke: `ink @ 0.20`, `stroke-width=0.8`, `rx=6`. Fill: `ink @ 0.05`. Icon at `(16, cross_y(k) + 10)`, name centered at `(effective_w / 2, cross_y(k) + 22)`, subtitle at `(effective_w / 2, cross_y(k) + 34)`.
+Stroke: `ink @ 0.20`, `stroke-width=0.8`, `rx=0`. Fill: `ink @ 0.05`. Icon at `(16, cross_y(k) + 10)`, name centered at `(effective_w / 2, cross_y(k) + 22)`, subtitle at `(effective_w / 2, cross_y(k) + 34)`.
 
 Reserved cross-cutting *concerns* (informational; user can name the actual bar whatever they want):
 - **Identity / Security** — Keycloak, LDAP/AD, Okta, Auth0, OIDC providers
@@ -172,7 +172,7 @@ bar_w              = cluster_w - 24
 bar_h              = 44
 ```
 
-Stroke: `ink @ 0.18`, `stroke-width=0.8`, `rx=4`. Fill: `ink @ 0.05`. Tool icon at the far right (`bar_x + bar_w - 50, 58`); name centered at `(bar_x + bar_w/2, 71)`; subtitle at `(bar_x + bar_w/2, 84)`.
+Stroke: `ink @ 0.18`, `stroke-width=0.8`, `rx=0`. Fill: `ink @ 0.05`. Tool icon at the far right (`bar_x + bar_w - 50, 58`); name centered at `(bar_x + bar_w/2, 71)`; subtitle at `(bar_x + bar_w/2, 84)`.
 
 ### 2.7 Component nodes (inside cluster)
 
@@ -414,10 +414,10 @@ The chevron banner needs a **dark band with a light label in both modes**. `ink`
 
 | Token | Value | Use |
 |---|---|---|
-| `band-1` | `#2d3142` | Darkest step: odd chevrons, light mode |
-| `band-2` | `#3d4460` | Middle step: even chevrons light, odd chevrons dark |
-| `band-3` | `#4a5270` | Lightest step: even chevrons, dark mode |
-| `band-label` | `#f5f5f5` | Fixed label color: 11.82:1, 8.78:1, and 7.05:1 against the three bands |
+| `band-1` | `#0f172a` | Darkest step: odd chevrons, light mode |
+| `band-2` | `#334155` | Middle step: even chevrons light, odd chevrons dark |
+| `band-3` | `#475569` | Lightest step: even chevrons, dark mode |
+| `band-label` | `#f8fafc` | Fixed label color: 11.82:1, 8.78:1, and 7.05:1 against the three bands |
 
 **These are type-scoped tokens, not skin roles, and they do not invert.** They are the one deliberate exception to the rule that hex values live only in [`style-guide.md`](style-guide.md). `scripts/lint-skin.py` rejects `band-2` and `band-3` as off-palette, which is why the shipped high-level examples are listed in `scripts/lint-skin-baseline.txt`. Phase labels always use `band-label`, and `band-label` has to hold at least 4.5:1 against every band, because these are 7px labels in either mode. When you re-skin, derive three analogous steps from the new brand's darkest neutral and pick a fixed label color that holds 4.5:1 against all three.
 

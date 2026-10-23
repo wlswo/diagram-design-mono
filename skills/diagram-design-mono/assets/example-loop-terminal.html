@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The self-improving loop · Terminal</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -21,12 +21,12 @@
         --paper: #141414;
         --bar: #1b1b1b;
         --border: #2b2b2b;
-        --ink: #f5f5f5;
+        --ink: #f8fafc;
         --muted: #9a9a9a;
         --soft: #5c5c5c;
         --accent: #ff5a36;
         --accent-tint: rgba(255, 90, 54, 0.12);
-        --mono: "Geist Mono", ui-monospace, monospace;
+        --mono: "JetBrains Mono", ui-monospace, monospace;
       }
       body {
         min-height: 100vh;
@@ -42,7 +42,7 @@
         max-width: 1200px;
         background: var(--paper);
         border: 1px solid var(--border);
-        border-radius: 12px;
+        border-radius: 0;
         overflow: hidden;
       }
       .titlebar {
@@ -153,7 +153,16 @@
         letter-spacing: 0.08em;
         text-anchor: middle;
       }
-    </style>
+    
+    /* Hover: a node box takes the accent fill while the pointer is over it. */
+    svg text { pointer-events: none; }
+    svg .node-box { transition: fill .12s ease, stroke .12s ease; }
+    @media (hover: hover) {
+      svg .node-box:hover, svg .node:hover .node-box { fill: rgba(253,186,117,0.22); stroke: #fdba75; }
+      svg .node:hover text { fill: #f8fafc; }
+    }
+    @media (prefers-reduced-motion: reduce) { svg .node-box { transition: none; } }
+  </style>
   </head>
   <body>
     <div class="terminal">
@@ -271,73 +280,73 @@
           />
 
           <!-- Curated spoke labels sit beside the line with an 8px visible gap. -->
-          <rect x="530" y="199" width="52" height="17" rx="4" fill="#141414" />
+          <rect class="node-box" x="530" y="199" width="52" height="17" fill="#141414" />
           <text x="556" y="211.5" class="arrow-label">SIGNALS</text>
-          <rect x="457" y="463" width="58" height="17" rx="4" fill="#141414" />
+          <rect class="node-box" x="457" y="463" width="58" height="17" fill="#141414" />
           <text x="486" y="475.5" class="arrow-label">OUTCOMES</text>
 
           <!-- Stations -->
-          <rect class="station" x="440" y="68" width="160" height="64" rx="6" />
+          <rect class="node-box station" x="440" y="68" width="160" height="64" />
           <text x="520" y="96.5" class="node-name">Capture</text>
           <text x="520" y="116.5" class="sublabel">signals in / intake</text>
 
           <rect
-            class="station"
+            class="node-box station"
             x="648"
             y="188"
             width="160"
             height="64"
-            rx="6"
+           
           />
           <text x="728" y="216.5" class="node-name">Research</text>
           <text x="728" y="236.5" class="sublabel">evidence pulled</text>
 
           <rect
-            class="station focal"
+            class="node-box station focal"
             x="648"
             y="428"
             width="160"
             height="64"
-            rx="6"
+           
           />
           <text x="728" y="456.5" class="node-name focal-name">Decide</text>
           <text x="728" y="476.5" class="sublabel">human approves</text>
 
           <rect
-            class="station"
+            class="node-box station"
             x="440"
             y="548"
             width="160"
             height="64"
-            rx="6"
+           
           />
           <text x="520" y="576.5" class="node-name">Act</text>
           <text x="520" y="596.5" class="sublabel">work ships</text>
 
           <rect
-            class="station"
+            class="node-box station"
             x="232"
             y="428"
             width="160"
             height="64"
-            rx="6"
+           
           />
           <text x="312" y="456.5" class="node-name">Measure</text>
           <text x="312" y="476.5" class="sublabel">outcomes logged</text>
 
           <rect
-            class="station"
+            class="node-box station"
             x="232"
             y="188"
             width="160"
             height="64"
-            rx="6"
+           
           />
           <text x="312" y="216.5" class="node-name">Learn</text>
           <text x="312" y="236.5" class="sublabel">playbook updated</text>
 
           <!-- The one shared-state hub. -->
-          <rect class="hub" x="420" y="288" width="200" height="104" rx="8" />
+          <rect class="node-box hub" x="420" y="288" width="200" height="104" />
           <text x="520" y="337.5" class="hub-name">Shared memory</text>
           <text x="520" y="360.5" class="hub-sub">one record, every loop</text>
         </svg>

@@ -24,8 +24,8 @@ import urllib.error
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
 
-MD_OUT = REPO / "skills" / "diagram-design" / "references" / "primitive-icons.md"
-HTML_OUT = REPO / "skills" / "diagram-design" / "assets" / "icons.html"
+MD_OUT = REPO / "skills" / "diagram-design-mono" / "references" / "primitive-icons.md"
+HTML_OUT = REPO / "skills" / "diagram-design-mono" / "assets" / "icons.html"
 VENDOR_DIR = REPO / "scripts" / "vendor" / "icons"
 
 
@@ -482,13 +482,13 @@ GALLERY_TEMPLATE = """<!DOCTYPE html>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --color-paper:   #f5f5f5;
-      --color-paper-2: #ececec;
-      --color-ink:     #2d3142;
-      --color-muted:   #4f5d75;
-      --color-soft:    #5a6580;
-      --color-rule:    rgba(45,49,66,0.12);
-      --color-accent:  #bf4520;
+      --color-paper:   #f8fafc;
+      --color-paper-2: #f1f5f9;
+      --color-ink:     #0f172a;
+      --color-muted:   #475569;
+      --color-soft:    #64748b;
+      --color-rule:    rgba(15,23,42,0.12);
+      --color-accent:  #c2410c;
       --font-sans:     'Geist', system-ui, sans-serif;
       --font-serif:    'Instrument Serif', serif;
       --font-mono:     'Geist Mono', ui-monospace, monospace;

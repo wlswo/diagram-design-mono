@@ -112,11 +112,11 @@ Node names shrink relative to the canvas as it grows — resist that. Scale the 
 
 | Role | standard | presentation | print |
 |---|---|---|---|
-| Title (Instrument Serif) | 28 | 40 | 32 |
-| Node name (Geist 600) | 12 | 16 | 12 |
-| Sublabel (Geist Mono) | 9 | 12 | 9 |
-| Arrow label (Geist Mono) | 8 | 12 | 8 |
-| Eyebrow / tag (Geist Mono) | 8 | 8 | 8 |
+| Title (JetBrains Mono) | 28 | 40 | 32 |
+| Node name (JetBrains Mono 600) | 12 | 16 | 12 |
+| Sublabel (JetBrains Mono) | 9 | 12 | 9 |
+| Arrow label (JetBrains Mono) | 8 | 12 | 8 |
+| Eyebrow / tag (JetBrains Mono) | 8 | 8 | 8 |
 | Node box min height | 48 | 64 | 48 |
 | Min gap between nodes | 24 | 40 | 24 |
 
@@ -126,12 +126,12 @@ Every `font-size` is one of the role values above for the preset in use, or one 
 
 | Exception | Font | Sizes |
 |---|---|---|
-| Dense annotation: legend keys, axis ticks, chart data labels, source lines, in-box tags | Geist Mono or Geist regular | 7 to 11, half steps allowed |
-| Chart series or row name: bar category, line or bump series, gantt row, matrix header | Geist 600 | 10 to 11 |
-| Group or entity heading | Geist 600 | 14 |
+| Dense annotation: legend keys, axis ticks, chart data labels, source lines, in-box tags | JetBrains Mono or JetBrains Mono regular | 7 to 11, half steps allowed |
+| Chart series or row name: bar category, line or bump series, gantt row, matrix header | JetBrains Mono 600 | 10 to 11 |
+| Group or entity heading | JetBrains Mono 600 | 14 |
 | Decorative watermark numerals at or under 0.08 opacity | any | any |
 
-An exception is bound to the font beside it, weight included: Geist at 600 or heavier is the node-name voice, lighter Geist is annotation. So a Geist 600 node name cannot borrow the dense-annotation range down to 7, and a Geist Mono tick cannot borrow the 14 reserved for headings. A chart row carries a name in the same Geist 600 voice at a rank the ramp has no row for, which is why it has an exception of its own rather than a licence to shrink: `type-bar.md`, `type-gantt.md` and `type-line.md` all set that name at 10 or 11.
+An exception is bound to the font beside it, weight included: JetBrains Mono at 600 or heavier is the node-name voice, lighter JetBrains Mono is annotation. So a JetBrains Mono 600 node name cannot borrow the dense-annotation range down to 7, and a JetBrains Mono tick cannot borrow the 14 reserved for headings. A chart row carries a name in the same JetBrains Mono 600 voice at a rank the ramp has no row for, which is why it has an exception of its own rather than a licence to shrink: `type-bar.md`, `type-gantt.md` and `type-line.md` all set that name at 10 or 11.
 
 Anything else is a bug in the diagram, not a new size. The one standing carve-out is the closed inventory below.
 
@@ -143,22 +143,22 @@ Each is registered against the font carrying it, because that is what the sweep 
 
 | File | Sizes | What they are |
 |---|---|---|
-| `assets/example-data-flow.html` | Geist Mono 5, Geist Mono 6 | chip text and role label, both set in CSS |
-| `assets/example-data-flow-dark.html` | Geist Mono 5, Geist Mono 6 | chip text and role label, both set in CSS |
-| `assets/example-data-flow-full.html` | Geist Mono 5, Geist Mono 6 | chip text and role label, both set in CSS |
-| `assets/example-nested.html` | Instrument Serif 14, Instrument Serif 14 | two italic serif asides |
-| `assets/example-nested-dark.html` | Instrument Serif 14, Instrument Serif 14 | two italic serif asides |
-| `assets/example-nested-full.html` | Instrument Serif 14, Instrument Serif 14 | two italic serif asides |
-| `assets/example-paved-road-animated.html` | Geist 600 13 | boundary node name |
-| `assets/example-process.html` | Geist Mono 6 | role chip |
-| `assets/example-process-dark.html` | Geist Mono 6 | role chip |
-| `assets/example-process-full.html` | Geist Mono 6 | role chip |
-| `assets/example-quadrant-consultant.html` | Geist 600 13 | inline dot glyph in a `tspan` |
-| `assets/example-queue-animated.html` | Geist 600 13, Geist 600 22, Geist 600 24 | state caption and two fill counters |
-| `assets/example-treemap.html` | Geist 600 7, Geist 600 7, Geist 600 13, Geist 600 13 | two cell index glyphs and two cell names |
-| `assets/example-treemap-dark.html` | Geist 600 7, Geist 600 7, Geist 600 13, Geist 600 13 | two cell index glyphs and two cell names |
-| `assets/example-treemap-full.html` | Geist 600 7, Geist 600 7, Geist 600 13, Geist 600 13 | two cell index glyphs and two cell names |
-| `references/type-treemap.md` | Geist 600 13 | the cell-name line of the documented pattern |
+| `assets/example-data-flow.html` | JetBrains Mono 5, JetBrains Mono 6 | chip text and role label, both set in CSS |
+| `assets/example-data-flow-dark.html` | JetBrains Mono 5, JetBrains Mono 6 | chip text and role label, both set in CSS |
+| `assets/example-data-flow-full.html` | JetBrains Mono 5, JetBrains Mono 6 | chip text and role label, both set in CSS |
+| `assets/example-nested.html` | JetBrains Mono 14, JetBrains Mono 14 | two italic serif asides |
+| `assets/example-nested-dark.html` | JetBrains Mono 14, JetBrains Mono 14 | two italic serif asides |
+| `assets/example-nested-full.html` | JetBrains Mono 14, JetBrains Mono 14 | two italic serif asides |
+| `assets/example-paved-road-animated.html` | JetBrains Mono 600 13 | boundary node name |
+| `assets/example-process.html` | JetBrains Mono 6 | role chip |
+| `assets/example-process-dark.html` | JetBrains Mono 6 | role chip |
+| `assets/example-process-full.html` | JetBrains Mono 6 | role chip |
+| `assets/example-quadrant-consultant.html` | JetBrains Mono 600 13 | inline dot glyph in a `tspan` |
+| `assets/example-queue-animated.html` | JetBrains Mono 600 13, JetBrains Mono 600 22, JetBrains Mono 600 24 | state caption and two fill counters |
+| `assets/example-treemap.html` | JetBrains Mono 600 7, JetBrains Mono 600 7, JetBrains Mono 600 13, JetBrains Mono 600 13 | two cell index glyphs and two cell names |
+| `assets/example-treemap-dark.html` | JetBrains Mono 600 7, JetBrains Mono 600 7, JetBrains Mono 600 13, JetBrains Mono 600 13 | two cell index glyphs and two cell names |
+| `assets/example-treemap-full.html` | JetBrains Mono 600 7, JetBrains Mono 600 7, JetBrains Mono 600 13, JetBrains Mono 600 13 | two cell index glyphs and two cell names |
+| `references/type-treemap.md` | JetBrains Mono 600 13 | the cell-name line of the documented pattern |
 
 New diagrams get no rows here. Bringing one of these onto the ramp is a visual change to a shipped example and belongs in its own PR.
 
@@ -229,16 +229,16 @@ Two rules that hold at every audience level:
 
 ### Non-Latin labels
 
-Geist has no CJK coverage. When labels contain Japanese, Chinese, or Korean text, extend the family on those `<text>` elements — don't swap the whole skin:
+JetBrains Mono has no CJK coverage. When labels contain Japanese, Chinese, or Korean text, extend the family on those `<text>` elements — don't swap the whole skin:
 
 ```svg
-<text font-family="'Geist', 'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif">認証サービス</text>
-<text font-family="'Geist', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif">인증 서비스</text>
-<text font-family="'Geist', 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif">认证服务</text>
-<text font-family="'Geist', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif">認證服務</text>
+<text font-family="'JetBrains Mono', 'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', ui-monospace, monospace">認証サービス</text>
+<text font-family="'JetBrains Mono', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', ui-monospace, monospace">인증 서비스</text>
+<text font-family="'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', ui-monospace, monospace">认证服务</text>
+<text font-family="'JetBrains Mono', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', ui-monospace, monospace">認證服務</text>
 ```
 
-These stacks lead with the default skin's sans. Under a custom skin, lead with the `node-name` family instead and keep the CJK fallbacks after it. The Hiragino/Yu Gothic stack carries no Hangul glyphs, so Korean labels need the Korean stack — don't reuse the Japanese one. Noto Sans KR ships in the skin's font link, so it leads that stack and the local families follow it; the register, floor, and title rules Korean needs beyond the font live in [`style-guide.md`](style-guide.md#korean-labels). Japanese fonts also cover only a subset of the Chinese character set and render Simplified forms with Japanese glyph variants, so Chinese labels need a Chinese stack; Simplified and Traditional are separate stacks for the same reason. Noto Sans TC now ships in the link too, so it leads the Traditional stack and the local families follow; the register, floor, and title rules Traditional Chinese needs beyond the font live in [`style-guide.md`](style-guide.md#traditional-chinese-labels). For mono sublabels use `'Geist Mono', 'Noto Sans Mono CJK JP', monospace` (Japanese), `'Geist Mono', 'Noto Sans Mono CJK KR', monospace` (Korean), or `'Geist Mono', 'Noto Sans Mono CJK SC', monospace` / `'Geist Mono', 'Noto Sans Mono CJK TC', monospace` (Chinese). Budget **1em per full-width CJK glyph**, not a small percentage over the average Latin glyph; `verify-treemap.py` uses that conservative contract for Unicode wide/full-width characters and treats combining marks as non-advancing. Prefer 12px names over 8px sublabels for CJK; Hangul and Han go muddy below 12px, so treat 12px as the floor rather than 10px. Actual width still varies by fallback font, so run the relevant geometry verifier after translating labels.
+These stacks lead with the default skin's sans. Under a custom skin, lead with the `node-name` family instead and keep the CJK fallbacks after it. The Hiragino/Yu Gothic stack carries no Hangul glyphs, so Korean labels need the Korean stack — don't reuse the Japanese one. Noto Sans KR ships in the skin's font link, so it leads that stack and the local families follow it; the register, floor, and title rules Korean needs beyond the font live in [`style-guide.md`](style-guide.md#korean-labels). Japanese fonts also cover only a subset of the Chinese character set and render Simplified forms with Japanese glyph variants, so Chinese labels need a Chinese stack; Simplified and Traditional are separate stacks for the same reason. Noto Sans TC now ships in the link too, so it leads the Traditional stack and the local families follow; the register, floor, and title rules Traditional Chinese needs beyond the font live in [`style-guide.md`](style-guide.md#traditional-chinese-labels). For mono sublabels use `'JetBrains Mono', 'Noto Sans Mono CJK JP', monospace` (Japanese), `'JetBrains Mono', 'Noto Sans Mono CJK KR', monospace` (Korean), or `'JetBrains Mono', 'Noto Sans Mono CJK SC', monospace` / `'JetBrains Mono', 'Noto Sans Mono CJK TC', monospace` (Chinese). Budget **1em per full-width CJK glyph**, not a small percentage over the average Latin glyph; `verify-treemap.py` uses that conservative contract for Unicode wide/full-width characters and treats combining marks as non-advancing. Prefer 12px names over 8px sublabels for CJK; Hangul and Han go muddy below 12px, so treat 12px as the floor rather than 10px. Actual width still varies by fallback font, so run the relevant geometry verifier after translating labels.
 
 ---
 

@@ -8,8 +8,8 @@
 
 ### Table box
 
-- **Header band** — `schema.table` (e.g. `public.orders`) in the `node-name` role, 12px, weight 600, with a rectangular type tag (`rx=2`, NOT a pill) reading `TABLE`. A hairline separates it from the body.
-- **Column rows** — fixed 24px row height so connectors can anchor predictably. Each row: column name in the `node-name` family at 12px anchored left, SQL type in the `sublabel` role 9px `muted` anchored right (`uuid`, `text`, `numeric(12,2)`, `timestamptz`), and constraint chips between them as small `rx=2` tags in the `eyebrow` role at 8px: `PK`, `FK`, `UQ`, `NN`. Alternate row background `ink @ 0.02` on even rows for scannability.
+- **Header band** — `schema.table` (e.g. `public.orders`) in the `node-name` role, 12px, weight 600, with a rectangular type tag (`rx=0`, NOT a pill) reading `TABLE`. A hairline separates it from the body.
+- **Column rows** — fixed 24px row height so connectors can anchor predictably. Each row: column name in the `node-name` family at 12px anchored left, SQL type in the `sublabel` role 9px `muted` anchored right (`uuid`, `text`, `numeric(12,2)`, `timestamptz`), and constraint chips between them as small `rx=0` tags in the `eyebrow` role at 8px: `PK`, `FK`, `UQ`, `NN`. Alternate row background `ink @ 0.02` on even rows for scannability.
 - **Overflow row** — when a table has more columns than the budget allows, the last row is a `sublabel`-role 9px `muted` line: `+ N more columns`. Never silently truncate a table without saying so.
 - **Index compartment** — an optional final compartment separated by a hairline, labelled with an `eyebrow`-role 8px uppercase `INDEXES` eyebrow, listing index names in the `sublabel` role at 9px (`idx_orders_customer_id`, `uq_products_sku`). List only the indexes that matter to the story, not every index on the table.
 
@@ -19,7 +19,7 @@ Each FK edge starts at the **vertical centre of its source column row** and ends
 
 ### Schema grouping
 
-Tables in a non-default schema sit inside a containment rect (`rx=8`, `ink @ 0.02` fill, `ink @ 0.20` stroke dashed `4,4`) with an `eyebrow`-role 8px uppercase tracked schema label in its top-left corner. Draw the group rect first so tables paint over it.
+Tables in a non-default schema sit inside a containment rect (`rx=0`, `ink @ 0.02` fill, `ink @ 0.20` stroke dashed `4,4`) with an `eyebrow`-role 8px uppercase tracked schema label in its top-left corner. Draw the group rect first so tables paint over it.
 
 ### Focal rule
 

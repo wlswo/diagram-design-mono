@@ -4,8 +4,8 @@
 
 ## Layout conventions
 - Shape carries type, not color:
-  - **Oval** (`rx=20`) — start / end
-  - **Rectangle** (`rx=6`) — step / action
+  - **Terminal** (`rx=0`, `stroke-width="2"`) — start / end; square like every box, told apart by the heavier border
+  - **Rectangle** (`rx=0`) — step / action
   - **Diamond** — decision (≤3 exits)
   - **Small filled ink dot** (`r=4`) — merge point where branches rejoin
 - Flow runs top→down. From a diamond, conventional exits: Yes to the right, No below — but label every outgoing arrow regardless.

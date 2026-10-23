@@ -209,8 +209,8 @@ path_w[1]   = 460
 (Both paths land 460-wide despite the viewBox being 1040 — the right pad is taken from the card's tier strip, not the path strip. Keep `path_w=460` for the canonical 5-tier shape. For other tier counts, derive `path_w = (viewBox_w - 2*left_pad - path_gap) / 2`.)
 
 Per-card content:
-- Container rect: white fill, `ink @ 0.20` stroke width 1, `rx=6`.
-- Tag chip: rect at `(path_x + 8, path_y + 6)`, `h=12 rx=2`, fill transparent, stroke `ink @ 0.30` width 0.8. Tag text centered inside in the `eyebrow` role with letter-spacing 0.08em, ink.
+- Container rect: white fill, `ink @ 0.20` stroke width 1, `rx=0`.
+- Tag chip: rect at `(path_x + 8, path_y + 6)`, `h=12 rx=0`, fill transparent, stroke `ink @ 0.30` width 0.8. Tag text centered inside in the `eyebrow` role with letter-spacing 0.08em, ink.
 - Title at `(path_x + 80, path_y + 30)`: `node-name` role at 11px, ink.
 - Sub at `(path_x + 80, path_y + 46)`: `sublabel` role, muted.
 
@@ -319,7 +319,7 @@ If zero or >1 tiers carry `focal: true`, halt and ask the user.
 Before emitting SVG, verify **every** item:
 
 1. `viewBox = "0 0 {viewBox_w} {viewBox_h}"` derived via §2 (5 tiers + 2 paths → 1040 × 548).
-2. Each tier card at `(tier_x(i), 80)` size `172 × 380`, `rx=6`.
+2. Each tier card at `(tier_x(i), 80)` size `172 × 380`, `rx=0`.
 3. Tier header band fills `(tier_x(i), 80, 172, 40)` plus a 10-px extension under the band.
 4. Exactly **one** focal tier; its incoming arc auto-styled to `focal`.
 5. Promotion arcs render as cubic Béziers over the top of adjacent tiers; anchors at `(tier_cx(i), 80)` → `(tier_cx(i+1), 80)`, controls at y=0. Label inside the arc at `(arc_peak_x, 50)`, no mask.
@@ -327,7 +327,7 @@ Before emitting SVG, verify **every** item:
 7. Custom component colors ≤ 2 in addition to the focal tier. Never on arrows.
 8. All promotion arrows + label masks emitted **before** any tier rect (z-order rule — cards mask the line ends inside the cards).
 9. The focal tier's bucket text and example values render in accent; the rest stay muted.
-10. `rx=6` on every tier and path card; `rx=2` on tag chips.
+10. `rx=0` on every tier and path card; `rx=0` on tag chips.
 
 ---
 

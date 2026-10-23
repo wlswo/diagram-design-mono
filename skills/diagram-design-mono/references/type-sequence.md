@@ -41,10 +41,10 @@ Use a rectangular **frame** that spans only the lifelines participating in the b
 
 ```svg
 <!-- Frame: light ink wash + hairline. Label tab top-left. -->
-<rect x="X" y="Y" width="W" height="H" rx="4"
+<rect x="X" y="Y" width="W" height="H"
       fill="{ink @ 0.02}" stroke="{ink @ 0.22}" stroke-width="1"/>
 <!-- Operator tab -->
-<rect x="X" y="Y" width="40" height="16" rx="2"
+<rect x="X" y="Y" width="40" height="16"
       fill="{paper}" stroke="{ink @ 0.22}" stroke-width="1"/>
 <text x="X+20" y="Y+12" fill="{muted}" font-size="8"
       font-family="{eyebrow}" text-anchor="middle"

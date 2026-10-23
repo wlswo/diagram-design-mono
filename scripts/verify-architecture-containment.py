@@ -687,15 +687,15 @@ def check_source(path: Path, source: str) -> list[str]:
                 fail(node, str(error))
                 continue
             if kind == "admin":
-                if box.rx is None or abs(box.rx - ADMIN_RX) > EPS:
-                    fail(node, "admin band must use rx=4")
+                if box.rx not in (None, 0):
+                    fail(node, "admin band must be square (no rx)")
                 if not box.dashed:
                     fail(node, "admin band must use a dashed stroke")
                 if box.w + EPS < box.h:
                     fail(node, "admin band must be a horizontal rectangle")
             elif kind == "traffic":
-                if box.rx is None or abs(box.rx - TRAFFIC_RX) > EPS:
-                    fail(node, "traffic box must use rx=8")
+                if box.rx not in (None, 0):
+                    fail(node, "traffic box must be square (no rx)")
                 if box.dashed:
                     fail(node, "traffic box must use a solid stroke")
             for value in (box.x, box.y, box.w, box.h):

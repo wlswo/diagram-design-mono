@@ -490,11 +490,11 @@ def interface_detail(P, r, z, sk, focal):
     x0, y0 = screen.x0 + 12, screen.y0 + 14
     for i, w in enumerate((60, 84, 44, 72, 0)):
         ly = y0 + i * 18
-        out.append(f'<path d="{outline(P, Rect(x0, ly, x0 + 6, ly + 4, 0), z)}" fill="rgba(245,245,245,0.85)"/>')
+        out.append(f'<path d="{outline(P, Rect(x0, ly, x0 + 6, ly + 4, 0), z)}" fill="rgba(248,250,252,0.85)"/>')
         if w:
-            out.append(f'<path d="{outline(P, Rect(x0 + 12, ly, x0 + 12 + w, ly + 4, 0), z)}" fill="rgba(245,245,245,0.40)"/>')
+            out.append(f'<path d="{outline(P, Rect(x0 + 12, ly, x0 + 12 + w, ly + 4, 0), z)}" fill="rgba(248,250,252,0.40)"/>')
         else:
-            out.append(f'<path d="{outline(P, Rect(x0 + 12, ly - 2, x0 + 18, ly + 6, 0), z)}" fill="rgba(245,245,245,0.85)"/>')
+            out.append(f'<path d="{outline(P, Rect(x0 + 12, ly - 2, x0 + 18, ly + 6, 0), z)}" fill="rgba(248,250,252,0.85)"/>')
     return out
 
 

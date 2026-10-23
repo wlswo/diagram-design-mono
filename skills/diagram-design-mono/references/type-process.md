@@ -144,14 +144,14 @@ Per-lane `color` override (§4): replaces the label fill with `C` and the lane s
 ### 2.4 Node content layout (inside the 100×64 rect)
 
 ```
-role_chip          rect 14×10 at (node_x+4, node_y+4),  rx=2
+role_chip          rect 14×10 at (node_x+4, node_y+4),  rx=0
 role_chip_text     centered at (node_x+11, node_y+12), font-size=6, weight=600
                                                                 # text = lanes[k].key (3-letter lane code)
 title              centered at (step_cx(j), node_y+26),  font-size=9 sans semibold
 in→out             centered at (step_cx(j), node_y+40),  font-size=6.5 mono muted
 tool               centered at (step_cx(j), node_y+52),  font-size=6.5 mono soft
-data chip IN       rect 16×8 at (node_x+4,   node_y+54), rx=2      # payload entering
-data chip OUT      rect 16×8 at (node_x+80,  node_y+54), rx=2      # payload leaving
+data chip IN       rect 16×8 at (node_x+4,   node_y+54), rx=0      # payload entering
+data chip OUT      rect 16×8 at (node_x+80,  node_y+54), rx=0      # payload leaving
 ```
 
 **Role chip text rule:** the badge inside each node renders `lanes[k].key` where `k` is the node's lane index — **not** the step number (the step number already lives in the column header chip at the top, §2.2). Showing the lane key as the node badge gives each node a self-contained "who" identifier that survives when a single node is excerpted out of context. Mirrors the same rule in `type-data-flow.md` §2.4.

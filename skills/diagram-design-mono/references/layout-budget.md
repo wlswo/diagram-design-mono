@@ -13,7 +13,7 @@ Routed from SKILL.md §7 and §8. SKILL.md keeps the grid rule in one line, the 
 | Node width / height | 80, 96, 112, 120, 128, 140, 144, 160, 180, 200, 240, 320 |
 | Gap between nodes | 20, 24, 32, 40, 48 |
 | Padding inside boxes | 8, 12, 16 |
-| Border radius | 4, 6, 8 |
+| Border radius | 0 (connector elbows: 8) |
 
 ### Complexity budget (per diagram)
 
@@ -68,7 +68,7 @@ If you exceed, split into two diagrams (overview + detail).
 ### Page layout
 
 1. **Header** — `eyebrow` role, `title` role, optional subtitle (`node-name` family, `muted`).
-2. **Diagram container** — default: **clean, borderless**, no background — the SVG sits directly on the page paper. Optional *framed* variant (for card-heavy layouts or hero placements): `paper-2` bg + 1px `rule` border + 8px radius + `1.5rem` padding + `overflow-x: auto`.
+2. **Diagram container** — default: **clean, borderless**, no background — the SVG sits directly on the page paper. Optional *framed* variant (for card-heavy layouts or hero placements): `paper-2` bg + 1px `rule` border + square corners + `1.5rem` padding + `overflow-x: auto`.
 3. **Summary cards** — 2–3 col grid with *varied* widths (e.g., `1.1fr 1fr 0.9fr`).
 4. **Footer** — colophon in the `sublabel` role, `muted`, hairline top border.
 
@@ -91,6 +91,6 @@ Rules:
 
 - `background: #ffffff` (not paper — slight lift without shadow)
 - `border: 1px solid` the `rule` color
-- `border-radius: 6px`, `padding: 1.25rem`
+- `border-radius: 0`, `padding: 1.25rem`
 - **No `box-shadow`**
 - Card dots: 7px, `border-radius: 50%` — ink / muted / coral / link / soft variants

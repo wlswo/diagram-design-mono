@@ -56,9 +56,9 @@ Decide which arrow to bridge: bridge the one that is less semantically important
 Group 2+ nodes that serve the same tier or trust boundary with a zone rect — drawn **before** arrows and nodes (z-order: bg → zones → arrows → nodes):
 
 ```svg
-<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="8"
+<rect x="{x}" y="{y}" width="{w}" height="{h}"
       fill="{ink @ 0.02}" stroke="{ink @ 0.10}" stroke-width="0.8"/>
-<rect x="{label_x}" y="{y+4}" width="{label_w}" height="12" rx="2" fill="{paper}"/>
+<rect x="{label_x}" y="{y+4}" width="{label_w}" height="12" fill="{paper}"/>
 <text x="{label_cx}" y="{y+13}" fill="{soft}" font-size="7"
       font-family="{eyebrow}" text-anchor="middle" letter-spacing="0.14em">LAYER</text>
 ```
@@ -79,7 +79,7 @@ Two scope kinds, never interchangeable:
 | Kind | What it is | Shape | `data-scope-kind` |
 |---|---|---|---|
 | **Administrative** | Billing, permissions, lifecycle. Holds no traffic. | Horizontal **band** — a full-width containment rect with a 24px header | `admin` |
-| **Traffic** | A boundary packets do not cross without an explicit rule. | **Box** — the existing zone rect (`rx=8`) | `traffic` |
+| **Traffic** | A boundary packets do not cross without an explicit rule. | **Box** — the existing zone rect (`rx=0`) | `traffic` |
 
 Provider-neutral metadata (no vendor prefix):
 

@@ -98,7 +98,7 @@ Read the rendered `font-family` stack of:
 - `<body>` → `node-name` family  
 - `<code>`, `<pre>`, or any mono-styled element → `sublabel` family
 
-If the site has only one family, keep the schematic defaults for the missing roles (Instrument Serif for title, Geist Mono for mono). Don't force-pick a mono font that isn't on the site.
+Keep JetBrains Mono for every role regardless of the site's own families: this skin is mono-only by design.
 
 ### Exact-font gate for brand-matched output
 

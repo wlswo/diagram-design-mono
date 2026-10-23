@@ -15,7 +15,7 @@
 
 ## Layout conventions
 
-- Each class is a **single box** (`rx=6`), divided by full-width hairlines into up to three compartments. Compartment heights follow content — never pad to a uniform height.
+- Each class is a **single box** (`rx=0`), divided by full-width hairlines into up to three compartments. Compartment heights follow content — never pad to a uniform height.
   1. **Name** — class name in the `node-name` role, 12px, weight 600, **centered**. An interface carries an `eyebrow`-role 8px `«interface»` stereotype line above the name. An abstract class sets the name in *italic*.
   2. **Attributes** — one line each, `sublabel` role 9px, left-aligned: `+ name: Type`. Visibility markers: `+` public, `-` private, `#` protected.
   3. **Operations** — one line each, `sublabel` role 9px, left-aligned: `+ method(arg): Return`.

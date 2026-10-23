@@ -9,7 +9,7 @@
 - Use the **Lifecycle phase map** semantic pattern for one subject moving through 4–5 primary phases with separate wait/recovery and terminal-outcome bands.
 
 ## Layout conventions
-- States are rounded rectangles (`rx=8`), labeled in the `node-name` role.
+- States are square-cornered rectangles (`rx=0`), labeled in the `node-name` role.
 - **Start**: filled ink dot (`r=6`). **End**: ringed dot (outer `r=8` outline, inner filled `r=5`).
 - Transitions: curved arrows labeled in the `arrow-label` role as `event [guard] / action` (omit sections you don't need).
 - Self-loops curve above the state.

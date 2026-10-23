@@ -129,7 +129,7 @@ Solid paper fill across `viewBox`. No dot pattern. Each zone box:
 
 ```svg
 <rect x="zone_x(i)" y="zone_y" width="zone_w(i)" height="zone_h"
-      fill="{ink @ 0.02}" stroke="{ink @ 0.10}" stroke-width="0.8" rx="8"/>
+      fill="{ink @ 0.02}" stroke="{ink @ 0.10}" stroke-width="0.8"/>
 <!-- paper-masked break for the zone label -->
 <rect x="zone_x(i)+20" y="zone_y-8" width="{label_w}" height="16" fill="{paper}"/>
 <text x="zone_x(i)+24" y="zone_y+4" fill="{soft}"
@@ -188,7 +188,7 @@ corridor_x = dst_cx                            # land arrow on dst horizontal ce
 
 ```svg
 <rect x="left_pad" y="footer_y(k)" width="viewBox_w - 2*left_pad" height="footer_bar_h"
-      fill="{ink @ 0.03}" stroke="{ink @ 0.18}" stroke-width="0.8" rx="8"/>
+      fill="{ink @ 0.03}" stroke="{ink @ 0.18}" stroke-width="0.8"/>
 <g transform="translate(left_pad + 20, footer_y(k) + (footer_bar_h - 24)/2)" color="{ink}">
   <use href="#icon-{name}"/>
 </g>
@@ -264,7 +264,7 @@ The label sits **near the source end** of the connector (not at the mid-segment)
 
 ```svg
 <g transform="translate({label_cx}, {label_cy})">
-  <rect x="-{w/2}" y="-9" width="{w}" height="18" rx="3" fill="{paper}" stroke="none"/>
+  <rect x="-{w/2}" y="-9" width="{w}" height="18" fill="{paper}" stroke="none"/>
   <use href="#icon-{icon}" x="-{w/2 + 4}" y="-6" width="12" height="12" color="{stroke_color}"/>     <!-- if icon set -->
   <text x="{icon ? (-(w/2) + 22) : 0}" y="3" text-anchor="{icon ? 'start' : 'middle'}"
         font-family="{arrow-label}" font-size="9" font-weight="600"

@@ -81,22 +81,46 @@ These six rules are **non-negotiable**. Run the pre-output checklist (SKILL.md �
 
 ## Node box — full pattern
 
+Every rect is square: no `rx`, no `ry`. Each node is one `<g class="node">` so the whole node reacts to hover; the styled rect carries `class="node-box"`.
+
 ```svg
-<!-- 1. Opaque paper mask — prevents arrows bleeding through transparent fills -->
-<rect x="X" y="Y" width="W" height="H" rx="6" fill="{paper}"/>
-<!-- 2. Styled box -->
-<rect x="X" y="Y" width="W" height="H" rx="6" fill="FILL" stroke="STROKE" stroke-width="1"/>
-<!-- 3. Rectangular type tag (rx=2, NOT a pill) -->
-<rect x="X+8" y="Y+6" width="28" height="12" rx="2" fill="transparent" stroke="STROKE@0.40" stroke-width="0.8"/>
-<text x="X+22" y="Y+15" fill="STROKE@0.8" font-size="7" font-family="{eyebrow}"
-      text-anchor="middle" letter-spacing="0.08em">API</text>
-<!-- 4. Node name (node-name role, sans: human-readable) -->
-<text x="CX" y="CY+2" fill="{ink}" font-size="12" font-weight="600"
-      font-family="{node-name}" text-anchor="middle">Node Name</text>
-<!-- 5. Technical sublabel (sublabel role, mono) -->
-<text x="CX" y="CY+18" fill="{muted}" font-size="9"
-      font-family="{sublabel}" text-anchor="middle">tech:port</text>
+<g class="node">
+  <!-- 1. Opaque paper mask — prevents arrows bleeding through transparent fills -->
+  <rect x="X" y="Y" width="W" height="H" fill="{paper}"/>
+  <!-- 2. Styled box: the hover target -->
+  <rect class="node-box" x="X" y="Y" width="W" height="H" fill="FILL" stroke="STROKE" stroke-width="1"/>
+  <!-- 3. Square type tag -->
+  <rect x="X+8" y="Y+6" width="28" height="12" fill="transparent" stroke="STROKE@0.40" stroke-width="0.8"/>
+  <text x="X+22" y="Y+15" fill="STROKE@0.8" font-size="7" font-family="{eyebrow}"
+        text-anchor="middle" letter-spacing="0.08em">API</text>
+  <!-- 4. Node name (node-name role) -->
+  <text x="CX" y="CY+2" fill="{ink}" font-size="12" font-weight="600"
+        font-family="{node-name}" text-anchor="middle">Node Name</text>
+  <!-- 5. Technical sublabel (sublabel role) -->
+  <text x="CX" y="CY+18" fill="{muted}" font-size="9"
+        font-family="{sublabel}" text-anchor="middle">tech:port</text>
+</g>
 ```
+
+## Hover
+
+The templates ship this CSS; keep it when copying a template, and paste it into any page that lacks it. Colors are the `hover-*` tokens in [`style-guide.md`](style-guide.md) (light shown; the dark template carries the dark values).
+
+```css
+svg text { pointer-events: none; }
+svg .node-box { transition: fill .12s ease, stroke .12s ease; }
+@media (hover: hover) {
+  svg .node-box:hover, svg .node:hover .node-box { fill: #fdba75; stroke: #0f172a; }
+  svg .node:hover text { fill: #431307; }
+}
+@media (prefers-reduced-motion: reduce) { svg .node-box { transition: none; } }
+```
+
+- Hover targets: node boxes, cards, kanban cards, table headers, heatmap and matrix cells, bars, Venn sets, filled chart shapes, and scatter dots with `r` of 4 or more. Mark a lone shape with `class="node-box"` directly.
+- Not hover targets: the background, zones, lanes, containers, label masks, legend swatches, type tags, and connectors.
+- CSS beats the `fill` and `stroke` attributes, so no inline `style` is needed. Hover only recolors: no transforms, no tooltips, no content that is absent from the static frame.
+- Exceptions: Sankey and polar pages ship no hover CSS and no `node-box` classes, because their verifiers forbid stylesheet rules and classes that reach the figure.
+- Motion pages: keep `.node-box` on step targets too; the controller sets classes, not fills, so hover and animation do not fight.
 
 ## Arrow labels — always mask, always with margin
 
@@ -104,7 +128,7 @@ Every arrow label needs an opaque rect behind it. Without one it bleeds through 
 
 ```svg
 <!-- Mask sits 14px above the arrow (8px text height + 6px gap). Stroke is at ARROW_Y. -->
-<rect x="MID_X-18" y="ARROW_Y-20" width="36" height="12" rx="2" fill="{paper}"/>
+<rect x="MID_X-18" y="ARROW_Y-20" width="36" height="12" fill="{paper}"/>
 <text x="MID_X" y="ARROW_Y-11" fill="{soft}" font-size="8"
       font-family="{arrow-label}" text-anchor="middle" letter-spacing="0.06em">WRITE</text>
 ```
@@ -116,7 +140,7 @@ Rules:
 - Never `writing-mode` vertical.
 - For vertical segments, place the label to the side (not on the line) with the same 6–10px horizontal gap.
 
-**Font substitution.** Don't estimate per-character widths — use the `style-guide.md` budget (0.60em sans / 0.62em mono per char). A production run sized mono labels at ~0.47em/char and clipped twice; the calibrated budget fits both the default skin's mono face (Geist Mono) and the common substituted mono faces (Menlo, Courier New, Monaco, all ≈0.60em). Previews via `rsvg`/`inkscape` can't fetch the injected Google Fonts, so verify with `python3 <repo-root>/scripts/verify-geometry.py` — it checks masks against later-painted nodes, not text fit; holding the budget is yours.
+**Font substitution.** Don't estimate per-character widths — use the `style-guide.md` budget (0.60em sans / 0.62em mono per char). A production run sized mono labels at ~0.47em/char and clipped twice; the calibrated budget fits both the default skin's mono face (JetBrains Mono) and the common substituted mono faces (Menlo, Courier New, Monaco, all ≈0.60em). Previews via `rsvg`/`inkscape` can't fetch the injected Google Fonts, so verify with `python3 <repo-root>/scripts/verify-geometry.py` — it checks masks against later-painted nodes, not text fit; holding the budget is yours.
 
 ## Legend — horizontal strip at the bottom
 

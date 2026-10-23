@@ -203,11 +203,11 @@ def check_onboarding_user_verification(errors: list[str], markdown: str) -> None
 def check_line_dark_skin(errors: list[str], source: str) -> None:
     """The dark Line example must not silently drift back to the light skin."""
     required = (
-        "--color-paper:#2d3142",
-        "--color-ink:#f5f5f5",
-        "--color-muted:#bfc0c0",
-        "--color-accent:#f08a59",
-        '<rect width="100%" height="100%" fill="#2d3142"',
+        "--color-paper:#0f172a",
+        "--color-ink:#f8fafc",
+        "--color-muted:#cbd5e1",
+        "--color-accent:#fdba75",
+        '<rect width="100%" height="100%" fill="#0f172a"',
     )
     for token in required:
         if token not in source:

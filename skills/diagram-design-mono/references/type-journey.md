@@ -15,7 +15,7 @@ Vertical stack, top to bottom, for one persona:
   - `TOUCHPOINTS` — the surface the action happens on (email, app, docs…), `sublabel` role 9px `muted`.
   - An optional third row for a metric or owner, same treatment as touchpoints.
   Rows are separated by hairlines that span the full plot width (from the left margin edge to the last stage's right edge).
-- **Pain markers** — on stages where sentiment drops, a small dashed-stroke tag box (`rx=2`, `accent @ 0.50` stroke dashed `3,3`, no fill or a faint accent tint) sits under that stage's actions cell, with an `arrow-label`-role 8px label naming the friction. Max 2 per diagram, and only on the trough — tagging every stage erases the signal.
+- **Pain markers** — on stages where sentiment drops, a small dashed-stroke tag box (`rx=0`, `accent @ 0.50` stroke dashed `3,3`, no fill or a faint accent tint) sits under that stage's actions cell, with an `arrow-label`-role 8px label naming the friction. Max 2 per diagram, and only on the trough — tagging every stage erases the signal.
 - **Legend** — horizontal strip at the bottom per the global rule (hairline separator above, 160–180px between entries): three keys, in order — the sentiment line, the trough-stage highlight, and the pain-marker tag. The trough key is not optional: the dip is the finding, so the reader needs the highlight named.
 
 ## Connector note

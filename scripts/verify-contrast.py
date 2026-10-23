@@ -59,6 +59,9 @@ ROLE_USES = {
     "accent": ("text", "non-text"),
     "accent-tint": ("decorative",),
     "link": ("text", "non-text"),
+    "hover-fill": ("decorative",),
+    "hover-stroke": ("decorative",),
+    "hover-ink": ("text",),
 }
 
 # Roles measured against something other than plain paper, as (role, alpha).
@@ -66,6 +69,7 @@ ROLE_USES = {
 # the skin ships under text is the heatmap focal cell, accent at 0.85.
 BACKGROUNDS = {
     "ink-strong": ("accent", 0.85),
+    "hover-ink": ("hover-fill", 1.0),
 }
 
 HEX_RE = re.compile(r"#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})\b")

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diagram Design · Gallery</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -25,9 +25,9 @@
         --rule: rgba(11, 13, 11, 0.12);
         --rule-strong: rgba(11, 13, 11, 0.25);
         --accent: #f7591f;
-        --sans: "Geist", system-ui, sans-serif;
-        --serif: "Instrument Serif", serif;
-        --mono: "Geist Mono", ui-monospace, monospace;
+        --sans: "JetBrains Mono", ui-monospace, monospace;
+        --serif: "JetBrains Mono", ui-monospace, monospace;
+        --mono: "JetBrains Mono", ui-monospace, monospace;
       }
       html,
       body {
@@ -76,7 +76,7 @@
         text-decoration: none;
         padding: 0.3rem 0.625rem;
         border: 1px solid var(--rule);
-        border-radius: 4px;
+        border-radius: 0;
         transition:
           color 0.15s,
           border-color 0.15s;
@@ -108,7 +108,7 @@
         background: transparent;
         color: var(--muted);
         border: 1px solid var(--rule);
-        border-radius: 4px;
+        border-radius: 0;
         cursor: pointer;
         transition: all 0.12s;
         letter-spacing: -0.005em;
@@ -187,7 +187,7 @@
         width: min(20rem, 45vw);
         padding: 0.5rem 0.625rem;
         border: 1px solid var(--rule-strong);
-        border-radius: 4px;
+        border-radius: 0;
         background: transparent;
         font: 0.8125rem var(--sans);
         color: var(--ink);

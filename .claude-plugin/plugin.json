@@ -1,25 +1,11 @@
 {
-  "name": "diagram-design",
-  "description": "Architecture, architecture delta, IT current-state, flowchart, sequence, state machine, ER/data model, timeline, swimlane, quadrant, radar/spider, polar, loop, nested, tree, org chart, layer stack, exploded/plan, Venn, pyramid/funnel, bar, waterfall, treemap, heatmap, line, Gantt, scatter, high-level, process, medallion, data flow, DP integration, DP security matrix, Sankey, fishbone, Wardley map, kanban, journey, deployment, dependency, blueprint, UML class, story map, schema, lifecycle phase.",
-  "version": "2.6.119",
+  "name": "diagram-design-mono",
+  "description": "Mono-styled fork of diagram-design: JetBrains Mono, square boxes, turbopuffer-inspired slate and orange palette, accent-on-hover nodes. Architecture, flowchart, sequence, state, ER, timeline, swimlane, charts and 30+ more diagram types as HTML/SVG/PNG.",
+  "version": "1.0.0",
   "author": {
-    "name": "Cathryn Lavery",
-    "url": "https://github.com/cathrynlavery"
+    "name": "OWNER"
   },
-  "homepage": "https://diagramdesign.dev",
-  "repository": "https://github.com/cathrynlavery/diagram-design",
+  "repository": "https://github.com/OWNER/diagram-design-mono",
   "license": "MIT",
-  "keywords": [
-    "diagrams",
-    "svg",
-    "architecture",
-    "flowchart",
-    "visualization",
-    "editorial",
-    "drawio",
-    "mermaid",
-    "import",
-    "animation",
-    "semantic-patterns"
-  ]
+  "keywords": ["diagrams", "svg", "architecture", "flowchart", "visualization", "jetbrains-mono", "hover"]
 }

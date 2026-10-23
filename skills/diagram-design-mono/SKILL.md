@@ -1,34 +1,27 @@
 ---
-name: diagram-design
-description: Create branded architecture, architecture delta, IT current-state, flowchart, sequence, state machine, ER/data model, timeline, swimlane, quadrant, radar/spider, polar chart (polar/radial lollipop), loop/flywheel, nested, tree, org chart, layer stack, exploded axonometric, axonometric plan, Venn, pyramid/funnel, treemap and marimekko, heatmap, bar and dumbbell, waterfall, line (slopegraph, ridgeline, streamgraph, bump), Gantt and scatter charts (bubble, beeswarm), high-level, process, medallion, data flow, DP integration, DP security matrix, Sankey, fishbone, Wardley map, kanban, user journey, service blueprint, deployment, dependency graph, UML class, story map, or database schema diagrams as HTML/SVG/PNG, with .drawio, Mermaid, and .excalidraw import, plus lifecycle phase maps, block decomposition trees, and onboarding guidance.
+name: diagram-design-mono
+description: Create mono-styled (JetBrains Mono, square corners, turbopuffer-inspired slate and orange palette, accent-on-hover nodes) architecture, architecture delta, IT current-state, flowchart, sequence, state machine, ER/data model, timeline, swimlane, quadrant, radar/spider, polar chart (polar/radial lollipop), loop/flywheel, nested, tree, org chart, layer stack, exploded axonometric, axonometric plan, Venn, pyramid/funnel, treemap and marimekko, heatmap, bar and dumbbell, waterfall, line (slopegraph, ridgeline, streamgraph, bump), Gantt and scatter charts (bubble, beeswarm), high-level, process, medallion, data flow, DP integration, DP security matrix, Sankey, fishbone, Wardley map, kanban, user journey, service blueprint, deployment, dependency graph, UML class, story map, or database schema diagrams as HTML/SVG/PNG, with .drawio, Mermaid, and .excalidraw import, plus lifecycle phase maps, block decomposition trees, and onboarding guidance.
 license: MIT
 metadata:
-  version: "2.6"
+  version: "1.0.0"
+  upstream: "cathrynlavery/diagram-design 2.6 (MIT)"
 ---
 
-# Diagram Design
+# Diagram Design Mono
 
-Create diagrams as self-contained HTML files with inline SVG and an editorial design system.
+Create diagrams as self-contained HTML files with inline SVG and a mono, square-cornered design system: JetBrains Mono for every text role, slate ink on near-white paper, one orange accent, and nodes that take the accent fill on hover.
+
+A fork of [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) (MIT). Layout grammar, connector rules, and type references are upstream's; the skin rules in §4, §5, §6, and §9 are this fork's.
 
 Forty-five visual types. Semantic patterns describe behavior; type references describe layout.
 
 ---
 
-## 0. First-time setup — style guide gate
+## 0. Skin
 
-**Before generating your first diagram in a new project, verify the style guide has been customized.**
+The shipped skin is the intended look. Use it without asking. Do not run the onboarding gate on first use.
 
-Do not silently ship default-skinned diagrams into a branded project.
-
-First resolve any project `.diagram-design` marker per [`references/profiles.md`](references/profiles.md); a successfully resolved marker selects its profile and bypasses this gate. That reference owns failures, the protected default, and save behavior.
-
-Open [`references/style-guide.md`](references/style-guide.md) and check the default tokens. If they are still the shipped defaults (paper `#f5f5f5`, ink `#2d3142`, accent `#bf4520`), **pause and ask the user**:
-
-> *"This is your first diagram in this project and the style guide is still default. Customize now? Options: (a) website URL, (b) installed skill, (c) local folder/design-system, (d) paste tokens, (e) keep default, (f) load saved profile."*
-
-Then branch per the matching section of [`references/onboarding.md`](references/onboarding.md); for **(f)** follow [`references/profiles.md`](references/profiles.md).
-
-**Once the style guide has been customized** (or the user explicitly chose default), skip this gate on later runs. A leading profile header names the copied-in active profile. Without a header, any semantic-role value or typography family differing from shipped defaults means **custom-unsaved**: skip the gate and offer to save it as a profile. All-default tokens with no marker/header trigger the gate. After onboarding, offer to save as a named client profile per `references/profiles.md`.
+Switch skins only when the user asks for a brand or a saved profile: then resolve a project `.diagram-design` marker per [`references/profiles.md`](references/profiles.md), or branch per [`references/onboarding.md`](references/onboarding.md). Whatever the brand colors, keep the three fork rules: JetBrains Mono, square corners, hover accent.
 
 ---
 
@@ -40,7 +33,7 @@ Applied to schematics:
 
 - Every node represents a distinct idea. Two nodes that always travel together are one node.
 - Every connection carries information. If the relationship is obvious from layout, remove the line.
-- Coral is **editorial, not a flag.** 1–2 focal nodes per diagram. Using it on 5 nodes erases the signal.
+- Orange is **editorial, not a flag.** 1–2 focal nodes per diagram. Using it on 5 nodes erases the signal.
 - The schematic isn't done when everything is added. It's done when nothing can be removed.
 
 **Target density: 4/10.** Enough to be technically complete. Not so dense it needs a guide. Above 9 nodes, it's probably two diagrams.
@@ -151,15 +144,16 @@ These mark "AI slop" schematics of any type:
 | Anti-pattern | Why it fails |
 |---|---|
 | Dark mode + cyan/purple glow | Looks "technical" without design decisions |
-| JetBrains Mono as blanket "dev" font | Mono is for *technical* content — ports, commands, URLs. Names go in Geist sans. |
+| A second font family | Every role is JetBrains Mono. Hierarchy comes from size, weight, case, and tracking, not from a serif or sans |
 | Identical boxes for every node | Erases hierarchy |
 | Legend floating inside the diagram area | Collides with nodes |
 | Arrow labels with no masking rect | Bleeds through the line |
 | Vertical `writing-mode` text on arrows | Unreadable |
 | 3 equal-width summary cards as default | Generic grid — vary widths |
 | Shadow on any element | Shadows are out. Borders are in. |
-| `rounded-2xl` on boxes | Max radius 6–10px or none |
-| Coral on every "important" node | Coral is 1–2 editorial accents, not a signaling system |
+| Any rounded box corner | Every `<rect>` and CSS box is square: no `rx`, no `ry`, `border-radius: 0`. Connector elbows stay rounded (§6 rule 1) |
+| Hover that moves, scales, or reveals content | Hover only recolors the node (§6 Hover). The static frame carries all meaning |
+| Orange on every "important" node | Orange is 1–2 editorial accents, not a signaling system |
 | Reproducing Mermaid's renderer layout | Imports automatic spacing and routing instead of making an editorial layout |
 | Any breach of the six §6 connector rules | Automatic fail: diagonal slants, labels touching their stroke, masks clipped by a later node, overlapping paths, shared attach points, transit behind a non-endpoint box |
 
@@ -190,11 +184,11 @@ Type-reference snippets write roles as placeholders: `{ink}`, `{ink @ 0.40}` for
 
 **Node treatments** (focal, backend/API/step, store/state, external/cloud, input/user, optional/async, security/boundary): fill and stroke per [style-guide.md § Node type → treatment](references/style-guide.md#node-type--treatment).
 
-**Typography:** Instrument Serif for the H1 title and italic callouts, Geist sans 600 for node names, Geist Mono for sublabels, eyebrows, and arrow labels. Sizes, weights, and the font `<link>`: [style-guide.md § Typography](references/style-guide.md#typography); per-preset type ramp: [output-spec.md](references/output-spec.md). When the user asks for offline output, system fonts, or no Google Fonts, follow [style-guide.md § Font source](references/style-guide.md#font-source).
+**Typography:** JetBrains Mono for every role: the H1 title at weight 600 with tight tracking, node names at 600, sublabels at 400, eyebrows and arrow labels uppercase and tracked, callouts in italic. Sizes, weights, and the font `<link>`: [style-guide.md § Typography](references/style-guide.md#typography); per-preset type ramp: [output-spec.md](references/output-spec.md). When the user asks for offline output, system fonts, or no Google Fonts, follow [style-guide.md § Font source](references/style-guide.md#font-source).
 
 **Non-Latin labels** — extend the family: [Korean](references/style-guide.md#korean-labels), [Chinese](references/style-guide.md#traditional-chinese-labels), [Cyrillic](references/style-guide.md#cyrillic-labels).
 
-**Mono is for technical content only** — never as a blanket "dev" font, and never JetBrains Mono.
+**One family only.** Never introduce Geist, Instrument Serif, or any other face. Hangul and Han labels fall back to Noto Sans KR / TC per the style guide.
 
 ---
 
@@ -211,7 +205,16 @@ Universal building blocks. Type-specialized primitives (lifeline, activation bar
 Exact markup (background, dotted paper, markers, node box, arrow label, legend) and the long form of each connector rule: [`references/primitives-core.md`](references/primitives-core.md). The static templates (`template.html`, `template-dark.html`, `template-full.html`) already define the background and the `arrow`, `arrow-accent`, and `arrow-link` markers; `template-motion.html` defines only its own prefixed marker, so add the others from primitives-core.md when a motion diagram needs them.
 
 - **Arrows:** `muted` by default, `accent` for the headline path, `link` for HTTP/API and external calls, dashed `5,4` for optional, passive, return, or async. Draw arrows before boxes so lines sit behind nodes.
-- **Node box:** an opaque paper mask rect, then the styled box at `rx=6`, a rectangular type tag at `rx=2` (not a pill), the name in Geist 600, and a Geist Mono sublabel.
+- **Node box:** a `<g class="node">` holding an opaque paper mask rect, then the styled box with `class="node-box"` and square corners (no `rx`), a square type tag, the name at weight 600, and a sublabel. Full markup: [primitives-core.md § Node box](references/primitives-core.md#node-box--full-pattern).
+
+### Hover
+
+Every node, card, cell, bar, and filled data shape is a hover target. The copied template already carries the CSS, so the only job is markup:
+
+- Wrap each node's parts in `<g class="node">` and put `class="node-box"` on its styled rect. On hover the box fills with turbopuffer orange `#fdba75` (dark skin: orange at 0.22 over a `#fdba75` stroke) and the node's text turns `#431307`.
+- For a chart mark with no group (bar, heatmap cell, Venn set, scatter dot of r≥4), put `class="node-box"` on the shape itself.
+- Never on backgrounds, zones, lanes, containers, label masks, legend swatches, or connectors.
+- Hover is decoration. Keep it inside `@media (hover: hover)`, recolor only, and leave the static and print frames complete.
 
 ### Mandatory connector rules
 
@@ -236,7 +239,7 @@ Structural geometry sits on a 4px grid: node origins, widths, heights, gaps, and
 |---|---|
 | Max nodes | 9 |
 | Max arrows / transitions | 12 |
-| Max coral elements | 2 |
+| Max orange (accent) elements | 2 |
 | Max annotation callouts | 2 |
 | Max motion (optional) | 8 steps, 12 marked items, 2 simultaneous items — see [animation.md](references/animation.md) |
 
@@ -248,7 +251,7 @@ If you exceed, split into two diagrams (overview + detail).
 
 ## 8. Summary Card Pattern
 
-Don't use 3 identical generic cards. Vary the treatment: column widths such as `1.1fr 1fr 0.9fr`, a white background with a 1px hairline border and 6px radius, no `box-shadow`. Markup and the card-dot variants: [layout-budget.md § Summary Card Pattern](references/layout-budget.md#summary-card-pattern).
+Don't use 3 identical generic cards. Vary the treatment: column widths such as `1.1fr 1fr 0.9fr`, a white background with a 1px hairline border and square corners, no `box-shadow`. Markup and the card-dot variants: [layout-budget.md § Summary Card Pattern](references/layout-budget.md#summary-card-pattern).
 
 ---
 
@@ -275,7 +278,7 @@ Run before producing any diagram.
 
 **Signal:**
 
-- [ ] Coral used on ≤2 elements? If more, which actually deserve focal status?
+- [ ] Orange accent used on ≤2 elements? If more, which actually deserve focal status?
 - [ ] Legend covers every type used — and nothing extra?
 - [ ] Within the type's complexity budget (§7)?
 
@@ -291,7 +294,7 @@ Run before producing any diagram.
 - [ ] **§6 rule 4:** a distinct attach point per connector on a shared edge, 12px or more apart, none hiding another?
 - [ ] **§6 rule 5:** no transit behind a non-endpoint box, except the unavoidable case (dashed, label at the visible end)?
 - [ ] **§6 rule 6:** no label mask overlapping a node drawn after it? (From a repository checkout, run `python3 <repo-root>/scripts/verify-geometry.py <file>`.)
-- [ ] Every arrow label has an opaque `fill="#f5f5f5"` rect behind it?
+- [ ] Every arrow label has an opaque `fill="#f8fafc"` rect behind it?
 - [ ] Legend is a horizontal bottom strip, not floating?
 - [ ] No vertical `writing-mode` text?
 - [ ] `viewBox` expanded for the legend strip (~60px)?
@@ -300,14 +303,13 @@ Run before producing any diagram.
 - [ ] From the installed skill directory, did `python3 scripts/self_check.py <file>` pass? (Accessible-SVG contract, single-file safety, content inside the viewBox, motion basics.)
 - [ ] If animated, does the complete static/no-JS frame work, does reduced motion hide/disable playback, and is the controller copied verbatim from `assets/template-motion.html`? From a repository checkout, also run `python3 <repo-root>/scripts/verify-motion.py path/to/generated.html` plus the skin linter; from an installed skill, manually check print and static-query states on top of the self-check.
 
-**Typography:**
+**Typography and shape:**
 
-- [ ] Brand match uses exact public families/weights, verified via `getComputedStyle`; fallbacks disclosed?
-- [ ] Human-readable names in Geist sans, not Geist Mono?
-- [ ] Technical sublabels (ports, commands, URLs) in Geist Mono?
-- [ ] Page title in Instrument Serif?
-- [ ] Annotation callouts (if any) in *italic* Instrument Serif? (see [primitive-annotation.md](references/primitive-annotation.md))
-- [ ] No JetBrains Mono anywhere?
+- [ ] Every `font-family` is the JetBrains Mono stack from `style-guide.md`, and the font `<link>` loads JetBrains Mono only (plus Noto Sans KR / TC)?
+- [ ] No Geist, no Instrument Serif, no serif or sans fallback ahead of `monospace`?
+- [ ] Annotation callouts (if any) in *italic* JetBrains Mono? (see [primitive-annotation.md](references/primitive-annotation.md))
+- [ ] No `rx` / `ry` on any `<rect>`, and no `border-radius` other than `50%` dots?
+- [ ] Every node wrapped in `<g class="node">` with `class="node-box"` on its styled rect, and the hover CSS from the template present?
 
 ---
 

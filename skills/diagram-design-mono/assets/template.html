@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diagram</title>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&family=Noto+Serif:ital@0;1&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400&family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --color-paper:   #f5f5f5;   /* white-smoke */
-      --color-ink:     #2d3142;   /* jet-black */
-      --color-muted:   #4f5d75;   /* blue-slate */
-      --color-accent:  #bf4520;   /* burnt-tangerine */
-      --font-sans:     'Geist', system-ui, sans-serif;
-      --font-serif:    'Instrument Serif', 'Noto Serif', 'Noto Serif KR', serif;
-      --font-mono:     'Geist Mono', ui-monospace, monospace;
+      --color-paper:   #f8fafc;   /* slate-50 */
+      --color-ink:     #0f172a;   /* navy */
+      --color-muted:   #475569;   /* slate-600 */
+      --color-accent:  #c2410c;   /* orange-700 */
+      --font-sans:     'JetBrains Mono', ui-monospace, monospace;
+      --font-serif:    'JetBrains Mono', 'Noto Sans KR', ui-monospace, monospace;
+      --font-mono:     'JetBrains Mono', ui-monospace, monospace;
     }
 
     body {
@@ -47,7 +47,7 @@
     h1 {
       font-family: var(--font-serif);
       font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2rem);
-      font-weight: 400;
+      font-weight: 600;
       letter-spacing: -0.02em;
       line-height: 1.15;
       color: var(--color-ink);
@@ -63,11 +63,20 @@
       .diagram-container { overflow-x: visible; }
       svg { min-width: 0; }
     }
+  
+    /* Hover: a node box takes the accent fill while the pointer is over it. */
+    svg text { pointer-events: none; }
+    svg .node-box { transition: fill .12s ease, stroke .12s ease; }
+    @media (hover: hover) {
+      svg .node-box:hover, svg .node:hover .node-box { fill: #fdba75; stroke: #0f172a; }
+      svg .node:hover text { fill: #431307; }
+    }
+    @media (prefers-reduced-motion: reduce) { svg .node-box { transition: none; } }
   </style>
 </head>
 <body>
   <div class="frame">
-    <p class="eyebrow">[Type] · Diagram Design</p>
+    <p class="eyebrow">[Type] · Diagram Design Mono</p>
     <h1>[Diagram title]</h1>
 
     <!-- Replace [diagram-slug] with a unique slug for this diagram before export. -->
@@ -76,19 +85,19 @@
         <title id="[diagram-slug]-title">[Diagram title]</title>
         <desc id="[diagram-slug]-desc">[One sentence describing what the diagram shows]</desc>
         <defs>
-          <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
-          <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bf4520"/></marker>
-          <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2e5aa8"/></marker>
+          <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#475569"/></marker>
+          <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#c2410c"/></marker>
+          <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#1d4ed8"/></marker>
 
           <!-- OPTIONAL: dot-pattern background. Uncomment the <pattern> and the second <rect> below if you want the dotted paper look. -->
           <!--
           <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
-            <circle cx="1" cy="1" r="0.9" fill="rgba(45,49,66,0.10)"/>
+            <circle cx="1" cy="1" r="0.9" fill="rgba(15,23,42,0.10)"/>
           </pattern>
           -->
         </defs>
 
-        <rect width="100%" height="100%" fill="#f5f5f5"/>
+        <rect width="100%" height="100%" fill="#f8fafc"/>
         <!-- <rect width="100%" height="100%" fill="url(#dots)" opacity="0.55"/> -->
 
         <!-- Draw arrows first, then nodes. Replace with your content. -->

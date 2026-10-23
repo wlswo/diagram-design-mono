@@ -27,13 +27,13 @@ steps:                              # 1..12 vertical step columns (left to right
   # ... up to 12
 
 nodes:                              # explicit per-cell entries; empty cells render nothing
-  - { lane: "RDE", step: 0,  title: "Survey design",      sub: "questionnaire · sampling", tool: "Excel · CSPro",
+  - { lane: "RDE", step: 0,  title: "Survey design",      sub: "questionnaire / sampling", tool: "Excel / CSPro",
       chips: {in: null,  out: "FL"} }              # first step has no input chip
-  - { lane: "IT",  step: 1,  title: "Build app",          sub: "form + validation",        tool: "CSPro · scripts",
+  - { lane: "IT",  step: 1,  title: "Build app",          sub: "form + validation",        tool: "CSPro / scripts",
       chips: {in: "FL", out: "TB"}, color: "#5a7d9a" }    # slate-blue — data quality concern
-  - { lane: "RDE", step: 2,  title: "Pilot test",         sub: "field debug",              tool: "tablet · script",
+  - { lane: "RDE", step: 2,  title: "Pilot test",         sub: "field debug",              tool: "tablet / script",
       chips: {in: "TB", out: "TB"}, focal: true }   # focal node — accent border
-  - { lane: "FLD", step: 3,  title: "Train enumerators",  sub: "protocols · safety",       tool: "manual",
+  - { lane: "FLD", step: 3,  title: "Train enumerators",  sub: "protocols / safety",       tool: "manual",
       chips: {in: "TB", out: "LS"}, color: "#b85450" }    # rust-red — governance / training
   # ... etc
 
@@ -349,7 +349,7 @@ Data-type chip colors are a **separate semantic axis** from the per-node color o
 Each row introduced by a category label at `x = label_col_w + 4` (= 144). The default legend has **3 rows** (`STEPS` / `DATA TYPE` / `FLOW`); when one or more nodes carry a `color` override (§4), add a 4th `CONCERN` row and grow `legend_h` to 100.
 
 - **Row 1 — `STEPS`** at `y = legend_y_top + 16`: repeat the header chips with their labels. Focal step keeps accent fill.
-- **Row 2 — `DATA TYPE`** at `y = legend_y_top + 37`: one swatch per chip type actually used in the diagram. Append a small sub-hint in muted mono: `left chip = input · right chip = output`.
+- **Row 2 — `DATA TYPE`** at `y = legend_y_top + 37`: one swatch per chip type actually used in the diagram. Append a small sub-hint in muted mono: `left chip = input / right chip = output`.
 - **Row 3 — `CONCERN`** (only when color overrides are present) at `y = legend_y_top + 58`: one mini-rect per custom color used, with its semantic label.
 - **Row 4 — `FLOW`** (position depends on whether `CONCERN` row exists): one segment per arrow style actually used, with marker + label.
 
@@ -417,27 +417,27 @@ steps:
 
 nodes:
   - { lane: "RDE", step: 0,  title: "Sample Design",     sub: "Census data → Sample",
-      tool: "SAS · Survey Solutions",      chips: {in: null, out: "LS"} }                # first step: no input chip
+      tool: "SAS / Survey Solutions",      chips: {in: null, out: "LS"} }                # first step: no input chip
   - { lane: "IT",  step: 1,  title: "Field Assignment",  sub: "Sample → Field tasks",
       tool: "Survey Solutions",            chips: {in: "LS", out: "LS"} }
   - { lane: "FLD", step: 2,  title: "Data Collection",   sub: "→ 10,464 dwellings",
       tool: "Survey Solutions",            chips: {in: "LS", out: "DB"},  focal: true }   # focal node
   - { lane: "SVY", step: 3,  title: "HQ Review",         sub: "Submissions → Approved",
-      tool: "Survey Sol. HQ",              chips: {in: "DB", out: "DB"},  color: "#b85450" }   # rust-red · governance
+      tool: "Survey Sol. HQ",              chips: {in: "DB", out: "DB"},  color: "#b85450" }   # rust-red / governance
   - { lane: "IT",  step: 4,  title: "Error Checks",      sub: "Approved → Cleaned",
-      tool: "SAS · Scripts",               chips: {in: "DB", out: "DB"},  color: "#5a7d9a" }   # slate-blue · data quality
+      tool: "SAS / Scripts",               chips: {in: "DB", out: "DB"},  color: "#5a7d9a" }   # slate-blue / data quality
   - { lane: "RDE", step: 5,  title: "Weight Calculation", sub: "Cleaned → Weighted",
       tool: "SAS",                         chips: null }                                  # 2-line title — chips skipped
   - { lane: "HHU", step: 6,  title: "2° Cleaning",       sub: "Weighted → Analysis",
-      tool: "SAS · R · SPSS",              chips: {in: "DB", out: "TB"} }
+      tool: "SAS / R / SPSS",              chips: {in: "DB", out: "TB"} }
   - { lane: "HHU", step: 7,  title: "Tables + Brief",    sub: "Analysis → Tables",
-      tool: "Excel · SAS",                 chips: {in: "TB", out: "FL"} }
+      tool: "Excel / SAS",                 chips: {in: "TB", out: "FL"} }
   - { lane: "CMM", step: 8,  title: "Stats Review",      sub: "Tables → Approved",
       tool: "Internal review",             chips: {in: "FL", out: "FL"} }
   - { lane: "CMM", step: 9,  title: "Public Release",    sub: "Approved → Public",
-      tool: "Press conference",            chips: {in: "FL", out: "WB"}, color: "#7a8c47" }   # olive-green · data products
+      tool: "Press conference",            chips: {in: "FL", out: "WB"}, color: "#7a8c47" }   # olive-green / data products
   - { lane: "IT",  step: 10, title: "Upload NatStat / SDMX", sub: "Results → Published",
-      tool: "Web · SDMX API",              chips: null }                                  # 2-line title — chips skipped
+      tool: "Web / SDMX API",              chips: null }                                  # 2-line title — chips skipped
 
 arrows:
   - { from: {lane: "RDE", step: 0}, to: {lane: "IT",  step: 1},  style: "normal"    }

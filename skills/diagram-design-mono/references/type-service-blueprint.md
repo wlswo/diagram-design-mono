@@ -28,7 +28,7 @@
   7. Line of internal interaction (hairline)
   8. Support processes (optional) — 48px
 - **Hairlines:** 8px band including stroke. Interaction and internal-interaction are 1px `rule` (`data-role="interaction"` / `data-role="internal-interaction"`). Visibility is 2px `ink` at 0.55 opacity (`data-role="visibility"`), which must clear 3:1 on paper — 0.45 fails that bar on light paper, so do not go thinner.
-- **Cells:** one action per stage per layer. JetBrains Mono 12px, one line, centered on the column. A second muted mono line is allowed for a system or wait (`dunning-job · 4h`). Empty required cells are allowed only with an explicit `—` or `Not applicable` as `data-name` and as the printed text.
+- **Cells:** one action per stage per layer. JetBrains Mono 12px, one line, centered on the column. A second muted mono line is allowed for a system or wait (`dunning-job / 4h`). Empty required cells are allowed only with an explicit `—` or `Not applicable` as `data-name` and as the printed text.
 - **Fills:** customer and frontstage are paper/white with `ink` stroke. Backstage and support take a light `ink` tint so the below-the-line band reads as hidden work, not another onstage row.
 - **Focal cell (≤1, optional):** the failure, wait, or handoff the figure exists to show — usually on or below the visibility line. Accent fill `rgba(194,65,12,0.12)` (dark: `rgba(253,186,117,0.18)`), accent stroke, `data-focal="true"`.
 - **Legend:** horizontal strip after a hairline rule, three keys in this order — visibility line, backstage layer, focal cell.
@@ -73,7 +73,7 @@ No `transform`, geometry `style`, or `<style>` rules that move marks.
   <text x="648" y="300" fill="#c2410c" font-size="12" font-weight="600"
         font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">dunning-job timeout</text>
   <text x="648" y="318" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace"
-        text-anchor="middle">dunning-job · 4h</text>
+        text-anchor="middle">dunning-job / 4h</text>
 </g>
 ```
 

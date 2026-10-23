@@ -25,7 +25,7 @@ ASSETS = ROOT / "skills/diagram-design-mono/assets"
 from axonometry import (FONT_LINK, FULL, MINIMAL, SKINS, Proj, Rect,  # noqa: E402
                         animated_page, cards_html, f, finish, outline, prism, solid, styles)
 
-EYEBROW = "Axonometric plan · Diagram Design"
+EYEBROW = "Axonometric plan / Diagram Design"
 TREE_TOP = {"light": "#cbd5e1", "dark": "#94a3b8"}
 T = 6  # wall thickness
 
@@ -386,7 +386,7 @@ def office() -> Plan:
     ]
     return Plan(
         slug="axonometric-plan",
-        title="Level 3 office · Where the team actually sits",
+        title="Level 3 office / Where the team actually sits",
         desc="Axonometric floor plan of an office level with an open office, meeting room, kitchen, lobby, and phone booth, with the meeting room as the focal room.",
         plate=Rect(0, 0, W, D, 0), plate_t=6, boxes=walls + furniture, rooms=rooms,
         caption=("FOCAL ROOM", "Walls cut at desk height so every room reads from one view; the meeting room is the one under discussion."),
@@ -394,7 +394,7 @@ def office() -> Plan:
         cards=[("The headline", "coral", "One room is the subject", "The meeting room gets the accent because it is the room being discussed. It seats twelve, and the floor tint marks it without colouring the furniture."),
                ("", "ink", "Reading the plan", ["Walls are cut low so nothing hides a room", "Tags sit on the floor they name", "Furniture shows how each room is used", "Gaps in walls are doors"]),
                ("", "muted", "When to use it", "Office moves, seating plans, and space reviews. For a list of rooms and capacities, a table is faster.")],
-        footer="office floor · axonometric plan")
+        footer="office floor / axonometric plan")
 
 
 SW, SD = 420, 300
@@ -413,7 +413,7 @@ def campus() -> Plan:
     trees = [Box(Rect(x - 10, y - 10, x + 10, y + 10, 10), 6, "tree") for x, y in TREES]
     return Plan(
         slug="axonometric-plan-campus",
-        title="North campus · Three phases, six buildings",
+        title="North campus / Three phases, six buildings",
         desc="Campus site plan with the library and labs in phase 1, two dorms in phase 2, and the sports hall and parking in phase 3, with the library as the focal building.",
         plate=Rect(0, 0, SW, SD, 6), plate_t=8, boxes=buildings + trees,
         flats=[(Rect(0, 144, SW, 168, 0), "road"), (Rect(196, 0, 220, SD, 0), "road")],
@@ -423,7 +423,7 @@ def campus() -> Plan:
         cards=[("The headline", "coral", "The library comes first", "Everything else on the site is placed around it, so it gets the accent and opens in phase 1 with the labs."),
                ("", "ink", "Reading the site", ["Heights are to scale with each other", "Roads cross at the quad", "Tags sit on the roof they name", "Trees mark the green edges"]),
                ("", "muted", "When to use it", "Master plans, site visits, and phasing reviews. For a schedule of phases and dates, use a Gantt chart.")],
-        footer="campus · axonometric plan", steps=3)
+        footer="campus / axonometric plan", steps=3)
 
 
 def post(x, y):
@@ -462,7 +462,7 @@ def coffee_shop() -> Plan:
     ]
     return Plan(
         slug="axonometric-plan-coffee-shop",
-        title="Corner coffee shop · From the door to a seat",
+        title="Corner coffee shop / From the door to a seat",
         desc="Axonometric floor plan of a small coffee shop with an entrance and queue, an espresso bar, seating, a kitchen, and a restroom, with the espresso bar as the focal room.",
         plate=Rect(0, 0, W, D, 0), plate_t=6, boxes=walls + kitchen + restroom + bar + queue + seating, rooms=rooms,
         caption=("FOCAL ROOM", "Every customer passes the espresso bar twice, once to order and once to pick up, so it sits beside the door."),
@@ -470,7 +470,7 @@ def coffee_shop() -> Plan:
         cards=[("The headline", "coral", "The bar is the bottleneck", "Every order goes through two baristas and one espresso machine. The accent marks the bar because its length sets how many people can wait without blocking the door."),
                ("", "ink", "Reading the plan", ["Posts mark the queue lane along the counter", "The tall unit on the back bar is the fridge", "Round tables seat two, the long table seats six", "Gaps in walls are doors"]),
                ("", "muted", "When to use it", "Fit-outs, staffing reviews, and new-store briefs. For a list of equipment and costs, a table is faster.")],
-        footer="coffee shop · axonometric plan", steps=3,
+        footer="coffee shop / axonometric plan", steps=3,
         phases={1: "The espresso bar: back bar and counter", 2: "The entrance and the queue posts", 3: "Seating: tables and the window bench"})
 
 
@@ -496,7 +496,7 @@ def warehouse() -> Plan:
     ]
     return Plan(
         slug="axonometric-plan-warehouse",
-        title="Fulfillment floor · Dock to dock",
+        title="Fulfillment floor / Dock to dock",
         desc="Axonometric plan of a fulfillment warehouse: receiving docks, storage racks, a pick zone, packing stations, and shipping docks, with packing as the focal zone.",
         plate=Rect(0, 0, W, D, 0), plate_t=6, boxes=walls + receiving + racks + pick + packing + shipping, rooms=rooms,
         flats=[(dock(30), "dock"), (dock(120), "dock"), (dock(210), "dock")],
@@ -506,7 +506,7 @@ def warehouse() -> Plan:
         cards=[("The headline", "coral", "Packing sets the pace", "Receiving and storage can run ahead. An order only ships when someone packs it, so the three stations are the accent and the place to add capacity first."),
                ("", "ink", "Reading the plan", ["Tall racks hold reserve stock", "The low flow rack faces the pick lane", "The conveyor carries packed orders to shipping", "Gaps in the side walls are dock doors"]),
                ("", "muted", "When to use it", "Layout changes, peak season planning, and new-hire walkthroughs. For pick rates by zone, use a bar chart.")],
-        footer="fulfillment floor · axonometric plan", steps=3,
+        footer="fulfillment floor / axonometric plan", steps=3,
         phases={1: "Inbound: receiving pallets and storage racks", 2: "Pick and pack: carts, flow rack, and packing stations", 3: "Outbound: shipping pallets"})
 
 
@@ -535,7 +535,7 @@ def render_all() -> dict[Path, str]:
             slug = f"{name}-animated"
             body, vh = build_svg(plan, "light", True, slug)
             files[ASSETS / f"example-{slug}.html"] = animated_page(
-                plan.title, plan.desc, slug, body, vh, plan.steps, "Axonometric plan · Optional motion",
+                plan.title, plan.desc, slug, body, vh, plan.steps, "Axonometric plan / Optional motion",
                 APPEAR_CSS, "The complete site plan is shown above.")
     return files
 

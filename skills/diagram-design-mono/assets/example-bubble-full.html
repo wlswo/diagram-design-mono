@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>p95 vs error rate, sized by traffic · Bubble</title>
+  <title>p95 vs error rate, sized by traffic / Bubble</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,7 +42,7 @@
 <body>
   <div class="container">
     <div class="header">
-      <p class="header-eyebrow">Bubble · Diagram Design</p>
+      <p class="header-eyebrow">Bubble / Diagram Design</p>
       <h1>The biggest risk is not the slowest service</h1>
       <p class="subtitle">Nine services by p95 latency and error rate, bubble area proportional to requests per second, both axes from zero. Reports is the slowest thing on the board and barely matters; Payments runs near-peak traffic at the highest error rate, and that is where the incident will come from.</p>
     </div>
@@ -154,17 +154,17 @@
         <!-- Legend -->
         <line x1="40" y1="462" x2="960" y2="462" stroke="rgba(15,23,42,0.10)" stroke-width="0.8"/>
         <text x="40" y="478" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.18em">LEGEND</text>
-        <text x="960" y="478" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="end">P95 VS ERROR RATE, BUBBLE AREA ∝ REQUESTS PER SECOND · BOTH AXES START AT ZERO · ILLUSTRATIVE FIGURES, NOT MEASURED SERVICES</text>
+        <text x="960" y="478" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="end">P95 VS ERROR RATE, BUBBLE AREA ∝ REQUESTS PER SECOND / BOTH AXES START AT ZERO / ILLUSTRATIVE FIGURES, NOT MEASURED SERVICES</text>
 
         <circle class="node-box" cx="52" cy="490" r="6" fill="rgba(194,65,12,0.15)" stroke="#c2410c" stroke-width="1.2"/>
-        <text x="68" y="494" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">Payments · focal, highest error rate at near-peak traffic</text>
+        <text x="68" y="494" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">Payments / focal, highest error rate at near-peak traffic</text>
         <circle class="node-box" cx="660" cy="490" r="5" fill="rgba(15,23,42,0.23)" stroke="#475569" stroke-width="1"/>
-        <text x="676" y="494" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">Service · faintest fill is the largest bubble</text>
+        <text x="676" y="494" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">Service / faintest fill is the largest bubble</text>
       </svg>
     </div>
     <div class="cards">
       <div class="card">
-        <p class="eyebrow">FOCAL · PAYMENTS</p>
+        <p class="eyebrow">FOCAL / PAYMENTS</p>
         <div class="card-header"><span class="card-dot coral"></span><h3>Payments burns the error budget fastest</h3></div>
         <p>2.8% of 760 requests per second — the highest error rate on the board applied to nearly the biggest volume. The accent marks the risk, not the worst number in any one column: Reports has worse latency and Gateway has more traffic, but neither multiplies out to as many failing requests.</p>
       </div>
@@ -178,8 +178,8 @@
       </div>
     </div>
     <div class="footer">
-      <span>p95 latency vs error rate, area ∝ requests per second · illustrative</span>
-      <span>example · diagram design</span>
+      <span>p95 latency vs error rate, area ∝ requests per second / illustrative</span>
+      <span>example / diagram design</span>
     </div>
   </div>
 </body>

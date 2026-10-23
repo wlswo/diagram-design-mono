@@ -13,7 +13,7 @@ Not for: ranked lists where exact values matter more than proportion (use a **ba
 - **Fill:** a rank-ordered `ink` opacity ramp (e.g. `0.16 → 0.04`), so the non-focal order survives greyscale printing and colour-blind readers. One accent cell only — the editorially focal one, not automatically the largest. Note what this does *not* buy you: the focal cell is painted off-ramp, so in greyscale it lands wherever its tint happens to fall, not at its rank. Identify it by the accent stroke, and never let tone carry meaning the area doesn't already carry. `ink` is a role, not a colour: it resolves near-black on light paper and near-white on dark, so one ramp of opacities composites *darker* as it strengthens in the light skin and *lighter* in the dark one. The opacities are identical in both; only their lightness flips.
 - **Stroke:** 1px `ink @ 0.30` hairline on every cell; the focal cell takes a 1.5px `accent` stroke.
 - **Labels sit inside the cell**, top-left, 16px in from the edge: name in the `node-name` role 12–14px 600, value in the `sublabel` role 9px on the next line. Three tiers by cell size:
-  - large — name + value + share (`4.78B · 59% of world`)
+  - large — name + value + share (`4.78B / 59% of world`)
   - medium — name + value
   - small — a 3-letter mono abbreviation, if one reads honestly
   - sliver — **no text.** When the cell is at least 12×12px, use a filled `ink` disc, `r=5`, centred in the cell, carrying a paper-coloured `i`, with the cell's name and share spelled out in the legend. Below 12px on either axis, omit the in-cell mark and identify the sliver by position in the legend; a fixed-size disc must never cross the cell boundary. `scripts/verify-treemap.py` checks marker containment. Resist rotating a label to make it fit: a single sideways word among five upright ones reads as a mistake before it reads as data, and its centring is a trap — `text-anchor="middle"` centres along the *baseline*, which a quarter-turn maps to the cell's long axis, leaving nothing centring the cap-height band across the narrow one.
@@ -47,7 +47,7 @@ Without it, a verifier has to infer the intended share from the text inside the 
 <!-- Cell body -->
 <rect x="X" y="Y" width="W" height="H" data-share="18.29" fill="{ink @ 0.16}" stroke="{ink @ 0.30}" stroke-width="1"/>
 <text x="X+16" y="Y+28" fill="{ink}" font-size="13" font-weight="600" font-family="{node-name}">NAME</text>
-<text x="X+16" y="Y+46" fill="{muted}" font-size="9" font-family="{sublabel}">VALUE · SHARE</text>
+<text x="X+16" y="Y+46" fill="{muted}" font-size="9" font-family="{sublabel}">VALUE / SHARE</text>
 ```
 
 Focal cell: replace the fill with `accent @ 0.16` and the stroke with `accent` at 1.5px.
@@ -84,8 +84,8 @@ Not for: a one-way split (that is the parent treemap, and a marimekko with one s
 - **Every column is the full plot height**, and its segments tile it top to bottom with no gaps and no gutters, separated by the hairline stroke alone. **Segment height is the series' share within its column**, so the same height means the same within-category share whatever the column's width. Segment boundaries are data and land on whole pixels, exempt from the 4px grid as the waterfall's bar tops are.
 - **One series order, top to bottom, in every column** — the order of the series' overall totals, largest at the top. A series absent from a category is omitted from that column, never drawn at zero height; the rows do not align across columns and are not meant to, which is why every segment prints its own share.
 - **Column and series budgets:** 3–8 columns, 2–5 series. Widths under ~24px cannot hold a label in either direction and take the treemap's information mark instead.
-- **Labels sit inside the segment**, top-left, 16px in, in the treemap's tiers by height: 56px and above takes the name in the `node-name` role 12px 600 with the amount and within-column share in the `sublabel` role 9px on the next line (`2,140 min · 68%`); 32–55px takes the same pair at 11px/9px on a tighter pitch; below that, the mark or nothing. The focal segment may add what its share is *of* (`83% of mobile`) because that is the one number a reader is most likely to misread as a share of the whole. Never shrink or widen a segment to fit a label.
-- **Column captions** print the column's name and its share of the whole (`web · 31%`), so the width can be read as a number without a ruler.
+- **Labels sit inside the segment**, top-left, 16px in, in the treemap's tiers by height: 56px and above takes the name in the `node-name` role 12px 600 with the amount and within-column share in the `sublabel` role 9px on the next line (`2,140 min / 68%`); 32–55px takes the same pair at 11px/9px on a tighter pitch; below that, the mark or nothing. The focal segment may add what its share is *of* (`83% of mobile`) because that is the one number a reader is most likely to misread as a share of the whole. Never shrink or widen a segment to fit a label.
+- **Column captions** print the column's name and its share of the whole (`web / 31%`), so the width can be read as a number without a ruler.
 - **Hold the 760px canvas on narrow screens.** The SVG keeps `min-width: 760px` so its 9px labels stay readable, and sits inside a local `overflow-x: auto` wrapper (`.diagram-container`) so a phone scrolls the chart, not the page. `scripts/lint-render.py --all` renders every marimekko at 390px and fails on page-level overflow, a shrunken canvas, or a missing local scroller.
 
 #### Colour
@@ -106,8 +106,8 @@ Every segment is one `<rect>` (over its paper mask, as in the parent) carrying t
 
 ```svg
 <rect x="580" y="106" width="216" height="314" data-column="mobile" data-segment="macOS" data-amount="1980" fill="{accent @ 0.16}" stroke="{accent}" stroke-width="1.5"/>
-<text data-column="mobile" data-segment="macOS" data-role="label" x="596" y="152" fill="{muted}" font-size="9" font-family="{sublabel}">1,980 min · 83% of mobile</text>
-<text data-column="mobile" data-role="caption" x="688" y="438" fill="{muted}" font-size="9" font-family="{sublabel}" text-anchor="middle">mobile · 24%</text>
+<text data-column="mobile" data-segment="macOS" data-role="label" x="596" y="152" fill="{muted}" font-size="9" font-family="{sublabel}">1,980 min / 83% of mobile</text>
+<text data-column="mobile" data-role="caption" x="688" y="438" fill="{muted}" font-size="9" font-family="{sublabel}" text-anchor="middle">mobile / 24%</text>
 <!-- Key: the node-name family at regular weight; swap in the active skin's sans stack -->
 <text data-segment="macOS" data-role="key" x="344" y="497" fill="{muted}" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">macOS</text>
 ```

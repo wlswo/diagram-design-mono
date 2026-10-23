@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Storage backends · Capability radar</title>
+  <title>Storage backends / Capability radar</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -64,11 +64,11 @@
 </head>
 <body>
   <div class="frame">
-    <p class="eyebrow">Radar · Diagram Design</p>
-    <h1>Storage backends · Capability radar</h1>
+    <p class="eyebrow">Radar / Diagram Design</p>
+    <h1>Storage backends / Capability radar</h1>
 
     <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="radar-title radar-desc">
-      <title id="radar-title">Storage backends · Capability radar</title>
+      <title id="radar-title">Storage backends / Capability radar</title>
       <desc id="radar-desc">Radar chart comparing MinIO, Amazon S3, Ceph, and Google Cloud Storage across five storage capabilities.</desc>
         <defs>
           <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
@@ -108,14 +108,14 @@
         <text x="494" y="210" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="end">2</text>
 
         <!-- Non-focal series (smallest to largest, back to front) -->
-        <!-- Ceph · series-2 dusty-blue · [7,7,7,4,6] -->
+        <!-- Ceph / series-2 dusty-blue / [7,7,7,4,6] -->
         <polygon class="node-box" points="500,128 606,206 566,330 462,292 409,211" fill="rgba(94,122,155,0.18)" stroke="#5e7a9b" stroke-width="1.5"/>
-        <!-- GCS · series-3 mustard · [6,9,8,6,7] -->
+        <!-- GCS / series-3 mustard / [6,9,8,6,7] -->
         <polygon class="node-box" points="500,144 637,196 575,343 444,317 394,206" fill="rgba(184,145,90,0.18)" stroke="#b8915a" stroke-width="1.5"/>
-        <!-- Amazon S3 · series-1 sage · [6,10,9,5,8] -->
+        <!-- Amazon S3 / series-1 sage / [6,10,9,5,8] -->
         <polygon class="node-box" points="500,144 652,191 585,356 453,305 378,201" fill="rgba(124,143,111,0.18)" stroke="#7c8f6f" stroke-width="1.5"/>
 
-        <!-- Focal series · MinIO · accent · [9,8,9,9,9] -->
+        <!-- Focal series / MinIO / accent / [9,8,9,9,9] -->
         <polygon class="node-box" points="500,96 622,201 585,356 415,356 363,196" fill="rgba(194,65,12,0.18)" stroke="#c2410c" stroke-width="1.8"/>
 
         <!-- Focal vertex dots (only on focal series) -->
@@ -130,7 +130,7 @@
         <text x="40" y="472" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.18em">LEGEND</text>
 
         <rect x="40"  y="484" width="16" height="8" fill="rgba(194,65,12,0.18)" stroke="#c2410c" stroke-width="1.5"/>
-        <text x="64"  y="492" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">MinIO · recommended</text>
+        <text x="64"  y="492" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">MinIO / recommended</text>
 
         <rect x="220" y="484" width="16" height="8" fill="rgba(124,143,111,0.18)" stroke="#7c8f6f" stroke-width="1.5"/>
         <text x="244" y="492" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">Amazon S3</text>

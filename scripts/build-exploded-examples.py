@@ -355,11 +355,11 @@ MOTION_CSS = """
 
 
 def exploded_animated(fig: Figure, slug: str, body: str, vh: int, steps: int) -> str:
-    return animated_page(fig.title, fig.desc, slug, body, vh, steps, "Exploded axonometric · Optional motion",
+    return animated_page(fig.title, fig.desc, slug, body, vh, steps, "Exploded axonometric / Optional motion",
                          MOTION_CSS, "The complete exploded diagram is shown above.")
 
 
-EYEBROW = "Exploded axonometric · Diagram Design"
+EYEBROW = "Exploded axonometric / Diagram Design"
 
 # ---------------------------------------------------------------- keyboard and agent stack detail
 
@@ -560,7 +560,7 @@ def keyboard():
 FIGURES = {
     "exploded": lambda: Figure(
         slug="exploded",
-        title="App stack · Three layers, one product",
+        title="App stack / Three layers, one product",
         desc="Exploded view of a three-layer app stack: data at the base, logic in the middle, interface on top, with logic as the focal layer.",
         parts=app_stack(), focus="logic",
         caption=("FOCAL LAYER", "Logic is where the product decisions live; the other two layers are swappable."),
@@ -568,30 +568,30 @@ FIGURES = {
         cards=[("The headline", "coral", "Logic is the layer that pays rent", "Swapping the database is a migration. Swapping the interface is a redesign. Rewriting the logic is a different product, so that layer gets the accent."),
                ("", "ink", "Reading the explode", ["Bottom layer stays put", "Equal gaps, one axis", "Dashed lines trace the outer corners", "Labels sit in one column"]),
                ("", "muted", "Why only three", "A stack this small reads at a glance. Past five parts the explode gets tall and the labels crowd; split it into two figures.")],
-        footer="app stack · exploded axonometric"),
+        footer="app stack / exploded axonometric"),
     "exploded-phone": lambda: Figure(
         slug="exploded-phone",
-        title="Phone teardown · What sits under the glass",
+        title="Phone teardown / What sits under the glass",
         desc="Exploded view of a phone: the display lifts off the housing to show the logic board and battery inside, with the logic board as the focal part.",
         parts=phone(), focus="board", gap_k=0.75, buttons=True,
         subtitle="The display comes off first. Underneath, the logic board and battery share one level inside the housing, so they lift together.",
         cards=[("The headline", "coral", "The board is the phone", "Cameras, radios and the system chip all live on one small board. Everything else holds it, powers it, or shows its output."),
                ("", "ink", "How it was drawn", ["Rounded corners project as quarter ellipses", "The housing is a tray, so its front walls paint last", "Parts on one level explode together", "Gap widened so the display clears the board"]),
                ("", "muted", "Four parts", "A real teardown has dozens of parts. The diagram keeps the four a reader needs and drops the screws.")],
-        footer="phone · exploded axonometric"),
+        footer="phone / exploded axonometric"),
     "exploded-unboxing": lambda: Figure(
         slug="exploded-unboxing",
-        title="Unboxing · What you see, in the order you see it",
+        title="Unboxing / What you see, in the order you see it",
         desc="Exploded view of product packaging: printed lid, the speaker and its cable, the moulded insert that holds them, and the rigid box, with the speaker as the focal part.",
         parts=unboxing(), focus="speaker",
         subtitle="Read it top down and it is the unboxing: lid, product, insert, box. The product and its cable share a level because they sit side by side.",
         cards=[("The headline", "coral", "The product is the reveal", "Everything above the speaker is a lid and everything below it is a cradle. The accent marks the speaker because the packaging exists to present it."),
                ("", "ink", "Reading the explode", ["Lid telescopes over the box walls", "Insert wells match the parts they hold", "Cable and speaker lift as one level", "Box stays put"]),
                ("", "muted", "When to use it", "Packaging reviews, supplier briefs, and launch pages. For a list of what is in the box, a table is faster.")],
-        footer="unboxing · exploded axonometric"),
+        footer="unboxing / exploded axonometric"),
     "exploded-ai-stack": lambda: Figure(
         slug="exploded-ai-stack",
-        title="AI agent stack · What sits under the prompt",
+        title="AI agent stack / What sits under the prompt",
         desc="Exploded view of an AI agent stack: a secrets vault at the base, then tools, skills, the agent harness that runs the model, and the chat or terminal interface on top, with skills as the focal layer.",
         parts=ai_stack(), focus="skills", gap_k=0.75,
         caption=("FOCAL LAYER", "Skills are plain files the agent reads before it acts. Swap the harness or the model and they still work."),
@@ -599,17 +599,17 @@ FIGURES = {
         cards=[("The headline", "coral", "Skills are the layer you own", "The interface and the harness come from a vendor and change every few months. A skill is a markdown playbook in your repo, so it carries over when the rest of the stack is swapped."),
                ("", "ink", "Reading the explode", ["Top layer is where you type", "The dark chip is the model inside the harness", "Each card on the skills layer is one playbook", "Plugs on the tools layer are the CLIs and APIs it can call"]),
                ("", "muted", "Why the vault is at the bottom", "Every tool call runs on a scoped service token. Keep it under everything else so no layer above holds a raw secret.")],
-        footer="ai agent stack · exploded axonometric"),
+        footer="ai agent stack / exploded axonometric"),
     "exploded-keyboard": lambda: Figure(
         slug="exploded-keyboard",
-        title="Mechanical keyboard · Five layers under your fingers",
+        title="Mechanical keyboard / Five layers under your fingers",
         desc="Exploded view of a mechanical keyboard: the case, the PCB with hot-swap sockets, the steel plate, a switch for every key, and the keycaps on top, with the switches as the focal part.",
         parts=keyboard(), focus="switches", gap_k=0.7,
         subtitle="Keycaps come off first. Under them every key has its own switch, held by a steel plate and plugged into the board in the case.",
         cards=[("The headline", "coral", "The switches are the feel", "Keycaps change the sound and the look. The switch under each key sets how far it travels and how hard it pushes back, so the switches get the accent."),
                ("", "ink", "Reading the explode", ["One switch per keycap, one cutout per switch", "Hot-swap sockets mean no soldering", "The case is a tray, so its front walls paint last", "Wider keys sit on one centred switch"]),
                ("", "muted", "Small parts, one primitive", "Every keycap and switch is the same rounded prism as the case, just smaller. The part box is the envelope of its grid.")],
-        footer="mechanical keyboard · exploded axonometric"),
+        footer="mechanical keyboard / exploded axonometric"),
 }
 ANIMATED = ("exploded-phone", "exploded-unboxing", "exploded-ai-stack", "exploded-keyboard")
 

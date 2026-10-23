@@ -33,7 +33,7 @@ Over budget: collapse a leaf cluster into one aggregate node labelled with its c
 - Forward edges that point upward without being the one marked cycle.
 - A hairball layout with no rank ordering — rank first, always; ranking is what makes the graph readable, not an optional polish pass.
 - One node per file instead of per package/module/service — the graph is about dependency structure, not the filesystem.
-- Unlabelled external dependencies — version or registry belongs in the `sublabel` (`v3.23 · npm`), not left implicit.
+- Unlabelled external dependencies — version or registry belongs in the `sublabel` (`v3.23 / npm`), not left implicit.
 - Highlighting more than one cycle in a single diagram — pick the one that matters editorially; a second cycle competes with the first and neither reads.
 - Omitting the fan-in badges — without them the reader can't see at a glance where dependencies concentrate, which is the entire reason this type exists over a plain tree.
 

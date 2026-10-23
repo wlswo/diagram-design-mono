@@ -14,6 +14,9 @@ Claude Code에서 아키텍처, 플로차트, 시퀀스 등 45종 다이어그�
 | 색상 | 회백색 바탕, 다홍색 강조 | turbopuffer.com 참고: 슬레이트 바탕 `#f8fafc`, 남색 글자 `#0f172a`, 주황 강조 |
 | 호버 | 없음 | 노드, 카드, 셀, 막대에 마우스를 올리면 `#fdba75` 주황 배경 |
 | 첫 실행 | 브랜드 설정 질문 | 질문 없이 바로 그림 |
+| 구분 점 | `A · B` 형태로 자주 씀 | 가운뎃점(`·`, `•`) 금지. 줄바꿈, 쉼표, `/`로 대신하고 `self_check.py`가 검사 |
+| 용어 | 클래스명, 약어 그대로 | 보는 사람 기준으로 풀어 씀. 코드 이름은 보조 설명에만 |
+| 아이콘 | Tabler 단색 아이콘 | 기술 노드에 [profile-technology-icons](https://github.com/marwin1991/profile-technology-icons) 컬러 로고 사용 |
 
 호버 제외: Sankey와 polar 차트. 이 두 유형의 검증 스크립트가 도형에 CSS 적용을 막음.
 
@@ -49,11 +52,18 @@ Claude Code에 그리고 싶은 내용을 말하면 스킬이 자동으로 선�
 
 결과는 HTML 파일 하나. 브라우저로 열어서 노드 위에 마우스를 올리면 호버 확인 가능.
 
+Kafka, MySQL처럼 이름 있는 기술 노드에는 로고가 들어감. 로고 원본 저장소에 라이선스가 없어서 이 저장소에는 PNG를 넣지 않고, 그릴 때 `scripts/techicon.py`가 받아서 HTML 안에 직접 넣음(첫 사용 때 인터넷 필요).
+
+```bash
+python3 skills/diagram-design-mono/scripts/techicon.py find "Spring Boot"
+python3 skills/diagram-design-mono/scripts/techicon.py snippet kafka --x 120 --y 86
+```
+
 PNG/SVG 내보내기, draw.io/Mermaid/Excalidraw 가져오기는 원본과 같은 명령 사용: `/export-diagram`, `/import-drawio`, `/import-mermaid`, `/import-excalidraw`.
 
 ## 3. 스타일 바꾸기
 
-색상만 바꾸려면 `skills/diagram-design-mono/references/style-guide.md`의 토큰 표 수정. 폰트, 직각 모서리, 호버 규칙은 `SKILL.md` 4장, 5장, 6장, 9장에 있음.
+색상만 바꾸려면 `skills/diagram-design-mono/references/style-guide.md`의 토큰 표 수정. 폰트, 직각 모서리, 호버 규칙은 `SKILL.md` 4장, 5장, 6장, 9장에 있음. 글쓰기 규칙은 `references/writing.md`, 기술 아이콘 규칙은 `references/primitive-techicon.md`.
 
 ## 저장소 구성
 

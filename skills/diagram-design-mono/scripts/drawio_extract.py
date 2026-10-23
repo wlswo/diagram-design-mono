@@ -666,7 +666,7 @@ def analyze(page: Page) -> dict[str, Any]:
         shapes[shape_family(node.shape)] = shapes.get(shape_family(node.shape), 0) + 1
 
     def name_of(node: Node) -> str:
-        return (node.label.replace("\n", " · ") or node.id)
+        return (node.label.replace("\n", " / ") or node.id)
 
     ranked = sorted(
         leaves, key=lambda n: (n.in_degree + n.out_degree), reverse=True
@@ -762,7 +762,7 @@ def _fold_lines(text: str, replacement: str) -> str:
 
 
 def _escape_inline(text: str) -> str:
-    return _escape_markdown(_fold_lines(text, " · "))
+    return _escape_markdown(_fold_lines(text, " / "))
 
 
 def _escape_table(text: str) -> str:

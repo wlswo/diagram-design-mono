@@ -1365,7 +1365,7 @@ def check_unicode_er_regression(tmp: Path) -> None:
         or len(payload["edges"]) != 1
         or payload["edges"][0]["source"] != "客户"
         or payload["edges"][0]["target"] != "订单"
-        or payload["edges"][0]["label"] != "|| -- o{ · 下单"
+        or payload["edges"][0]["label"] != "|| -- o{ / 下单"
     ):
         fail("ER Unicode identifiers or their attributes/relationships were lost")
     path.write_text("erDiagram\n1客户 ||--o{ 订单 : 下单\n", encoding="utf-8")

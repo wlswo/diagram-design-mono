@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>p95 by service, before and after · Slopegraph</title>
+  <title>p95 by service, before and after / Slopegraph</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,7 +42,7 @@
 <body>
   <div class="container">
     <div class="header">
-      <p class="header-eyebrow">Slopegraph · Diagram Design</p>
+      <p class="header-eyebrow">Slopegraph / Diagram Design</p>
       <h1>One service went the other way</h1>
       <p class="subtitle">p95 response time per service before and after the caching layer, both axes on one 100-to-550ms scale. Four services got faster. The recommender got 81% slower, and being the only line going up it crosses three of them.</p>
     </div>
@@ -124,19 +124,19 @@
         <!-- Legend -->
         <line x1="40" y1="462" x2="960" y2="462" stroke="rgba(15,23,42,0.10)" stroke-width="0.8"/>
         <text x="40" y="478" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.18em">LEGEND</text>
-        <text x="960" y="478" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="end">P95 RESPONSE TIME IN MS, LOWER IS BETTER · SAME 100-550 SCALE ON BOTH AXES · ILLUSTRATIVE FIGURES, NOT A MEASURED RELEASE</text>
+        <text x="960" y="478" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="end">P95 RESPONSE TIME IN MS, LOWER IS BETTER / SAME 100-550 SCALE ON BOTH AXES / ILLUSTRATIVE FIGURES, NOT A MEASURED RELEASE</text>
 
         <line x1="40" y1="492" x2="64" y2="492" stroke="#c2410c" stroke-width="2.4"/>
         <circle class="node-box" cx="52" cy="492" r="4" fill="#c2410c"/>
-        <text x="72" y="496" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">Recommender · focal, the only regression</text>
+        <text x="72" y="496" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">Recommender / focal, the only regression</text>
         <line x1="320" y1="492" x2="344" y2="492" stroke="rgba(15,23,42,0.80)" stroke-width="1.2"/>
         <circle cx="332" cy="492" r="3" fill="rgba(15,23,42,0.80)"/>
-        <text x="352" y="496" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">Other services · strongest tone was slowest before</text>
+        <text x="352" y="496" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">Other services / strongest tone was slowest before</text>
       </svg>
     </div>
     <div class="cards">
       <div class="card">
-        <p class="eyebrow">FOCAL · RECOMMENDER</p>
+        <p class="eyebrow">FOCAL / RECOMMENDER</p>
         <div class="card-header"><span class="card-dot coral"></span><h3>The recommender went from fourth-slowest to slowest</h3></div>
         <p>238ms to 431ms. It is the only line that rises, so it crosses three of the other four — all but Auth, which stays below it throughout. Where it crosses on the page is an artifact of joining two endpoints with a straight line: this chart cannot say when the regression started, only that it is there.</p>
       </div>
@@ -150,8 +150,8 @@
       </div>
     </div>
     <div class="footer">
-      <span>p95 response time · before and after the caching layer · illustrative</span>
-      <span>example · diagram design</span>
+      <span>p95 response time / before and after the caching layer / illustrative</span>
+      <span>example / diagram design</span>
     </div>
   </div>
 </body>

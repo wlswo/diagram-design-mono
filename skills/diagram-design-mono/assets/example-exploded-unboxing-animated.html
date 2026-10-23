@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unboxing · What you see, in the order you see it</title>
+  <title>Unboxing / What you see, in the order you see it</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
@@ -213,12 +213,12 @@
 </head>
 <body>
   <main data-motion-root data-motion-mode="reveal" data-step-count="4" data-step-current="4" data-frame="static" data-static-frame="complete">
-    <p class="eyebrow">Exploded axonometric · Optional motion</p>
-    <h1>Unboxing · What you see, in the order you see it</h1>
+    <p class="eyebrow">Exploded axonometric / Optional motion</p>
+    <h1>Unboxing / What you see, in the order you see it</h1>
 
     <div class="diagram-container">
       <svg viewBox="0 0 1000 964" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="exploded-unboxing-animated-title exploded-unboxing-animated-desc">
-        <title id="exploded-unboxing-animated-title">Unboxing · What you see, in the order you see it</title>
+        <title id="exploded-unboxing-animated-title">Unboxing / What you see, in the order you see it</title>
         <desc id="exploded-unboxing-animated-desc">Exploded view of product packaging: printed lid, the speaker and its cable, the moulded insert that holds them, and the rigid box, with the speaker as the focal part.</desc>
         <rect width="100%" height="100%" fill="#f8fafc"/>
         <g data-exploded data-origin="348 752" data-gap="180">
@@ -239,7 +239,7 @@
       <button type="button" data-motion-action="pause" aria-pressed="true">Pause</button>
       <button type="button" data-motion-action="next">Next</button>
       <button type="button" data-motion-action="replay">Replay</button>
-      <span class="keyboard-help">←/→ step · Space play/pause · R replay · Home/End jump</span>
+      <span class="keyboard-help">←/→ step / Space play/pause / R replay / Home/End jump</span>
       <span data-motion-status-visible aria-hidden="true">Step <span data-motion-step-label>4</span> of 4</span>
     </div>
     <p class="sr-only" data-motion-status role="status" aria-live="polite" aria-atomic="true"></p>
@@ -311,7 +311,7 @@
         function finish() {
           pause(false);
           root.dataset.frame = 'end';
-          status.textContent = `Complete · step ${count} of ${count}`;
+          status.textContent = `Complete / step ${count} of ${count}`;
         }
 
         function tick() {
@@ -376,13 +376,13 @@
             render(count, false);
             root.dataset.frame = 'static';
             root.dataset.motionState = 'reduced';
-            status.textContent = 'Reduced motion · complete static frame · playback controls unavailable';
+            status.textContent = 'Reduced motion / complete static frame / playback controls unavailable';
           } else if (staticOverride || root.dataset.motionMode === 'none') {
             setControlsAvailable(false);
             render(count, false);
             root.dataset.frame = 'static';
             root.dataset.motionState = 'static';
-            status.textContent = 'Static frame · complete diagram · playback controls unavailable';
+            status.textContent = 'Static frame / complete diagram / playback controls unavailable';
           } else {
             delete root.dataset.motionState;
             if (exactStep !== null) {
@@ -390,11 +390,11 @@
               render(exactStep, false);
               root.dataset.frame = 'step';
               root.dataset.motionState = 'test';
-              status.textContent = `Test frame · step ${step} of ${count} · playback controls unavailable`;
+              status.textContent = `Test frame / step ${step} of ${count} / playback controls unavailable`;
             } else {
               setControlsAvailable(true);
               render(stepBeforeReduce, false);
-              status.textContent = `Ready · step ${step} of ${count}`;
+              status.textContent = `Ready / step ${step} of ${count}`;
               if (resumeAfterReduce && root.dataset.motionMode === 'reveal') {
                 play(false, false);
               }
@@ -410,7 +410,7 @@
           render(count, false);
           root.dataset.frame = 'static';
           root.dataset.motionState = 'static';
-          status.textContent = 'Static frame · complete diagram · playback controls unavailable';
+          status.textContent = 'Static frame / complete diagram / playback controls unavailable';
         } else if (reduce.matches || root.dataset.motionMode === 'none') {
           pause(false);
           setControlsAvailable(false);
@@ -418,8 +418,8 @@
           root.dataset.frame = 'static';
           root.dataset.motionState = reduce.matches ? 'reduced' : 'static';
           status.textContent = reduce.matches
-            ? 'Reduced motion · complete static frame · playback controls unavailable'
-            : 'Static frame · complete diagram · playback controls unavailable';
+            ? 'Reduced motion / complete static frame / playback controls unavailable'
+            : 'Static frame / complete diagram / playback controls unavailable';
         } else if (exactStep !== null) {
           document.documentElement.dataset.motion = 'step';
           pause(false);
@@ -427,7 +427,7 @@
           render(exactStep, false);
           root.dataset.frame = 'step';
           root.dataset.motionState = 'test';
-          status.textContent = `Test frame · step ${step} of ${count} · playback controls unavailable`;
+          status.textContent = `Test frame / step ${step} of ${count} / playback controls unavailable`;
         } else if (root.dataset.motionMode === 'reveal') {
           setControlsAvailable(true);
           render(0, false);
@@ -436,7 +436,7 @@
           pause(false);
           setControlsAvailable(true);
           render(0, false);
-          status.textContent = `Ready · step 0 of ${count}`;
+          status.textContent = `Ready / step 0 of ${count}`;
         }
         root.classList.add('motion-ready');
       });

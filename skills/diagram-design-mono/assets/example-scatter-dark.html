@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deploy frequency vs lead time · Scatter · dark</title>
+  <title>Deploy frequency vs lead time / Scatter / dark</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,13 +26,13 @@
 </head>
 <body>
   <div class="frame">
-    <p class="eyebrow">Scatter · Diagram Design</p>
-    <h1>Deploy frequency vs. lead time · 12 teams</h1>
+    <p class="eyebrow">Scatter / Diagram Design</p>
+    <h1>Deploy frequency vs. lead time / 12 teams</h1>
 
     <!-- X: 0-20 deploys/week → 880px. x = 80 + f/20*880 = 80+44*f -->
     <!-- Y: 0-24 days lead time → 380px. y = 420 - lt/24*380. High lt = high y (worse) -->
     <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="scatter-dark-title scatter-dark-desc">
-      <title id="scatter-dark-title">Deploy frequency vs. lead time · 12 teams</title>
+      <title id="scatter-dark-title">Deploy frequency vs. lead time / 12 teams</title>
       <desc id="scatter-dark-desc">Scatter plot showing twelve engineering teams by deploy frequency and lead time, with Platform in the best-performing quadrant.</desc>
       <defs>
         <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
@@ -137,7 +137,7 @@
       <text x="40" y="478" fill="#cbd5e1" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.18em">LEGEND</text>
 
       <circle class="node-box" cx="52" cy="490" r="6" fill="rgba(253,186,117,0.18)" stroke="#fdba75" stroke-width="1.2"/>
-      <text x="68" y="494" fill="#cbd5e1" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">Platform team · best performer</text>
+      <text x="68" y="494" fill="#cbd5e1" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">Platform team / best performer</text>
 
       <circle class="node-box" cx="256" cy="490" r="5" fill="rgba(203,213,225,0.20)" stroke="#cbd5e1" stroke-width="1"/>
       <text x="272" y="494" fill="#cbd5e1" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">Engineering team</text>

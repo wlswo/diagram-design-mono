@@ -189,7 +189,7 @@
   <main data-motion-root data-motion-mode="step" data-step-count="5" data-step-current="5" data-frame="static" data-static-frame="complete" tabindex="-1">
     <header class="page-header">
       <div>
-        <p class="eyebrow">Semantic pattern · Secure paved road</p>
+        <p class="eyebrow">Semantic pattern / Secure paved road</p>
         <h1>Secure Paved Road Architecture</h1>
       </div>
       <p class="lede">
@@ -348,7 +348,7 @@
       <button type="button" data-motion-action="pause" aria-pressed="true">Pause</button>
       <button type="button" data-motion-action="next">Next</button>
       <button type="button" data-motion-action="replay">Replay</button>
-      <span class="keyboard-help">←/→ step · Space play/pause · R replay · Home/End jump</span>
+      <span class="keyboard-help">←/→ step / Space play/pause / R replay / Home/End jump</span>
       <span data-motion-status-visible aria-hidden="true">Step <span data-motion-step-label>5</span> of 5</span>
     </div>
     <p class="sr-only" data-motion-status role="status" aria-live="polite" aria-atomic="true"></p>
@@ -420,7 +420,7 @@
         function finish() {
           pause(false);
           root.dataset.frame = 'end';
-          status.textContent = `Complete · step ${count} of ${count}`;
+          status.textContent = `Complete / step ${count} of ${count}`;
         }
 
         function tick() {
@@ -485,13 +485,13 @@
             render(count, false);
             root.dataset.frame = 'static';
             root.dataset.motionState = 'reduced';
-            status.textContent = 'Reduced motion · complete static frame · playback controls unavailable';
+            status.textContent = 'Reduced motion / complete static frame / playback controls unavailable';
           } else if (staticOverride || root.dataset.motionMode === 'none') {
             setControlsAvailable(false);
             render(count, false);
             root.dataset.frame = 'static';
             root.dataset.motionState = 'static';
-            status.textContent = 'Static frame · complete diagram · playback controls unavailable';
+            status.textContent = 'Static frame / complete diagram / playback controls unavailable';
           } else {
             delete root.dataset.motionState;
             if (exactStep !== null) {
@@ -499,11 +499,11 @@
               render(exactStep, false);
               root.dataset.frame = 'step';
               root.dataset.motionState = 'test';
-              status.textContent = `Test frame · step ${step} of ${count} · playback controls unavailable`;
+              status.textContent = `Test frame / step ${step} of ${count} / playback controls unavailable`;
             } else {
               setControlsAvailable(true);
               render(stepBeforeReduce, false);
-              status.textContent = `Ready · step ${step} of ${count}`;
+              status.textContent = `Ready / step ${step} of ${count}`;
               if (resumeAfterReduce && root.dataset.motionMode === 'reveal') {
                 play(false, false);
               }
@@ -519,7 +519,7 @@
           render(count, false);
           root.dataset.frame = 'static';
           root.dataset.motionState = 'static';
-          status.textContent = 'Static frame · complete diagram · playback controls unavailable';
+          status.textContent = 'Static frame / complete diagram / playback controls unavailable';
         } else if (reduce.matches || root.dataset.motionMode === 'none') {
           pause(false);
           setControlsAvailable(false);
@@ -527,8 +527,8 @@
           root.dataset.frame = 'static';
           root.dataset.motionState = reduce.matches ? 'reduced' : 'static';
           status.textContent = reduce.matches
-            ? 'Reduced motion · complete static frame · playback controls unavailable'
-            : 'Static frame · complete diagram · playback controls unavailable';
+            ? 'Reduced motion / complete static frame / playback controls unavailable'
+            : 'Static frame / complete diagram / playback controls unavailable';
         } else if (exactStep !== null) {
           document.documentElement.dataset.motion = 'step';
           pause(false);
@@ -536,7 +536,7 @@
           render(exactStep, false);
           root.dataset.frame = 'step';
           root.dataset.motionState = 'test';
-          status.textContent = `Test frame · step ${step} of ${count} · playback controls unavailable`;
+          status.textContent = `Test frame / step ${step} of ${count} / playback controls unavailable`;
         } else if (root.dataset.motionMode === 'reveal') {
           setControlsAvailable(true);
           render(0, false);
@@ -545,7 +545,7 @@
           pause(false);
           setControlsAvailable(true);
           render(0, false);
-          status.textContent = `Ready · step 0 of ${count}`;
+          status.textContent = `Ready / step 0 of ${count}`;
         }
         root.classList.add('motion-ready');
       });

@@ -35,7 +35,7 @@ Exactly 2 accent elements: the trough dot + its incoming curve segment (counts a
 
 ## Complexity budget
 
-Max 6 stages · max 3 content rows · 5 sentiment levels (ordinal, named — never numeric) · max 2 pain markers · max 2 accent elements.
+Max 6 stages / max 3 content rows / 5 sentiment levels (ordinal, named — never numeric) / max 2 pain markers / max 2 accent elements.
 
 ## Anti-patterns
 

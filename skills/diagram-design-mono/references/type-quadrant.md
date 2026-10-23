@@ -37,7 +37,7 @@ A **layout variant** of the standard quadrant — same house skin (warm paper, d
 |---|---|---|
 | Axis arrows | single-ended | **double-ended** — both axes have `marker-start` + `marker-end` |
 | Cell content | small dots with labels | **named scenario + 1–3 line description** |
-| Quadrant corner | short tag (e.g. DO FIRST) | **numbered tag + axis combination** (`01 · DIMENSION-A / DIMENSION-B`) |
+| Quadrant corner | short tag (e.g. DO FIRST) | **numbered tag + axis combination** (`01 / DIMENSION-A / DIMENSION-B`) |
 | Focal accent | coral on one *item* | coral on one *quadrant* — tinted bg + coral stroke + coral corner tag |
 | Axes | 1px muted ink | **1.2px ink** (slightly heavier — the axes carry more of the figure) |
 
@@ -54,7 +54,7 @@ Everything else — paper, dot pattern, typography, legend strip, 4px grid, comp
 - **Non-focal cells**: `store` treatment (`ink @ 0.04` fill, `muted @ 0.28` stroke).
 - **Cell title**: `node-name` role, 16px, weight 600, `ink`.
 - **Cell description**: `node-name` role, 11px, `muted`, 1–3 lines, left-aligned inside the cell.
-- **Corner tag**: `eyebrow` role, 8px, uppercase, tracked `0.18em`, `muted` (or `accent` on focal). Format: `NN · DIMENSION-A / DIMENSION-B` — the two axis-dimension words must match the axis labels exactly.
+- **Corner tag**: `eyebrow` role, 8px, uppercase, tracked `0.18em`, `muted` (or `accent` on focal). Format: `NN / DIMENSION-A / DIMENSION-B` — the two axis-dimension words must match the axis labels exactly.
 - **Axis labels**: `eyebrow` role 9px **regular weight** (not bold), tracked `0.18em`, uppercase, `ink`. **One word per tip.** No arrow glyphs in the label, no `HIGH / LOW` parentheticals, no multi-line sublabels. The word itself *is* the label. Position labels *beyond* the arrow tips (not on the axis line):
   - Top tip: `text-anchor="middle"`, ~12px above the arrow tip
   - Bottom tip: `text-anchor="middle"`, ~20px below the arrow tip

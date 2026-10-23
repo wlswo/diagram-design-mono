@@ -22,11 +22,11 @@ roles:                                  # 2..6 columns, ordered left → right
 
 components:                             # 2..14 rows, ordered top → bottom
   - { name: "Keycloak",                          hint: "SSO" }   # `hint` = right-aligned aside in label cell
-  - { name: "MinIO · raw bucket" }
-  - { name: "MinIO · anon · staging · agg" }
-  - { name: "Trino · raw catalog" }
-  - { name: "Trino · anon-staging" }
-  - { name: "Trino · aggregated" }
+  - { name: "MinIO / raw bucket" }
+  - { name: "MinIO / anon / staging / agg" }
+  - { name: "Trino / raw catalog" }
+  - { name: "Trino / anon-staging" }
+  - { name: "Trino / aggregated" }
   - { name: "JupyterHub" }
   - { name: "NiFi" }
 
@@ -313,11 +313,11 @@ roles:
 
 components:
   - { name: "Keycloak",                          hint: "SSO" }
-  - { name: "MinIO · raw bucket" }
-  - { name: "MinIO · anon · staging · agg" }
-  - { name: "Trino · raw catalog" }
-  - { name: "Trino · anon-staging" }
-  - { name: "Trino · aggregated" }
+  - { name: "MinIO / raw bucket" }
+  - { name: "MinIO / anon / staging / agg" }
+  - { name: "Trino / raw catalog" }
+  - { name: "Trino / anon-staging" }
+  - { name: "Trino / aggregated" }
   - { name: "JupyterHub" }
   - { name: "NiFi" }
 

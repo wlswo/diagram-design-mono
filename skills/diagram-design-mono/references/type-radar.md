@@ -19,9 +19,9 @@
 For axis `i` (0-indexed) of `N`, value `v` on scale `S`, center `(cx, cy)`, outer radius `R`:
 
 ```
-angle = -π/2 + 2π · i / N
-x = cx + (v / S) · R · cos(angle)
-y = cy + (v / S) · R · sin(angle)
+angle = -π/2 + 2π / i / N
+x = cx + (v / S) / R / cos(angle)
+y = cy + (v / S) / R / sin(angle)
 ```
 
 A series with values `[v0, v1, ..., v(N-1)]` becomes a `<polygon>` with `points="x0,y0 x1,y1 ..."`.
@@ -47,7 +47,7 @@ Series `[9, 8, 9, 9, 9]` on a 0–10 scale becomes:
          fill="{accent @ 0.18}" stroke="{accent}" stroke-width="1.8"/>
 ```
 
-Each vertex: `center + (v/10) · (outer_i − center)`, rounded to the nearest pixel.
+Each vertex: `center + (v/10) / (outer_i − center)`, rounded to the nearest pixel.
 
 ## Series palette
 

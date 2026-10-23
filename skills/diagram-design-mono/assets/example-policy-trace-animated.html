@@ -191,7 +191,7 @@
         data-frame="static" data-static-frame="complete" tabindex="-1">
     <header class="page-header">
       <div>
-        <p class="eyebrow">Semantic pattern · Paired policy-evaluation traces</p>
+        <p class="eyebrow">Semantic pattern / Paired policy-evaluation traces</p>
         <h1>Where policy traces diverge</h1>
       </div>
       <p class="lede">Two requests traverse the same ordered rules. Explicit states distinguish a rule that does not apply from one the evaluator never reaches.</p>
@@ -212,15 +212,15 @@
         <!-- Shared rule column and trace headers. -->
         <text x="72" y="76" fill="#475569" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" letter-spacing="1.6">ORDERED POLICY</text>
         <rect class="node-box" x="500" y="44" width="240" height="60" fill="#ffffff" stroke="#0f172a"/>
-        <text x="620" y="72" text-anchor="middle" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">Trace A · read-only</text>
+        <text x="620" y="72" text-anchor="middle" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">Trace A / read-only</text>
         <text x="620" y="92" text-anchor="middle" fill="#475569" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">internal metrics request</text>
         <rect class="node-box" x="816" y="44" width="240" height="60" fill="#ffffff" stroke="#0f172a"/>
-        <text x="936" y="72" text-anchor="middle" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">Trace B · sensitive write</text>
+        <text x="936" y="72" text-anchor="middle" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">Trace B / sensitive write</text>
         <text x="936" y="92" text-anchor="middle" fill="#475569" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">restricted records request</text>
 
         <g data-motion-item data-step="1" aria-label="Rule 1: Identity bound passes for both traces">
           <rect class="row-focus" x="48" y="124" width="1080" height="68"/>
-          <text x="72" y="152" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">1 · Identity bound</text>
+          <text x="72" y="152" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">1 / Identity bound</text>
           <text x="72" y="172" fill="#475569" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">named principal required</text>
           <rect class="node-box" x="532" y="132" width="176" height="52" fill="rgba(15,23,42,0.05)" stroke="#475569"/>
           <text x="620" y="164" text-anchor="middle" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" font-weight="600">✓ PASS</text>
@@ -230,7 +230,7 @@
 
         <g data-motion-item data-step="2" aria-label="Rule 2: Internal audience passes for both traces">
           <rect class="row-focus" x="48" y="200" width="1080" height="68"/>
-          <text x="72" y="228" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">2 · Internal audience</text>
+          <text x="72" y="228" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">2 / Internal audience</text>
           <text x="72" y="248" fill="#475569" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">employees only</text>
           <rect class="node-box" x="532" y="208" width="176" height="52" fill="rgba(15,23,42,0.05)" stroke="#475569"/>
           <text x="620" y="240" text-anchor="middle" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" font-weight="600">✓ PASS</text>
@@ -240,7 +240,7 @@
 
         <g data-motion-item data-step="3" aria-label="Rule 3 is the first divergence: Trace A passes and Trace B fails">
           <rect class="row-focus" x="48" y="276" width="1080" height="80"/>
-          <text x="72" y="304" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">3 · Data class</text>
+          <text x="72" y="304" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">3 / Data class</text>
           <text x="72" y="324" fill="#475569" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">restricted writes denied</text>
           <rect class="node-box" x="532" y="284" width="176" height="52" fill="rgba(15,23,42,0.05)" stroke="#475569"/>
           <text x="620" y="316" text-anchor="middle" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" font-weight="600">✓ PASS</text>
@@ -253,7 +253,7 @@
 
         <g data-motion-item data-step="4" aria-label="Rule 4 is skipped for Trace A and not reached for Trace B">
           <rect class="row-focus" x="48" y="364" width="1080" height="68"/>
-          <text x="72" y="392" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">4 · Human approval</text>
+          <text x="72" y="392" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">4 / Human approval</text>
           <text x="72" y="412" fill="#475569" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">required only for writes</text>
           <rect class="node-box" x="532" y="372" width="176" height="52" fill="#f8fafc" stroke="#64748b" stroke-dasharray="4 4"/>
           <text x="620" y="404" text-anchor="middle" fill="#475569" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" font-weight="600">— SKIPPED</text>
@@ -263,7 +263,7 @@
 
         <g data-motion-item data-step="5" aria-label="Rule 5 passes for Trace A and is not reached for Trace B; outcomes are permitted and denied">
           <rect class="row-focus" x="48" y="440" width="1080" height="152"/>
-          <text x="72" y="468" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">5 · Deploy gate</text>
+          <text x="72" y="468" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">5 / Deploy gate</text>
           <text x="72" y="488" fill="#475569" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">all reached rules must pass</text>
           <rect class="node-box" x="532" y="448" width="176" height="52" fill="rgba(15,23,42,0.05)" stroke="#475569"/>
           <text x="620" y="480" text-anchor="middle" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" font-weight="600">✓ PASS</text>
@@ -276,14 +276,14 @@
           <rect data-trace-b-outcome="denied" x="816" y="528" width="240" height="56" fill="#f8fafc"/>
           <rect class="node-box" x="816" y="528" width="240" height="56" fill="rgba(194,65,12,0.08)" stroke="#c2410c" stroke-width="1.2"/>
           <text x="936" y="552" text-anchor="middle" fill="#c2410c" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" letter-spacing="1.2">OUTCOME</text>
-          <text x="936" y="572" text-anchor="middle" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">Denied · review</text>
+          <text x="936" y="572" text-anchor="middle" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">Denied / review</text>
         </g>
 
         <line x1="72" y1="620" x2="1128" y2="620" stroke="rgba(15,23,42,0.12)"/>
         <text x="72" y="640" fill="#475569" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">✓ PASS</text>
         <text x="176" y="640" fill="#c2410c" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">× FAIL</text>
-        <text x="272" y="640" fill="#475569" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">— SKIPPED · rule intentionally bypassed</text>
-        <text x="564" y="640" fill="#64748b" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">○ NOT REACHED · earlier terminal result</text>
+        <text x="272" y="640" fill="#475569" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">— SKIPPED / rule intentionally bypassed</text>
+        <text x="564" y="640" fill="#64748b" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">○ NOT REACHED / earlier terminal result</text>
       </svg>
     </div>
 
@@ -293,9 +293,9 @@
       <button type="button" data-motion-action="pause" aria-pressed="true">Pause</button>
       <button type="button" data-motion-action="next">Next</button>
       <button type="button" data-motion-action="replay">Replay</button>
-      <span class="keyboard-help">←/→ step · Space play/pause · R replay · Home/End jump</span>
+      <span class="keyboard-help">←/→ step / Space play/pause / R replay / Home/End jump</span>
     </div>
-    <span data-motion-status role="status" aria-live="polite" aria-atomic="true">Static frame · all 5 rules visible</span>
+    <span data-motion-status role="status" aria-live="polite" aria-atomic="true">Static frame / all 5 rules visible</span>
     <noscript><p>Animation controls require JavaScript. The complete final policy trace is shown above.</p></noscript>
   </main>
 
@@ -364,7 +364,7 @@
         function finish() {
           pause(false);
           root.dataset.frame = 'end';
-          status.textContent = `Complete · step ${count} of ${count}`;
+          status.textContent = `Complete / step ${count} of ${count}`;
         }
 
         function tick() {
@@ -429,13 +429,13 @@
             render(count, false);
             root.dataset.frame = 'static';
             root.dataset.motionState = 'reduced';
-            status.textContent = 'Reduced motion · complete static frame · playback controls unavailable';
+            status.textContent = 'Reduced motion / complete static frame / playback controls unavailable';
           } else if (staticOverride || root.dataset.motionMode === 'none') {
             setControlsAvailable(false);
             render(count, false);
             root.dataset.frame = 'static';
             root.dataset.motionState = 'static';
-            status.textContent = 'Static frame · complete diagram · playback controls unavailable';
+            status.textContent = 'Static frame / complete diagram / playback controls unavailable';
           } else {
             delete root.dataset.motionState;
             if (exactStep !== null) {
@@ -443,11 +443,11 @@
               render(exactStep, false);
               root.dataset.frame = 'step';
               root.dataset.motionState = 'test';
-              status.textContent = `Test frame · step ${step} of ${count} · playback controls unavailable`;
+              status.textContent = `Test frame / step ${step} of ${count} / playback controls unavailable`;
             } else {
               setControlsAvailable(true);
               render(stepBeforeReduce, false);
-              status.textContent = `Ready · step ${step} of ${count}`;
+              status.textContent = `Ready / step ${step} of ${count}`;
               if (resumeAfterReduce && root.dataset.motionMode === 'reveal') {
                 play(false, false);
               }
@@ -463,7 +463,7 @@
           render(count, false);
           root.dataset.frame = 'static';
           root.dataset.motionState = 'static';
-          status.textContent = 'Static frame · complete diagram · playback controls unavailable';
+          status.textContent = 'Static frame / complete diagram / playback controls unavailable';
         } else if (reduce.matches || root.dataset.motionMode === 'none') {
           pause(false);
           setControlsAvailable(false);
@@ -471,8 +471,8 @@
           root.dataset.frame = 'static';
           root.dataset.motionState = reduce.matches ? 'reduced' : 'static';
           status.textContent = reduce.matches
-            ? 'Reduced motion · complete static frame · playback controls unavailable'
-            : 'Static frame · complete diagram · playback controls unavailable';
+            ? 'Reduced motion / complete static frame / playback controls unavailable'
+            : 'Static frame / complete diagram / playback controls unavailable';
         } else if (exactStep !== null) {
           document.documentElement.dataset.motion = 'step';
           pause(false);
@@ -480,7 +480,7 @@
           render(exactStep, false);
           root.dataset.frame = 'step';
           root.dataset.motionState = 'test';
-          status.textContent = `Test frame · step ${step} of ${count} · playback controls unavailable`;
+          status.textContent = `Test frame / step ${step} of ${count} / playback controls unavailable`;
         } else if (root.dataset.motionMode === 'reveal') {
           setControlsAvailable(true);
           render(0, false);
@@ -489,7 +489,7 @@
           pause(false);
           setControlsAvailable(true);
           render(0, false);
-          status.textContent = `Ready · step 0 of ${count}`;
+          status.textContent = `Ready / step 0 of ${count}`;
         }
         root.classList.add('motion-ready');
       });

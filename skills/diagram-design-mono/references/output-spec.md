@@ -218,7 +218,7 @@ Worked example — the same node through all three:
 
 | Audience | Node name | Sublabel |
 |---|---|---|
-| `engineer` | `Auth Service` | `JWT · RS256 · :8443` |
+| `engineer` | `Auth Service` | `JWT / RS256 / :8443` |
 | `mixed` | `Auth Service` | `token check` |
 | `executive` | `Sign-in` | — |
 
@@ -247,7 +247,7 @@ These stacks lead with the default skin's sans. Under a custom skin, lead with t
 Any time output is smaller than input — every `balanced` and `simplified` run, and most `faithful` ones — report what you cut, in chat, after the file path. Short and specific:
 
 ```
-Detail: balanced · 18 source nodes → 9 drawn
+Detail: balanced / 18 source nodes → 9 drawn
 Merged:  worker-01..06 → "Ingest Worker ×6"
 Collapsed: "Observability" group (Grafana, Loki, Tempo) → one node
 Dropped: 2 sticky notes, CI pipeline (cross-cutting)

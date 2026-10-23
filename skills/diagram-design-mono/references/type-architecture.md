@@ -72,7 +72,7 @@ Rules:
 
 ## Containment
 
-Use this section when **the network hierarchy itself carries the meaning** — the reader must see what sits inside which scope, and a flattened zone label (`VNET · SNET-APP`) would lie about that hierarchy. Connectors stay Architecture; containment geometry comes from Nested (consistent insets, eyebrow per level, fills stepping up inward). This is a variant of Architecture, not a new type and not a provider-specific grammar.
+Use this section when **the network hierarchy itself carries the meaning** — the reader must see what sits inside which scope, and a flattened zone label (`VNET / SNET-APP`) would lie about that hierarchy. Connectors stay Architecture; containment geometry comes from Nested (consistent insets, eyebrow per level, fills stepping up inward). This is a variant of Architecture, not a new type and not a provider-specific grammar.
 
 Two scope kinds, never interchangeable:
 
@@ -104,7 +104,7 @@ Provider-neutral metadata (no vendor prefix):
 - Every box in coral ("this is important too") — hierarchy collapses.
 - Bidirectional arrow when one direction is obvious from context.
 - Legend floating inside the diagram area.
-- Flattening two containment levels into one zone eyebrow (`VNET · SNET-APP`) — the hierarchy is the claim.
+- Flattening two containment levels into one zone eyebrow (`VNET / SNET-APP`) — the hierarchy is the claim.
 - A managed PaaS box drawn inside a subnet or VPC — only its private endpoint belongs there.
 - Colour as the only distinction between an administrative band and a traffic box — the shapes must differ, because greyscale still has to tell them apart.
 

@@ -13,7 +13,7 @@ This type is **parametric** — the inputs schema in §1 drives every coordinate
 ```yaml
 title:    "Current IT Landscape"
 subtitle: "Data pipeline before the platform"
-eyebrow:  "NatStat · Before the platform"
+eyebrow:  "NatStat / Before the platform"
 
 orientation: horizontal      # horizontal (default, zones L→R) | vertical (zones T→B)
 
@@ -22,20 +22,20 @@ zones:                       # 2..4 zones, ordered along the orientation axis
     components:              # 1..5 components per zone
       - id: survey-solutions
         name: "Survey Solutions"
-        sub:  "CAPI · PostgreSQL"
+        sub:  "CAPI / PostgreSQL"
         icon: postgres               # any id from references/primitive-icons.md
         kind: standard               # standard | focal | external (external → dashed stroke)
-      - { id: aspnet,    name: "ASP.NET Apps",    sub: "migration · admin portals", icon: server }
-      - { id: civil-reg, name: "Civil Registry",  sub: "external · CRVS data",      icon: database, kind: external }
+      - { id: aspnet,    name: "ASP.NET Apps",    sub: "migration / admin portals", icon: server }
+      - { id: civil-reg, name: "Civil Registry",  sub: "external / CRVS data",      icon: database, kind: external }
   - name: "PROCESSING"
     components:
-      - { id: shared-drive,  name: "Shared Drive",     sub: "No version control · Windows file share", icon: file,      kind: focal }
-      - { id: analyst-mach,  name: "Analyst Machines", sub: "SPSS · SAS · Stata · Excel",              icon: desktop }
-      - { id: sql-server,    name: "SQL Server",       sub: "on-premises · core RDBMS",                icon: sqlserver, color: "#7a8c47" }  # custom olive
+      - { id: shared-drive,  name: "Shared Drive",     sub: "No version control / Windows file share", icon: file,      kind: focal }
+      - { id: analyst-mach,  name: "Analyst Machines", sub: "SPSS / SAS / Stata / Excel",              icon: desktop }
+      - { id: sql-server,    name: "SQL Server",       sub: "on-premises / core RDBMS",                icon: sqlserver, color: "#7a8c47" }  # custom olive
   - name: "DISSEMINATION"
     components:
       - { id: legacy-portal,   name: "LegacyPortal",      sub: "manual bottleneck",     icon: cloud,    kind: focal }
-      - { id: natstat-website, name: "NatStat Website",   sub: "public · static pages", icon: internet }
+      - { id: natstat-website, name: "NatStat Website",   sub: "public / static pages", icon: internet }
       - { id: ministry,        name: "Ministry Partners", sub: "~6 ministries",         icon: users,    kind: external }
 
 connectors:                   # ordered list; each links two component ids
@@ -49,8 +49,8 @@ connectors:                   # ordered list; each links two component ids
   - { from: natstat-website,  to: ministry,        label: "CSV DL", icon: csv,   style: link, dashed: true }
 
 footer:                       # 0..3 optional full-canvas-width bars (cross-cutting concerns)
-  - { name: "Identity Manager", sub: "Active Directory · LDAP · SSO", icon: active-directory }
-  - { name: "Observability",    sub: "logs · metrics · alerts",       icon: monitoring }
+  - { name: "Identity Manager", sub: "Active Directory / LDAP / SSO", icon: active-directory }
+  - { name: "Observability",    sub: "logs / metrics / alerts",       icon: monitoring }
 
 legend:                       # auto-generated from styles used; user can override labels
   - { swatch: link,    label: "data flow" }
@@ -406,25 +406,25 @@ The complete inputs that map to the shipped canonical example. Every coordinate 
 ```yaml
 title:    "Current IT Landscape"
 subtitle: "Data pipeline before the platform"
-eyebrow:  "NatStat · Before the platform"
+eyebrow:  "NatStat / Before the platform"
 
 orientation: horizontal
 
 zones:
   - name: "COLLECTION"
     components:
-      - { id: survey-solutions, name: "Survey Solutions", sub: "CAPI · PostgreSQL",          icon: postgres }
-      - { id: aspnet,           name: "ASP.NET Apps",     sub: "migration · admin portals", icon: server   }
-      - { id: civil-reg,        name: "Civil Registry",   sub: "external · CRVS data",      icon: database, kind: external }
+      - { id: survey-solutions, name: "Survey Solutions", sub: "CAPI / PostgreSQL",          icon: postgres }
+      - { id: aspnet,           name: "ASP.NET Apps",     sub: "migration / admin portals", icon: server   }
+      - { id: civil-reg,        name: "Civil Registry",   sub: "external / CRVS data",      icon: database, kind: external }
   - name: "PROCESSING"
     components:
-      - { id: shared-drive,  name: "Shared Drive",     sub: "No version control · Windows file share", icon: file,      kind: focal }
-      - { id: analyst-mach,  name: "Analyst Machines", sub: "SPSS · SAS · Stata · Excel",              icon: desktop }
-      - { id: sql-server,    name: "SQL Server",       sub: "on-premises · core RDBMS",                icon: sqlserver, color: "#7a8c47" }
+      - { id: shared-drive,  name: "Shared Drive",     sub: "No version control / Windows file share", icon: file,      kind: focal }
+      - { id: analyst-mach,  name: "Analyst Machines", sub: "SPSS / SAS / Stata / Excel",              icon: desktop }
+      - { id: sql-server,    name: "SQL Server",       sub: "on-premises / core RDBMS",                icon: sqlserver, color: "#7a8c47" }
   - name: "DISSEMINATION"
     components:
       - { id: legacy-portal,   name: "LegacyPortal",      sub: "manual bottleneck",     icon: cloud,    kind: focal }
-      - { id: natstat-website, name: "NatStat Website",   sub: "public · static pages", icon: internet }
+      - { id: natstat-website, name: "NatStat Website",   sub: "public / static pages", icon: internet }
       - { id: ministry,        name: "Ministry Partners", sub: "~6 ministries",         icon: users,    kind: external }
 
 connectors:

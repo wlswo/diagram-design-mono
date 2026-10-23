@@ -102,6 +102,8 @@ Every rect is square: no `rx`, no `ry`. Each node is one `<g class="node">` so t
 </g>
 ```
 
+**Technology nodes:** when the node is a named technology (Kafka, MySQL, Kubernetes), replace step 3, the type tag, with its icon from `scripts/techicon.py snippet <name> --x X+8 --y Y+6`. See [primitive-techicon.md](primitive-techicon.md). A type tag that stays is a whole short word, never a cryptic code ([writing.md](writing.md)).
+
 ## Hover
 
 The templates ship this CSS; keep it when copying a template, and paste it into any page that lacks it. Colors are the `hover-*` tokens in [`style-guide.md`](style-guide.md) (light shown; the dark template carries the dark values).

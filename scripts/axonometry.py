@@ -283,7 +283,7 @@ FULL = """<!DOCTYPE html>
     .card h3 {{ font-size: 0.875rem; font-weight: 600; }}
     .card p, .card ul {{ color: var(--color-muted); font-size: 0.8125rem; line-height: 1.55; list-style: none; }}
     .card li {{ margin-bottom: 0.3rem; padding-left: 0.875rem; position: relative; }}
-    .card li::before {{ content: '·'; position: absolute; left: 0.2rem; color: rgba(15,23,42,0.45); }}
+    .card li::before {{ content: '—'; position: absolute; left: 0.2rem; color: rgba(15,23,42,0.45); }}
     .footer {{ margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(15,23,42,0.10); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--color-soft); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }}
   </style>
 </head>
@@ -309,7 +309,7 @@ FULL = """<!DOCTYPE html>
 
     <div class="footer">
       <span>{footer}</span>
-      <span>example · diagram design</span>
+      <span>example / diagram design</span>
     </div>
   </div>
 </body>

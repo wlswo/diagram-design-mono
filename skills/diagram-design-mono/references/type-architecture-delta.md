@@ -11,7 +11,7 @@
 
 ## Layout conventions
 
-- **Three panels, one reading order: Before · Changes · After.** Both topology panels use the same width, height, and internal grid pitch. The center panel is a short change ledger, not a third topology. Name the two snapshots with meaningful versions or dates.
+- **Three panels, one reading order: Before / Changes / After.** Both topology panels use the same width, height, and internal grid pitch. The center panel is a short change ledger, not a third topology. Name the two snapshots with meaningful versions or dates.
 - **Keep the mental map stable.** Start by copying the Before coordinates into After. Move a retained component only when its movement is part of the story and receives a `MOVED` entry. Do not independently run a layout algorithm on each panel.
 - **Panel positions are not component positions.** Put each snapshot in one SVG `<g transform="translate(x y)">`; write component bounds and relationship paths in local coordinates. The Before and After origins share one y-coordinate, with the ledger occupying the horizontal gap.
 - **Shared grid:** use a 4px pitch by default. Every component's local x, y, width, and height is a multiple of that pitch. The shipped example uses two `336 480 4` grids; scale the overall SVG responsively without changing their local geometry.
@@ -98,14 +98,14 @@ This excerpt shows one changed component; a complete diagram also needs its othe
     <g data-kind="component" data-object-id="orders" data-status="changed"
        data-signature="orders-api:v1;mode=dispatch">
       <rect data-role="bounds" x="80" y="96" width="144" height="64"/>
-      <text x="96" y="120">orders · direct dispatch</text>
+      <text x="96" y="120">orders / direct dispatch</text>
     </g>
   </g>
   <g data-snapshot="after" data-grid="320 320 4" transform="translate(656 64)">
     <g data-kind="component" data-object-id="orders" data-status="changed"
        data-signature="orders-api:v2;mode=enqueue">
       <rect data-role="bounds" x="80" y="96" width="144" height="64"/>
-      <text x="96" y="120">orders · enqueue</text>
+      <text x="96" y="120">orders / enqueue</text>
     </g>
   </g>
   <text data-change="CHANGED" data-target="orders" x="376" y="176">

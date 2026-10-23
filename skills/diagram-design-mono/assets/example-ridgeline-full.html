@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Request latency by service · Ridgeline</title>
+  <title>Request latency by service / Ridgeline</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,7 +42,7 @@
 <body>
   <div class="container">
     <div class="header">
-      <p class="header-eyebrow">Ridgeline · Diagram Design</p>
+      <p class="header-eyebrow">Ridgeline / Diagram Design</p>
       <h1>Checkout is slow in two different ways</h1>
       <p class="subtitle">Five services, one week of request latency, one amplitude scale. Each ridge is the share of that service's own requests in each 40&nbsp;ms bin — so the ridges compare shape, not traffic. Four of them have a single hump and a thinning tail; checkout-api has a second, smaller peak past 300&nbsp;ms, which is a different failure from simply being slow.</p>
     </div>
@@ -64,7 +64,7 @@
              as a tight one, which is the single lie this type is built to tell.
              scripts/verify-ridgeline.py derives the amplitude from the figure and then
              holds every vertex of every ridge to it. -->
-        <text transform="rotate(-90 24 264)" x="24" y="264" fill="#475569" font-size="7" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.14em" text-anchor="middle">SHARE OF REQUESTS · 1% = 2.4PX ON EVERY RIDGE</text>
+        <text transform="rotate(-90 24 264)" x="24" y="264" fill="#475569" font-size="7" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.14em" text-anchor="middle">SHARE OF REQUESTS / 1% = 2.4PX ON EVERY RIDGE</text>
 
         <!-- One baseline per ridge, 56px pitch. The baseline is where a bin of zero
              requests sits, so it can never be moved to give a ridge more room. -->
@@ -109,19 +109,19 @@
         <!-- Legend -->
         <line x1="40" y1="462" x2="960" y2="462" stroke="rgba(15,23,42,0.10)" stroke-width="0.8"/>
         <text x="40" y="478" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.18em">LEGEND</text>
-        <text x="960" y="478" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="end">SHARE OF EACH SERVICE'S OWN REQUESTS PER 40 MS BIN · 1% = 2.4PX ON EVERY RIDGE · UNSMOOTHED · ILLUSTRATIVE FIGURES</text>
+        <text x="960" y="478" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="end">SHARE OF EACH SERVICE'S OWN REQUESTS PER 40 MS BIN / 1% = 2.4PX ON EVERY RIDGE / UNSMOOTHED / ILLUSTRATIVE FIGURES</text>
 
         <rect x="40" y="486" width="24" height="10" fill="rgba(194,65,12,0.16)"/>
         <line x1="40" y1="486" x2="64" y2="486" stroke="#c2410c" stroke-width="2.4"/>
-        <text x="72" y="496" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">checkout-api · focal, second peak past 300 ms</text>
+        <text x="72" y="496" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">checkout-api / focal, second peak past 300 ms</text>
         <rect x="360" y="486" width="24" height="10" fill="rgba(15,23,42,0.12)"/>
         <line x1="360" y1="486" x2="384" y2="486" stroke="rgba(15,23,42,0.80)" stroke-width="1.2"/>
-        <text x="392" y="496" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">Other services · strongest tone is the fastest median</text>
+        <text x="392" y="496" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">Other services / strongest tone is the fastest median</text>
       </svg>
     </div>
     <div class="cards">
       <div class="card">
-        <p class="eyebrow">FOCAL · CHECKOUT-API</p>
+        <p class="eyebrow">FOCAL / CHECKOUT-API</p>
         <div class="card-header"><span class="card-dot coral"></span><h3>A second peak is not a long tail</h3></div>
         <p>About a third of checkout's requests land past 280&nbsp;ms, and they arrive as a distinct bump peaking near 360&nbsp;ms rather than as a thinning tail. A tail says "sometimes slower"; a second peak says there are two paths through the code and one of them is always slow. Its p50 is 160&nbsp;ms and its p99 is 400&nbsp;ms — both true, and neither says the requests between them arrive in two clusters instead of one spread.</p>
       </div>
@@ -135,8 +135,8 @@
       </div>
     </div>
     <div class="footer">
-      <span>share of requests per 40 ms bin · one week · illustrative</span>
-      <span>example · diagram design</span>
+      <span>share of requests per 40 ms bin / one week / illustrative</span>
+      <span>example / diagram design</span>
     </div>
   </div>
 </body>

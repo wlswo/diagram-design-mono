@@ -25,18 +25,18 @@ steps:                              # 1..6 columns (left to right)
   - { number: "05", label: "PUBLISH" }
 
 nodes:                              # explicit per-cell entries; empty cells render nothing
-  - { lane: "ADM", step: 0, title: "Project Setup",   sub: "create · assign roles",     tool: "Platform console" }
-  - { lane: "ADM", step: 1, title: "Access Control",  sub: "bucket policies · LDAP",    tool: "MinIO · LDAP console",
+  - { lane: "ADM", step: 0, title: "Project Setup",   sub: "create / assign roles",     tool: "Platform console" }
+  - { lane: "ADM", step: 1, title: "Access Control",  sub: "bucket policies / LDAP",    tool: "MinIO / LDAP console",
       color: "#b85450" }            # tinted rust-red to flag governance/identity concern
-  - { lane: "ENG", step: 0, title: "Source Ingest",   sub: "ext. sources → raw",        tool: "NiFi · API · SFTP",
+  - { lane: "ENG", step: 0, title: "Source Ingest",   sub: "ext. sources → raw",        tool: "NiFi / API / SFTP",
       chips: {in: "WB", out: "DB"} }                    # web payload in, dataset out
   - { lane: "ENG", step: 1, title: "Raw Store",       sub: "raw landing zones",         tool: "MinIO raw",
       chips: {in: "DB", out: "DB"} }                    # raw stays raw inside the landing zone
-  - { lane: "ENG", step: 2, title: "Clean & Stage",   sub: "raw → staging → anon",      tool: "NiFi · Trino",
+  - { lane: "ENG", step: 2, title: "Clean & Stage",   sub: "raw → staging → anon",      tool: "NiFi / Trino",
       chips: {in: "DB", out: "TB"} }                    # raw dataset → analysis-ready table
-  - { lane: "SCI", step: 3, title: "Explore & Model", sub: "anon data → insights",      tool: "JupyterHub · Trino",
+  - { lane: "SCI", step: 3, title: "Explore & Model", sub: "anon data → insights",      tool: "JupyterHub / Trino",
       chips: {in: "TB", out: "FL"}, focal: true }       # focal — table in, file/report out
-  - { lane: "SCI", step: 4, title: "Publish Findings", sub: "models → dashboards",      tool: "Superset · Reports",
+  - { lane: "SCI", step: 4, title: "Publish Findings", sub: "models → dashboards",      tool: "Superset / Reports",
       chips: {in: "FL", out: "FL"} }                    # report in, report out (pass-through to publish)
   - { lane: "CON", step: 4, title: "Query Insights",   sub: "aggregated views",         tool: "Trino (read-only)",
       chips: {in: "TB", out: "TB"} }                    # consumers read tables, hand off tables
@@ -327,8 +327,8 @@ Data-type chip colors are a **separate semantic axis** from the per-node color o
 Each row introduced by a category label at `x=144`. The default legend has **3 rows** (`STEPS` / `DATA TYPE` / `FLOW`); when one or more nodes carry a `color` override (§4), add a 4th `CONCERN` row and grow `legend_h` to 100 (so `viewBox_h = header_h + n_lanes·80 + 100`).
 
 - **Row 1 — `STEPS`** at `y = legend_y_top + 16`: repeat the header chips with their labels. Focal step keeps accent fill.
-- **Row 2 — `DATA TYPE`** at `y = legend_y_top + 37`: one swatch per chip type actually used in the diagram. **Append a small sub-hint** in the muted `sublabel` role after the chips: `left chip = input · right chip = output`. This makes the position-based input/output convention explicit for first-time readers.
-- **Row 3 — `CONCERN`** (only when color overrides are present) at `y = legend_y_top + 58`: one mini-rect per custom color used, with its semantic label (e.g., `Identity · Governance`, `Data Quality · Observability`). The focal accent swatch is also shown here so the reader sees all three colored axes side-by-side.
+- **Row 2 — `DATA TYPE`** at `y = legend_y_top + 37`: one swatch per chip type actually used in the diagram. **Append a small sub-hint** in the muted `sublabel` role after the chips: `left chip = input / right chip = output`. This makes the position-based input/output convention explicit for first-time readers.
+- **Row 3 — `CONCERN`** (only when color overrides are present) at `y = legend_y_top + 58`: one mini-rect per custom color used, with its semantic label (e.g., `Identity / Governance`, `Data Quality / Observability`). The focal accent swatch is also shown here so the reader sees all three colored axes side-by-side.
 - **Row 4 — `FLOW`** (last row, position depends on whether `CONCERN` row exists): short line segments with their marker + text label, one per arrow style actually used.
 
 All legend items align on a single horizontal strip per row. Do not stack vertically inside a box.

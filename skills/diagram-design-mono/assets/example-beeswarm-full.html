@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Per-request latency, one dot per request · Beeswarm</title>
+  <title>Per-request latency, one dot per request / Beeswarm</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,7 +42,7 @@
 <body>
   <div class="container">
     <div class="header">
-      <p class="header-eyebrow">Beeswarm · Diagram Design</p>
+      <p class="header-eyebrow">Beeswarm / Diagram Design</p>
       <h1>The median hides the tail</h1>
       <p class="subtitle">A hundred and thirty-eight per-request latency samples for one checkout endpoint, one dot per request on a shared linear axis from zero. The median sits near 105&nbsp;ms and looks perfectly healthy; the story is the three requests past 380&nbsp;ms, because the p99 is what a customer at the wrong moment actually experiences.</p>
     </div>
@@ -391,12 +391,12 @@
         <!-- Legend -->
         <line x1="40" y1="462" x2="960" y2="462" stroke="rgba(15,23,42,0.10)" stroke-width="0.8"/>
         <text x="40" y="478" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.18em">LEGEND</text>
-        <text x="960" y="478" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="end">ONE DOT = ONE REQUEST · VALUE AXIS 0–440 MS, LINEAR FROM ZERO · VERTICAL SPREAD IS PACKING, NOT A VALUE · ILLUSTRATIVE FIGURES, NOT MEASURED TRAFFIC</text>
+        <text x="960" y="478" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="end">ONE DOT = ONE REQUEST / VALUE AXIS 0–440 MS, LINEAR FROM ZERO / VERTICAL SPREAD IS PACKING, NOT A VALUE / ILLUSTRATIVE FIGURES, NOT MEASURED TRAFFIC</text>
 
         <circle class="node-box" cx="52" cy="490" r="4" fill="rgba(194,65,12,0.55)" stroke="#c2410c" stroke-width="1.2"/>
-        <text x="68" y="494" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">req-4c1f · focal, the slowest request in the window</text>
+        <text x="68" y="494" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">req-4c1f / focal, the slowest request in the window</text>
         <circle class="node-box" cx="660" cy="490" r="4" fill="rgba(15,23,42,0.55)" stroke="#475569" stroke-width="0.75"/>
-        <text x="676" y="494" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">request · vertical offset is packing only</text>
+        <text x="676" y="494" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">request / vertical offset is packing only</text>
       </svg>
     </div>
     <div class="cards">
@@ -417,8 +417,8 @@
       </div>
     </div>
     <div class="footer">
-      <span>POST /checkout · one five-minute window · illustrative figures, not measured traffic</span>
-      <span>DIAGRAM DESIGN · BEESWARM</span>
+      <span>POST /checkout / one five-minute window / illustrative figures, not measured traffic</span>
+      <span>DIAGRAM DESIGN / BEESWARM</span>
     </div>
   </div>
 </body>

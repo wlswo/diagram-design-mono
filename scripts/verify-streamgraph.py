@@ -871,7 +871,7 @@ def check_legend(layers: list, doc: _Scanner, findings: list, name: str) -> None
             )
 
         # The number is bound; the NAME must be bound too. An entry reading
-        # "Unit · 688 min" above data-layer="End-to-end" with End-to-end's
+        # "Unit / 688 min" above data-layer="End-to-end" with End-to-end's
         # real total satisfies every check above and still hands the reader
         # the wrong band. A hidden datum being right is not the figure being
         # right - the visible string is what anyone actually reads.

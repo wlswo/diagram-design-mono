@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Article request · Sequence</title>
+  <title>Article request / Sequence</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -64,7 +64,7 @@
 </head>
 <body>
   <div class="frame">
-    <p class="eyebrow">Sequence · Diagram Design</p>
+    <p class="eyebrow">Sequence / Diagram Design</p>
     <h1>Article request, cold cache</h1>
 
     <svg viewBox="0 0 1000 584" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sequence-title sequence-desc">
@@ -115,22 +115,22 @@
              Draw before labels so label masks cover the line.
              ================================================================= -->
 
-        <!-- M1: Reader → Cloudflare  (HTTPS request · link-blue) -->
+        <!-- M1: Reader → Cloudflare  (HTTPS request / link-blue) -->
         <line x1="128" y1="176" x2="352" y2="176" stroke="#1d4ed8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
 
-        <!-- M2: Cloudflare → Astro  (cache miss · muted) -->
+        <!-- M2: Cloudflare → Astro  (cache miss / muted) -->
         <line x1="352" y1="232" x2="580" y2="232" stroke="#475569" stroke-width="1.2" marker-end="url(#arrow)"/>
 
-        <!-- M3: Astro self-message  (render MDX · muted U-loop) -->
+        <!-- M3: Astro self-message  (render MDX / muted U-loop) -->
         <path d="M 588 284 L 624 284 L 624 316 L 588 316" fill="none" stroke="#475569" stroke-width="1.2" marker-end="url(#arrow)"/>
 
-        <!-- M4: Astro → Cloudflare  (return HTML · muted dashed) -->
+        <!-- M4: Astro → Cloudflare  (return HTML / muted dashed) -->
         <line x1="580" y1="352" x2="356" y2="352" stroke="#475569" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
 
-        <!-- M5: Cloudflare → Reader  (primary success · coral) -->
+        <!-- M5: Cloudflare → Reader  (primary success / coral) -->
         <line x1="348" y1="408" x2="128" y2="408" stroke="#c2410c" stroke-width="1.4" marker-end="url(#arrow-accent)"/>
 
-        <!-- M6: Reader → Analytics  (async beacon · muted dashed) -->
+        <!-- M6: Reader → Analytics  (async beacon / muted dashed) -->
         <line x1="128" y1="464" x2="800" y2="464" stroke="#475569" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
 
         <!-- =================================================================
@@ -143,7 +143,7 @@
 
         <!-- M2 label -->
         <rect x="416" y="216" width="100" height="12" fill="#f8fafc"/>
-        <text x="466" y="226" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">CACHE MISS · ORIGIN</text>
+        <text x="466" y="226" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">CACHE MISS / ORIGIN</text>
 
         <!-- M3 label (to the right of the self-loop) -->
         <rect x="632" y="292" width="72" height="12" fill="#f8fafc"/>
@@ -151,11 +151,11 @@
 
         <!-- M4 label -->
         <rect x="420" y="336" width="96" height="12" fill="#f8fafc"/>
-        <text x="468" y="346" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">200 · HTML + MAX-AGE</text>
+        <text x="468" y="346" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">200 / HTML + MAX-AGE</text>
 
-        <!-- M5 label (coral · primary response) -->
+        <!-- M5 label (coral / primary response) -->
         <rect x="192" y="392" width="96" height="12" fill="#f8fafc"/>
-        <text x="240" y="402" fill="#c2410c" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">200 · EDGE-CACHED</text>
+        <text x="240" y="402" fill="#c2410c" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">200 / EDGE-CACHED</text>
 
         <!-- M6 label (placed between Astro and Analytics lifelines, a clear gap) -->
         <rect x="648" y="448" width="96" height="12" fill="#f8fafc"/>
@@ -180,7 +180,7 @@
         <rect x="288" y="80" width="32" height="12" fill="transparent" stroke="rgba(15,23,42,0.22)" stroke-width="0.8"/>
         <text x="304" y="89" fill="#64748b" font-size="7" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">EDGE</text>
         <text x="352" y="104" fill="#0f172a" font-size="12" font-weight="600" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">Cloudflare</text>
-        <text x="352" y="119" fill="#475569" font-size="9" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">Pages · cache</text>
+        <text x="352" y="119" fill="#475569" font-size="9" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">Pages / cache</text>
 
         <!-- Actor 3: Astro Origin (focal / coral) -->
         <rect x="504" y="72" width="160" height="56" fill="#f8fafc"/>
@@ -196,7 +196,7 @@
         <rect x="736" y="80" width="28" height="12" fill="transparent" stroke="rgba(15,23,42,0.22)" stroke-width="0.8"/>
         <text x="750" y="89" fill="#64748b" font-size="7" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">ASY</text>
         <text x="800" y="104" fill="#0f172a" font-size="12" font-weight="600" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">Analytics</text>
-        <text x="800" y="119" fill="#475569" font-size="9" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">Beacon · async</text>
+        <text x="800" y="119" fill="#475569" font-size="9" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">Beacon / async</text>
 
         <!-- =================================================================
              LEGEND — horizontal strip at the bottom.

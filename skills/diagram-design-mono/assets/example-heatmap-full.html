@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CI failure rate by service and sprint · Heatmap</title>
+  <title>CI failure rate by service and sprint / Heatmap</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,7 +42,7 @@
 <body>
   <div class="container">
     <div class="header">
-      <p class="header-eyebrow">Heatmap · Diagram Design</p>
+      <p class="header-eyebrow">Heatmap / Diagram Design</p>
       <h1>The week payments went dark</h1>
       <p class="subtitle">CI failure rate (%) by service and sprint, six sprints. payments spiked to 47% in S4 — a deploy regression that slipped through the gate — and had recovered to 4% by S6. billing carries the highest structural rate; notifications is the quietest service throughout.</p>
     </div>
@@ -123,7 +123,7 @@
         <rect class="node-box" data-row="payments" data-col="S3" data-value="5" x="400" y="124" width="116" height="56" fill="rgba(15,23,42,0.36)"/>
         <text x="458" y="156" fill="#0f172a" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">5%</text>
 
-        <!-- FOCAL CELL: payments·S4 = 47% deploy regression -->
+        <!-- FOCAL CELL: payments/S4 = 47% deploy regression -->
         <rect x="520" y="124" width="116" height="56" fill="#f8fafc"/>
         <rect class="node-box" data-row="payments" data-col="S4" data-value="47" data-focal="true" x="520" y="124" width="116" height="56" fill="rgba(194,65,12,0.85)" stroke="#c2410c" stroke-width="1.2"/>
         <text x="578" y="149" fill="#111111" font-size="10" font-weight="600" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">47%</text>
@@ -223,7 +223,7 @@
         <!-- Legend -->
         <line x1="40" y1="382" x2="960" y2="382" stroke="rgba(15,23,42,0.10)" stroke-width="0.8"/>
         <text x="40" y="398" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.18em">LEGEND</text>
-        <text x="960" y="398" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="end">ILLUSTRATIVE CI FAILURE RATES · NOT A MEASURED REGISTRY</text>
+        <text x="960" y="398" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="end">ILLUSTRATIVE CI FAILURE RATES / NOT A MEASURED REGISTRY</text>
 
         <rect x="120" y="386" width="20" height="12" fill="#f8fafc"/><rect x="120" y="386" width="20" height="12" fill="rgba(15,23,42,0.07)"/>
         <rect x="142" y="386" width="20" height="12" fill="#f8fafc"/><rect x="142" y="386" width="20" height="12" fill="rgba(15,23,42,0.14)"/>
@@ -237,15 +237,15 @@
         <text x="298" y="396" fill="#475569" font-size="7.5" font-family="'JetBrains Mono', ui-monospace, monospace">HIGH</text>
 
         <rect x="360" y="386" width="20" height="12" fill="#f8fafc"/><rect x="360" y="386" width="20" height="12" fill="rgba(194,65,12,0.85)" stroke="#c2410c" stroke-width="1"/>
-        <text x="388" y="396" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">payments · S4 · 47% — deploy regression (now fixed)</text>
+        <text x="388" y="396" fill="#475569" font-size="8.5" font-family="'JetBrains Mono', ui-monospace, monospace">payments / S4 / 47% — deploy regression (now fixed)</text>
 
-        <text x="40" y="418" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.06em">NON-FOCAL SCALE: 1–9% · SINGLE INK RAMP · ACCENT IS EDITORIAL, NOT A DATA RANGE</text>
+        <text x="40" y="418" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.06em">NON-FOCAL SCALE: 1–9% / SINGLE INK RAMP / ACCENT IS EDITORIAL, NOT A DATA RANGE</text>
       </svg>
     </div>
 
     <div class="cards">
       <div class="card">
-        <p class="eyebrow">Focal · payments · S4</p>
+        <p class="eyebrow">Focal / payments / S4</p>
         <div class="card-header">
           <div class="card-swatch focal"></div>
           <h3>Deploy regression — 47%</h3>
@@ -253,7 +253,7 @@
         <p>A CI gate misconfiguration during the payments S4 deploy let a breaking change through. The spike resolved by S6 after the rollback and a gate fix, returning to a 4% baseline.</p>
       </div>
       <div class="card">
-        <p class="eyebrow">Structural issue · billing</p>
+        <p class="eyebrow">Structural issue / billing</p>
         <div class="card-header">
           <div class="card-swatch high"></div>
           <h3>Highest baseline — peaks 9%</h3>
@@ -261,7 +261,7 @@
         <p>billing shows the highest non-focal failure rates across all six sprints, peaking at 9% in S3. This is a persistent structural issue unrelated to the payments regression.</p>
       </div>
       <div class="card">
-        <p class="eyebrow">Quietest service · notifications</p>
+        <p class="eyebrow">Quietest service / notifications</p>
         <div class="card-header">
           <div class="card-swatch low"></div>
           <h3>Most stable — never above 2%</h3>
@@ -271,8 +271,8 @@
     </div>
 
     <div class="footer">
-      <span>Heatmap · Diagram Design</span>
-      <span>Illustrative CI failure rates · not a measured registry</span>
+      <span>Heatmap / Diagram Design</span>
+      <span>Illustrative CI failure rates / not a measured registry</span>
     </div>
   </div>
 </body>

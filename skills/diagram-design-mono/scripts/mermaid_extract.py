@@ -1148,7 +1148,7 @@ def _parse_er(
             diagram.add_edge(
                 source,
                 target,
-                " · ".join(label_parts),
+                " / ".join(label_parts),
                 "dashed" if separator == ".." else "solid",
                 "cardinality",
                 undirected=True,
@@ -1242,7 +1242,7 @@ def analyze(diagram: Diagram) -> dict[str, Any]:
         shapes[family] = shapes.get(family, 0) + 1
 
     def name(node: Node) -> str:
-        return node.label.replace("\n", " · ") or node.id
+        return node.label.replace("\n", " / ") or node.id
 
     hubs = [
         {"id": node.id, "label": name(node), "degree": node.in_degree + node.out_degree}

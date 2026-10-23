@@ -19,7 +19,7 @@ Accepts `.drawio`, `.drawio.xml`, `.xml`, `.drawio.png`, and `.drawio.svg`.
 
 - `--format=html` — a self-contained HTML file next to the source.
 - `--size=doc-inline` — `viewBox 0 0 960 600`.
-- `--detail=balanced` · `--audience=mixed`.
+- `--detail=balanced` / `--audience=mixed`.
 - `--variant=light` — the minimal light template.
 - A single-page file selects its only page; a multi-page file lists pages and asks which to use.
 - Type is chosen from the extracted structure; `--type` forces one of the visual types in

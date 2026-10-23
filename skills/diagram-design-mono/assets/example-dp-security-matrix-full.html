@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Platform · Access Matrix · Editorial</title>
+  <title>Data Platform / Access Matrix / Editorial</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--paper:#f8fafc;--paper-2:#f1f5f9;--ink:#0f172a;--muted:#475569;--soft:#64748b;--rule:rgba(15,23,42,.12);--accent:#c2410c;--sans:'JetBrains Mono',ui-monospace,monospace;--serif:'JetBrains Mono',ui-monospace,monospace;--mono:'JetBrains Mono',ui-monospace,monospace}
@@ -22,7 +22,7 @@
     @media (prefers-reduced-motion: reduce) { svg .node-box { transition: none; } }
   </style>
 </head>
-<body><main class="container"><header class="header"><p class="header-eyebrow">DP security matrix · Diagram Design</p><h1>Data platform access matrix</h1><p class="subtitle">A compact policy view for five human roles across storage, query, analysis, reporting, and orchestration. Each intersection resolves to one explicit permission level.</p></header><div class="diagram-container">
+<body><main class="container"><header class="header"><p class="header-eyebrow">DP security matrix / Diagram Design</p><h1>Data platform access matrix</h1><p class="subtitle">A compact policy view for five human roles across storage, query, analysis, reporting, and orchestration. Each intersection resolves to one explicit permission level.</p></header><div class="diagram-container">
   <svg viewBox="0 0 1084 400" role="img" aria-labelledby="dp-security-matrix-full-title dp-security-matrix-full-desc" xmlns="http://www.w3.org/2000/svg">
     <title id="dp-security-matrix-full-title">Data platform access matrix</title><desc id="dp-security-matrix-full-desc">A five by five permission matrix for platform roles and components.</desc><rect width="1084" height="400" fill="#f8fafc"/>
     <rect class="component-head" x="12" y="72" width="208" height="52"/><text class="head-name" x="116" y="96" text-anchor="middle">Component</text><text class="head-sub" x="116" y="112" text-anchor="middle">vs. AD group</text>
@@ -36,6 +36,6 @@
   </svg>
   </div>
   <section class="cards" aria-label="Access policy summary"><article class="card"><p class="eyebrow">THE HEADLINE</p><div class="card-header"><span class="card-dot coral"></span><h2>Partner access stops at BI</h2></div><p>External partners receive read-only shared dashboards. They cannot enter storage, notebooks, or orchestration.</p></article><article class="card"><div class="card-header"><span class="card-dot ink"></span><h2>Administration stays separate</h2></div><ul><li>Administrators hold admin rights everywhere.</li><li>Engineers write across the platform.</li><li>Scientists write only in notebooks.</li></ul></article><article class="card"><div class="card-header"><span class="card-dot muted"></span><h2>Analyst scope is narrow</h2></div><p>Analysts query governed data and author BI content, while object storage, notebooks, and workflow controls remain unavailable.</p></article></section>
-  <footer class="footer"><span>data platform · access policy</span><span>example · diagram design</span></footer>
+  <footer class="footer"><span>data platform / access policy</span><span>example / diagram design</span></footer>
   </main></body>
 </html>

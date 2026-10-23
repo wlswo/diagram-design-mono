@@ -16,19 +16,19 @@ subtitle: "Quarterly survey through Raw → Anonymized → Staging → Aggregate
 
 tiers:                                # 3..6 tier columns, ordered left → right
   - { name: "Raw",        bucket: "raw-bucket",        style: "outer",
-      fields: { tool: "NiFi · raw write",          format: "CSV · Parquet · JSON", writer: "Data Engineer",
-                example: ["Q1 dump · w/ PII", "verbatim CAPI export"] } }
+      fields: { tool: "NiFi / raw write",          format: "CSV / Parquet / JSON", writer: "Data Engineer",
+                example: ["Q1 dump / w/ PII", "verbatim CAPI export"] } }
   - { name: "Anonymized", bucket: "anon-bucket",       style: "default",
-      fields: { tool: "Trino INSERT",              format: "Iceberg · partitioned", writer: "Data Engineer",
-                example: ["no name · address", "stable household ID"] } }
+      fields: { tool: "Trino INSERT",              format: "Iceberg / partitioned", writer: "Data Engineer",
+                example: ["no name / address", "stable household ID"] } }
   - { name: "Staging",    bucket: "staging-bucket",    style: "default",  color: "#c9a23a",   # warm yellow — analytical working zone
-      fields: { tool: "Trino · JupyterHub",        format: "Iceberg · cleaned",     writer: "Data Scientist",
+      fields: { tool: "Trino / JupyterHub",        format: "Iceberg / cleaned",     writer: "Data Scientist",
                 example: ["weighted records", "harmonised codings"] } }
   - { name: "Aggregated", bucket: "aggregated-bucket", style: "focal",  focal: true,
-      fields: { tool: "Trino INSERT · SAS JDBC",   format: "Iceberg · indicators",  writer: "Data Scientist",
+      fields: { tool: "Trino INSERT / SAS JDBC",   format: "Iceberg / indicators",  writer: "Data Scientist",
                 example: ["unemployment rate", "labour participation"] } }
   - { name: "Archive",    bucket: "archive-bucket",    style: "cold",
-      fields: { tool: "MinIO lifecycle",           format: "cold tier · immutable", writer: "Data Administrator",
+      fields: { tool: "MinIO lifecycle",           format: "cold tier / immutable", writer: "Data Administrator",
                 example: ["historical Q1–Q4 sets", "5+ years retained"] } }
 
 example_label: "Quarterly survey example" # bottom field label (varies per domain)
@@ -41,9 +41,9 @@ promotions:                           # adjacent-tier arrows; len = n_tiers - 1
 
 paths:                                # 0..2 write-method cards at the bottom (optional)
   - { tag: "SQL PATH",      title: "Trino INSERT INTO … SELECT",
-      sub: "filter · reshape · join · aggregate — set-based transforms" }
+      sub: "filter / reshape / join / aggregate — set-based transforms" }
   - { tag: "NOTEBOOK PATH", title: "DuckDB + Python/R in JupyterHub",
-      sub: "stats · ML · interactive analysis — row-iterative work" }
+      sub: "stats / ML / interactive analysis — row-iterative work" }
 
 dark: false
 ```

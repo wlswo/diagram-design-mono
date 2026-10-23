@@ -12,7 +12,7 @@ This type is **parametric** — like `type-high-level.md`, every coord is derive
 
 ```yaml
 sources:                            # left column, 0..6 nodes
-  - { name: "Databases",  type: "db",        subtitle: "SQL · MariaDB",
+  - { name: "Databases",  type: "db",        subtitle: "SQL / MariaDB",
       connects_to: [{to: "NiFi", label: "JDBC"},
                     {to: "Trino", label: "FEDERATE", style: "federated"}] }
   - { name: "SFTP drops", type: "sftp",      subtitle: "scheduled pulls",
@@ -25,20 +25,20 @@ sources:                            # left column, 0..6 nodes
 platform:
   name: "DATA PLATFORM"             # zone label (paper-masked top border)
   rows:                             # ordered top→bottom; each is bar or row
-    - { kind: bar, name: "Trino",   icon: trino,   subtitle: "federated query · push-down",
+    - { kind: bar, name: "Trino",   icon: trino,   subtitle: "federated query / push-down",
         role: "SQL", focal: true }
     - { kind: row, nodes: [
         { name: "Apache NiFi",  icon: nifi,    role: "INGEST",   subtitle: "flow-based ETL" },
-        { name: "MinIO",        icon: minio,   role: "STORE",    subtitle: "S3 object store · medallion", focal: true },
-        { name: "JupyterLab",   icon: jupyter, role: "NOTEBOOK", subtitle: "Python · R · pandas" }
+        { name: "MinIO",        icon: minio,   role: "STORE",    subtitle: "S3 object store / medallion", focal: true },
+        { name: "JupyterLab",   icon: jupyter, role: "NOTEBOOK", subtitle: "Python / R / pandas" }
       ]}
     - { kind: bar, name: "Apache Airflow", icon: airflow,
-        subtitle: "scheduler · DAG triggers · backfill", role: "DAG" }
+        subtitle: "scheduler / DAG triggers / backfill", role: "DAG" }
 
 consumers:                          # right column, 0..6 nodes
-  - { name: "Desktop apps",   type: "monitor", subtitle: "SPSS · SAS · Stata",
+  - { name: "Desktop apps",   type: "monitor", subtitle: "SPSS / SAS / Stata",
       connects_from: [{from: "Trino", label: "ODBC"}] }
-  - { name: "BI & reports",   type: "chart",   subtitle: "Tableau · Power BI",
+  - { name: "BI & reports",   type: "chart",   subtitle: "Tableau / Power BI",
       connects_from: [{from: "Trino", label: "JDBC"}] }
   - { name: "Public website", type: "globe",   subtitle: "NatStat portal",
       connects_from: [{from: "Trino", label: "HTTPS"}] }
@@ -46,7 +46,7 @@ consumers:                          # right column, 0..6 nodes
       connects_from: [{from: "Trino", label: "REST"}] }
 
 footer:                             # 0..N cross-cutting bars stacked below zone (full-canvas width)
-  - { name: "Active Directory", icon: key,        subtitle: "LDAP · SSO · group RBAC",
+  - { name: "Active Directory", icon: key,        subtitle: "LDAP / SSO / group RBAC",
       color: "#b85450" }            # tinted red to flag the security concern
   # additional footer nodes (Observability, Backup, …) stack below this one
 

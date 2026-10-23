@@ -19,7 +19,7 @@ Accepts `.excalidraw` and `.excalidraw.json` scenes. PNG/SVG exports are rejecte
 
 - `--format=html` — a self-contained HTML file next to the source.
 - `--size=doc-inline` — `viewBox 0 0 960 600`.
-- `--detail=balanced` · `--audience=mixed`.
+- `--detail=balanced` / `--audience=mixed`.
 - `--variant=light` — the minimal light template.
 - An Excalidraw file holds a single scene, so there is no page or diagram selector.
 - Type is chosen from the extracted structure; `--type` forces one of the visual

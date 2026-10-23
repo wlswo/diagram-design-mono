@@ -477,7 +477,7 @@ GALLERY_TEMPLATE = """<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Icon library · Diagram Design</title>
+  <title>Icon library / Diagram Design</title>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -581,13 +581,13 @@ GALLERY_TEMPLATE = """<!DOCTYPE html>
 <body>
   <div class="container">
     <div class="header">
-      <p class="eyebrow">Icons · Diagram Design</p>
+      <p class="eyebrow">Icons / Diagram Design</p>
       <h1>Icon library</h1>
       <p class="subtitle">A small, monochrome library for IT/cloud illustrations. Stroked icons from <a href="https://tabler.io/icons" style="color:inherit">Tabler Icons</a> (MIT); brand silhouettes from <a href="https://simpleicons.org" style="color:inherit">Simple Icons</a> (CC0). Every icon uses <code>currentColor</code> so it inherits ink from its parent.</p>
     </div>
     {SECTIONS}
     <footer>
-      Tabler Icons · MIT · github.com/tabler/tabler-icons &nbsp;·&nbsp; Simple Icons · CC0 · github.com/simple-icons/simple-icons &nbsp;·&nbsp; Devicon · MIT · github.com/devicons/devicon
+      Tabler Icons / MIT / github.com/tabler/tabler-icons &nbsp;/&nbsp; Simple Icons / CC0 / github.com/simple-icons/simple-icons &nbsp;/&nbsp; Devicon / MIT / github.com/devicons/devicon
     </footer>
   </div>
 </body>

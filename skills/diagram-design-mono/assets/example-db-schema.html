@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Commerce schema · database schema</title>
+  <title>Commerce schema / database schema</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -64,11 +64,11 @@
 </head>
 <body>
   <div class="frame">
-    <p class="eyebrow">Database schema · Diagram Design</p>
-    <h1>Commerce schema · public + billing</h1>
+    <p class="eyebrow">Database schema / Diagram Design</p>
+    <h1>Commerce schema / public + billing</h1>
 
     <svg viewBox="0 0 1080 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="db-schema-title db-schema-desc">
-      <title id="db-schema-title">Commerce schema · public + billing</title>
+      <title id="db-schema-title">Commerce schema / public + billing</title>
       <desc id="db-schema-desc">Physical database schema diagram showing five commerce tables with column-level foreign keys, SQL types, and constraint chips, including a cascading delete from orders into order_items and a billing schema group.</desc>
       <defs>
         <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#475569"/></marker>
@@ -83,13 +83,13 @@
       <text x="756" y="348" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.14em">BILLING</text>
 
       <!-- FK connectors (drawn before boxes) -->
-      <!-- FK1: orders.customer_id -> customers.id · ON DELETE RESTRICT -->
+      <!-- FK1: orders.customer_id -> customers.id / ON DELETE RESTRICT -->
       <path d="M 400,104 H 348 Q 340,104 340,112 Q 340,120 332,120 H 280" fill="none" stroke="#475569" stroke-width="1" marker-end="url(#arrow)"/>
-      <!-- FK2: order_items.order_id -> orders.id · ON DELETE CASCADE (focal) -->
+      <!-- FK2: order_items.order_id -> orders.id / ON DELETE CASCADE (focal) -->
       <path d="M 640,384 H 660 Q 668,384 668,376 V 96 Q 668,88 660,88 H 640" fill="none" stroke="#c2410c" stroke-width="1.2" marker-end="url(#arrow-accent)"/>
-      <!-- FK3: order_items.product_id -> products.id · ON DELETE RESTRICT -->
+      <!-- FK3: order_items.product_id -> products.id / ON DELETE RESTRICT -->
       <path d="M 640,408 H 708 Q 716,408 716,400 V 88 Q 716,80 724,80 H 760" fill="none" stroke="#475569" stroke-width="1" marker-end="url(#arrow)"/>
-      <!-- FK4: invoices.order_id -> orders.id · ON DELETE RESTRICT -->
+      <!-- FK4: invoices.order_id -> orders.id / ON DELETE RESTRICT -->
       <path d="M 760,432 H 700 Q 692,432 692,424 V 416 a 8,8 0 0,0 0,-16 V 80 Q 692,72 684,72 H 640" fill="none" stroke="#475569" stroke-width="1" marker-end="url(#arrow)"/>
 
       <!-- FK labels (masked, 6-10px gap above/beside their connector) -->

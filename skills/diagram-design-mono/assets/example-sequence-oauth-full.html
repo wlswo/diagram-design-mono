@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bearer Call with Refresh · Sequence</title>
+  <title>Bearer Call with Refresh / Sequence</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -184,7 +184,7 @@
   <div class="container">
 
     <div class="header">
-      <p class="header-eyebrow">Sequence · Diagram Design · Special</p>
+      <p class="header-eyebrow">Sequence / Diagram Design / Special</p>
       <h1>Bearer call with refresh</h1>
       <p class="subtitle">A resource call under a bearer token, with an ALT fragment for the happy path versus a 401 that refreshes via Auth and retries. Async audit is fire-and-forget with an open arrowhead.</p>
     </div>
@@ -239,12 +239,12 @@
 
         <line x1="476" y1="272" x2="168" y2="272" stroke="#c2410c" stroke-width="1.4" marker-end="url(#arrow-accent)"/>
         <rect x="256" y="256" width="88" height="12" fill="#f8fafc"/>
-        <text x="300" y="266" fill="#c2410c" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">200 · BODY</text>
+        <text x="300" y="266" fill="#c2410c" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">200 / BODY</text>
 
         <line x1="96" y1="312" x2="832" y2="312"
               stroke="rgba(15,23,42,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
 
-        <text x="100" y="336" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.04em">[else · 401]</text>
+        <text x="100" y="336" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.04em">[else / 401]</text>
 
         <!-- M3: 401 return dashed -->
         <line x1="476" y1="368" x2="168" y2="368" stroke="#475569" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
@@ -253,31 +253,31 @@
 
         <line x1="164" y1="416" x2="796" y2="416" stroke="#1d4ed8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
         <rect x="408" y="400" width="128" height="12" fill="#f8fafc"/>
-        <text x="472" y="410" fill="#1d4ed8" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">POST /TOKEN · REFRESH</text>
+        <text x="472" y="410" fill="#1d4ed8" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">POST /TOKEN / REFRESH</text>
 
         <line x1="796" y1="456" x2="168" y2="456" stroke="#475569" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
         <rect x="424" y="440" width="96" height="12" fill="#f8fafc"/>
-        <text x="472" y="450" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">200 · NEW ACCESS</text>
+        <text x="472" y="450" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">200 / NEW ACCESS</text>
 
         <line x1="164" y1="504" x2="476" y2="504" stroke="#1d4ed8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
         <rect x="248" y="488" width="112" height="12" fill="#f8fafc"/>
-        <text x="304" y="498" fill="#1d4ed8" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">GET /RESOURCE · RETRY</text>
+        <text x="304" y="498" fill="#1d4ed8" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">GET /RESOURCE / RETRY</text>
 
         <!-- M7: retry 200 return dashed -->
         <line x1="476" y1="544" x2="168" y2="544" stroke="#475569" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
         <rect x="256" y="528" width="88" height="12" fill="#f8fafc"/>
-        <text x="300" y="538" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">200 · BODY</text>
+        <text x="300" y="538" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">200 / BODY</text>
 
         <line x1="164" y1="600" x2="796" y2="600" stroke="#475569" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#arrow-open)"/>
         <rect x="424" y="584" width="96" height="12" fill="#f8fafc"/>
-        <text x="472" y="594" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">AUDIT · ASYNC</text>
+        <text x="472" y="594" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">AUDIT / ASYNC</text>
 
         <rect x="88" y="72" width="144" height="56" fill="#f8fafc"/>
         <rect class="node-box" x="88" y="72" width="144" height="56" fill="rgba(71,85,105,0.10)" stroke="#64748b" stroke-width="1"/>
         <rect x="96" y="80" width="32" height="12" fill="transparent" stroke="rgba(100,116,139,0.40)" stroke-width="0.8"/>
         <text x="112" y="89" fill="#64748b" font-size="7" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">APP</text>
         <text x="160" y="104" fill="#0f172a" font-size="12" font-weight="600" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">Client</text>
-        <text x="160" y="119" fill="#475569" font-size="9" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">SPA · SDK</text>
+        <text x="160" y="119" fill="#475569" font-size="9" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">SPA / SDK</text>
 
         <rect x="408" y="72" width="144" height="56" fill="#f8fafc"/>
         <rect class="node-box" x="408" y="72" width="144" height="56" fill="rgba(194,65,12,0.08)" stroke="#c2410c" stroke-width="1"/>
@@ -291,7 +291,7 @@
         <rect x="736" y="80" width="36" height="12" fill="transparent" stroke="rgba(15,23,42,0.30)" stroke-width="0.8"/>
         <text x="754" y="89" fill="#475569" font-size="7" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">AUTH</text>
         <text x="800" y="104" fill="#0f172a" font-size="12" font-weight="600" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">Auth</text>
-        <text x="800" y="119" fill="#475569" font-size="9" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">token · refresh</text>
+        <text x="800" y="119" fill="#475569" font-size="9" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">token / refresh</text>
 
         <line x1="56" y1="648" x2="904" y2="648" stroke="rgba(15,23,42,0.10)" stroke-width="0.8"/>
         <text x="56" y="664" fill="#475569" font-size="8" font-family="'JetBrains Mono', ui-monospace, monospace" letter-spacing="0.18em">LEGEND</text>
@@ -350,8 +350,8 @@
     </div>
 
     <div class="footer">
-      <span>oauth · bearer + alt refresh sequence</span>
-      <span>example · schematic skill</span>
+      <span>oauth / bearer + alt refresh sequence</span>
+      <span>example / schematic skill</span>
     </div>
 
   </div>

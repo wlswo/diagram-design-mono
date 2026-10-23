@@ -3,7 +3,7 @@ name: diagram-design-mono
 description: Create mono-styled (JetBrains Mono, square corners, turbopuffer-inspired slate and orange palette, accent-on-hover nodes) architecture, architecture delta, IT current-state, flowchart, sequence, state machine, ER/data model, timeline, swimlane, quadrant, radar/spider, polar chart (polar/radial lollipop), loop/flywheel, nested, tree, org chart, layer stack, exploded axonometric, axonometric plan, Venn, pyramid/funnel, treemap and marimekko, heatmap, bar and dumbbell, waterfall, line (slopegraph, ridgeline, streamgraph, bump), Gantt and scatter charts (bubble, beeswarm), high-level, process, medallion, data flow, DP integration, DP security matrix, Sankey, fishbone, Wardley map, kanban, user journey, service blueprint, deployment, dependency graph, UML class, story map, or database schema diagrams as HTML/SVG/PNG, with .drawio, Mermaid, and .excalidraw import, plus lifecycle phase maps, block decomposition trees, and onboarding guidance.
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   upstream: "cathrynlavery/diagram-design 2.6 (MIT)"
 ---
 
@@ -156,6 +156,8 @@ These mark "AI slop" schematics of any type:
 | Orange on every "important" node | Orange is 1–2 editorial accents, not a signaling system |
 | Reproducing Mermaid's renderer layout | Imports automatic spacing and routing instead of making an editorial layout |
 | Any breach of the six §6 connector rules | Automatic fail: diagonal slants, labels touching their stroke, masks clipped by a later node, overlapping paths, shared attach points, transit behind a non-endpoint box |
+| A middle dot (`·`, `•`, `&middot;`) joining two facts | Banned in every text role. Use a line break, comma, or slash, or delete one of the facts (§5 Writing for the reader) |
+| Jargon, code identifiers, or cryptic abbreviations as labels | `JobMaster`, `XFRM`, `prepareCommit` make the reader decode. Name what the thing does in plain words; code names go in the sublabel only when the reader needs them |
 
 Type-specific anti-patterns live in each type reference linked in the guide.
 
@@ -190,6 +192,16 @@ Type-reference snippets write roles as placeholders: `{ink}`, `{ink @ 0.40}` for
 
 **One family only.** Never introduce Geist, Instrument Serif, or any other face. Hangul and Han labels fall back to Noto Sans KR / TC per the style guide.
 
+### Writing for the reader
+
+Every label, caption, and card is written for the person looking at the diagram, not for the codebase. Full rules and Korean examples: [`references/writing.md`](references/writing.md).
+
+- **No separator dots.** Never use `·`, `•`, `・`, `∙`, or `&middot;` in a title, eyebrow, zone label, node name, sublabel, arrow label, legend, card, or footer. Split into two lines, use a comma or ` / `, or delete the weaker fact. `scripts/self_check.py` fails a file that shows one.
+- **Plain words first.** Name a node by what it does (`작업 관리자`, `Job manager`), not by its class (`JobMaster`). Arrow labels are everyday verb phrases (`SEND JOB`, `작업 보내기`), never method names.
+- **Code names are secondary.** A class, method, or config key may appear only in the sublabel, and only when the audience is `engineer` or the reader will search for it.
+- **No unexplained abbreviations.** Spell an abbreviation out or replace it. Type tags are a whole short word (`SOURCE`, `STORE`) or a technology icon (§6), never a 2 to 4 letter code such as `RM`, `CP`, or `XFRM`.
+- **Explain once, in prose.** A term the reader cannot avoid gets a short definition in the caption or a card, not a longer label.
+
 ---
 
 ## 6. Core SVG Primitives
@@ -201,6 +213,7 @@ Universal building blocks. Type-specialized primitives (lifeline, activation bar
 - Icon set (laptop, server, DB, K8s, Docker, AWS, …) → [primitive-icons.md](references/primitive-icons.md). Browse the gallery at [`assets/icons.html`](assets/icons.html).
 - Terminal / CLI-window variant → [primitive-terminal.md](references/primitive-terminal.md)
 - Optional explanatory motion → [animation.md](references/animation.md)
+- Technology logos (Kafka, MySQL, Kubernetes, Spring, …) → [primitive-techicon.md](references/primitive-techicon.md). Use one on every node that *is* a named technology; fetch it with `python3 scripts/techicon.py snippet <name> --x X --y Y`, which inlines it as a data URL.
 
 Exact markup (background, dotted paper, markers, node box, arrow label, legend) and the long form of each connector rule: [`references/primitives-core.md`](references/primitives-core.md). The static templates (`template.html`, `template-dark.html`, `template-full.html`) already define the background and the `arrow`, `arrow-accent`, and `arrow-link` markers; `template-motion.html` defines only its own prefixed marker, so add the others from primitives-core.md when a motion diagram needs them.
 
@@ -311,6 +324,13 @@ Run before producing any diagram.
 - [ ] No `rx` / `ry` on any `<rect>`, and no `border-radius` other than `50%` dots?
 - [ ] Every node wrapped in `<g class="node">` with `class="node-box"` on its styled rect, and the hover CSS from the template present?
 
+**Wording and icons:**
+
+- [ ] No `·`, `•`, `・`, `∙`, or `&middot;` anywhere in visible text, including the page header, captions, cards, and footer? (`self_check.py` enforces this.)
+- [ ] Could a new teammate who never opened the code read every label aloud and explain it? Node names say what the thing does; code identifiers only in sublabels.
+- [ ] No unexplained abbreviation in a name, tag, arrow label, or legend?
+- [ ] Every node that is a named technology carries its icon from `scripts/techicon.py` (or a [primitive-icons.md](references/primitive-icons.md) glyph when the catalog has none), one icon per node, replacing the type tag?
+
 ---
 
 ## 10. Templates & Variants
@@ -359,10 +379,10 @@ Set these four import decisions **before** drawing. Full spec: [output-spec.md](
 
 | Dial | Options | Default |
 |---|---|---|
-| **Format** | `html` · `svg` · `png` · `html+png` | `html` |
-| **Size** | `doc-inline` · `doc-wide` · `slide-16x9` · `slide-4x3` · `social-og` · `social-square` · `print-a4-landscape` · `print-a3-landscape` · `print-letter-landscape` · `fit` | `doc-inline` |
-| **Detail** | `faithful` (≤24 nodes, zoned) · `balanced` (≤12) · `simplified` (≤7) | `balanced` |
-| **Audience** | `engineer` · `mixed` · `executive` — governs wording, not count | `mixed` |
+| **Format** | `html` / `svg` / `png` / `html+png` | `html` |
+| **Size** | `doc-inline` / `doc-wide` / `slide-16x9` / `slide-4x3` / `social-og` / `social-square` / `print-a4-landscape` / `print-a3-landscape` / `print-letter-landscape` / `fit` | `doc-inline` |
+| **Detail** | `faithful` (≤24 nodes, zoned) / `balanced` (≤12) / `simplified` (≤7) | `balanced` |
+| **Audience** | `engineer` / `mixed` / `executive` — governs wording, not count | `mixed` |
 
 The size preset sets the `viewBox` **and** the type ramp; `faithful` is the only exemption from the §7 budget — zoned above 9 nodes, split above 24. The §6 connector rules never relax.
 
@@ -373,7 +393,7 @@ The size preset sets the `viewBox` **and** the type ramp; `faithful` is the only
 Always produce a single self-contained `.html` file:
 
 - Embedded CSS (no external except Google Fonts)
-- Inline SVG (no external images)
+- Inline SVG (no external images; technology icons are embedded as `data:image/png` URLs by `scripts/techicon.py`)
 - Static by default; minimal inline JavaScript only for explicit animation controls/state
 
 Renders correctly in any modern browser. Motion-enabled output must render its complete meaning without JavaScript; under `prefers-reduced-motion: reduce` it shows the complete static frame and hides/disables playback controls.

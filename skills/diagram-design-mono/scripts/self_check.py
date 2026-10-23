@@ -8,8 +8,8 @@ Ships inside the skill so an installed agent can verify its own output:
 Checks the accessible-SVG contract, the single-file safety rules (no remote
 assets beyond the approved Google Fonts stylesheet, no executable attributes,
 no scripts other than the one canonical motion controller), painted content
-staying inside each SVG's viewBox, and — when motion markup is present — the
-structural motion contract. This is a distilled
+staying inside each SVG's viewBox, no middle-dot separators in visible text,
+and — when motion markup is present — the structural motion contract. This is a distilled
 subset of the repository gates (`lint-skin.py`, `verify-motion.py`), which
 remain the authority for contributions to the repository itself.
 """
@@ -132,6 +132,7 @@ class DiagramParser(HTMLParser):
         self.ids: Counter[str] = Counter()
         self.unsafe: list[str] = []
         self.references: list[tuple[str, str, str]] = []
+        self.visible_text: list[str] = []
         self._svg_depth = 0
         self._current_svg: dict[str, object] | None = None
         self._capture: str | None = None
@@ -237,6 +238,8 @@ class DiagramParser(HTMLParser):
             body.append(data)
         if self._in_style:
             self.styles.append(data)
+        if self._current_script is None and not self._in_style:
+            self.visible_text.append(data)
         if self._capture and self._current_svg:
             node = self._current_svg[self._capture]
             assert isinstance(node, dict)
@@ -673,6 +676,20 @@ def check_motion(parser: DiagramParser, source: str, errors: list[str]) -> None:
             errors.append("motion file needs a <noscript> explanation of the complete static frame")
 
 
+# Separator dots are banned in every text role; see SKILL.md § Writing for the reader.
+SEPARATOR_DOTS = {"\u00b7": "middle dot", "\u2022": "bullet", "\u30fb": "katakana middle dot", "\u2219": "bullet operator"}
+
+
+def check_wording(parser: DiagramParser, errors: list[str]) -> None:
+    for line in "".join(parser.visible_text).splitlines():
+        for char, name in SEPARATOR_DOTS.items():
+            if char in line:
+                errors.append(
+                    f"{name} separator in visible text (use a line break, comma, or slash): {line.strip()[:80]!r}"
+                )
+                break
+
+
 def verify(path: Path, offline: bool = False) -> list[str]:
     source = path.read_text(encoding="utf-8")
     parser = parsed_document(source)
@@ -688,6 +705,7 @@ def verify(path: Path, offline: bool = False) -> list[str]:
                 "offline: file loads Google Fonts; remove the font <link> to use system fonts"
             )
     check_svgs(parser, errors)
+    check_wording(parser, errors)
     check_viewbox(source, errors)
     check_scripts(parser, errors)
     check_motion(parser, source, errors)

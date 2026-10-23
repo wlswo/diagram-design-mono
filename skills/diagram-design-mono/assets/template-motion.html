@@ -194,7 +194,7 @@
 <body>
   <!-- Replace template-motion in IDs and prose when copying this file. -->
   <main data-motion-root data-motion-mode="step" data-step-count="5" data-step-current="5" data-frame="static" data-static-frame="complete">
-    <p class="eyebrow">Process · Optional motion</p>
+    <p class="eyebrow">Process / Optional motion</p>
     <h1>Request evaluation</h1>
 
     <div class="diagram-container">
@@ -221,7 +221,7 @@
         <g data-motion-item data-step="2" aria-label="Step 2: Policy passed">
           <rect class="node-box" x="356" y="128" width="200" height="104" fill="rgba(194,65,12,0.08)" stroke="#c2410c"/>
           <text x="456" y="168" text-anchor="middle" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="16" font-weight="600">Policy</text>
-          <text x="456" y="196" text-anchor="middle" fill="#475569" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">✓ PASS · rule 2</text>
+          <text x="456" y="196" text-anchor="middle" fill="#475569" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">✓ PASS / rule 2</text>
         </g>
         <g data-motion-item data-step="3" aria-label="Step 3: Three items queued">
           <rect x="664" y="128" width="200" height="104" fill="#f8fafc" stroke="#0f172a"/>
@@ -232,7 +232,7 @@
         <g data-motion-item data-step="4" aria-label="Step 4: Audit entry appended">
           <rect class="node-box" x="664" y="328" width="200" height="88" fill="#f8fafc" stroke="#0f172a"/>
           <text x="764" y="364" text-anchor="middle" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="16" font-weight="600">Audit log</text>
-          <text x="764" y="388" text-anchor="middle" fill="#475569" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">0042 · appended</text>
+          <text x="764" y="388" text-anchor="middle" fill="#475569" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">0042 / appended</text>
         </g>
         <g data-motion-item data-step="5" aria-label="Step 5: Evaluation complete">
           <text x="48" y="376" fill="#0f172a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="16" font-weight="600">Outcome: accepted and recorded</text>
@@ -250,7 +250,7 @@
       <button type="button" data-motion-action="pause" aria-pressed="true">Pause</button>
       <button type="button" data-motion-action="next">Next</button>
       <button type="button" data-motion-action="replay">Replay</button>
-      <span class="keyboard-help">←/→ step · Space play/pause · R replay · Home/End jump</span>
+      <span class="keyboard-help">←/→ step / Space play/pause / R replay / Home/End jump</span>
       <span data-motion-status-visible aria-hidden="true">Step <span data-motion-step-label>5</span> of 5</span>
     </div>
     <p class="sr-only" data-motion-status role="status" aria-live="polite" aria-atomic="true"></p>
@@ -322,7 +322,7 @@
         function finish() {
           pause(false);
           root.dataset.frame = 'end';
-          status.textContent = `Complete · step ${count} of ${count}`;
+          status.textContent = `Complete / step ${count} of ${count}`;
         }
 
         function tick() {
@@ -387,13 +387,13 @@
             render(count, false);
             root.dataset.frame = 'static';
             root.dataset.motionState = 'reduced';
-            status.textContent = 'Reduced motion · complete static frame · playback controls unavailable';
+            status.textContent = 'Reduced motion / complete static frame / playback controls unavailable';
           } else if (staticOverride || root.dataset.motionMode === 'none') {
             setControlsAvailable(false);
             render(count, false);
             root.dataset.frame = 'static';
             root.dataset.motionState = 'static';
-            status.textContent = 'Static frame · complete diagram · playback controls unavailable';
+            status.textContent = 'Static frame / complete diagram / playback controls unavailable';
           } else {
             delete root.dataset.motionState;
             if (exactStep !== null) {
@@ -401,11 +401,11 @@
               render(exactStep, false);
               root.dataset.frame = 'step';
               root.dataset.motionState = 'test';
-              status.textContent = `Test frame · step ${step} of ${count} · playback controls unavailable`;
+              status.textContent = `Test frame / step ${step} of ${count} / playback controls unavailable`;
             } else {
               setControlsAvailable(true);
               render(stepBeforeReduce, false);
-              status.textContent = `Ready · step ${step} of ${count}`;
+              status.textContent = `Ready / step ${step} of ${count}`;
               if (resumeAfterReduce && root.dataset.motionMode === 'reveal') {
                 play(false, false);
               }
@@ -421,7 +421,7 @@
           render(count, false);
           root.dataset.frame = 'static';
           root.dataset.motionState = 'static';
-          status.textContent = 'Static frame · complete diagram · playback controls unavailable';
+          status.textContent = 'Static frame / complete diagram / playback controls unavailable';
         } else if (reduce.matches || root.dataset.motionMode === 'none') {
           pause(false);
           setControlsAvailable(false);
@@ -429,8 +429,8 @@
           root.dataset.frame = 'static';
           root.dataset.motionState = reduce.matches ? 'reduced' : 'static';
           status.textContent = reduce.matches
-            ? 'Reduced motion · complete static frame · playback controls unavailable'
-            : 'Static frame · complete diagram · playback controls unavailable';
+            ? 'Reduced motion / complete static frame / playback controls unavailable'
+            : 'Static frame / complete diagram / playback controls unavailable';
         } else if (exactStep !== null) {
           document.documentElement.dataset.motion = 'step';
           pause(false);
@@ -438,7 +438,7 @@
           render(exactStep, false);
           root.dataset.frame = 'step';
           root.dataset.motionState = 'test';
-          status.textContent = `Test frame · step ${step} of ${count} · playback controls unavailable`;
+          status.textContent = `Test frame / step ${step} of ${count} / playback controls unavailable`;
         } else if (root.dataset.motionMode === 'reveal') {
           setControlsAvailable(true);
           render(0, false);
@@ -447,7 +447,7 @@
           pause(false);
           setControlsAvailable(true);
           render(0, false);
-          status.textContent = `Ready · step 0 of ${count}`;
+          status.textContent = `Ready / step 0 of ${count}`;
         }
         root.classList.add('motion-ready');
       });

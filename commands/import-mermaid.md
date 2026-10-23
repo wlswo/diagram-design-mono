@@ -19,7 +19,7 @@ Accepts `.mmd`, `.mermaid`, and Markdown files containing fenced `mermaid` block
 
 - `--format=html` — a self-contained HTML file next to the source.
 - `--size=doc-inline` — `viewBox 0 0 960 600`.
-- `--detail=balanced` · `--audience=mixed`.
+- `--detail=balanced` / `--audience=mixed`.
 - `--variant=light` — the minimal light template.
 - A single diagram selects diagram 0; a multi-block Markdown file lists blocks and asks which to use.
 - Type is chosen from the extracted grammar and structure; `--type` forces one of the visual

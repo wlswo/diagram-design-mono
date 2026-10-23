@@ -83,7 +83,7 @@ def main() -> int:
                 fail(f"{path.name} missing ALT operator label")
         if "[token valid]" not in body:
             fail(f"{path.name} missing [token valid] guard")
-        if "[else" not in body and "[else · 401]" not in body:
+        if "[else" not in body and "[else / 401]" not in body:
             fail(f"{path.name} missing else-region guard")
         if "arrow-open" not in body:
             fail(f"{path.name} missing arrow-open async marker")
